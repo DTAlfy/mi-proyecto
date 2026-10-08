@@ -1,0 +1,29 @@
+# Secretos
+.env
+
+# Media pesada: vive en tu disco, no en git
+02_Bruto_OBS/*
+05_Renders_Finales/*
+03_Assets_Generados/**/*.mp4
+03_Assets_Generados/**/*.mov
+03_Assets_Generados/**/*.mp3
+03_Assets_Generados/**/*.wav
+03_Assets_Generados/**/*.png
+03_Assets_Generados/**/*.jpg
+03_Assets_Generados/**/*.jpeg
+03_Assets_Generados/**/*.webp
+03_Assets_Generados/AUDIO/_comparacion/
+04_Workbooks/*.pdf
+04_Workbooks/*.html
+01_Guiones/teleprompter/*.html
+
+# Generados por el pipeline
+00_Sistema/logs/*
+00_Sistema/ediciones/*
+!**/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

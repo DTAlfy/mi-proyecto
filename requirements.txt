@@ -1,0 +1,7 @@
+# Python 3.10+ ·  pip install -r requirements.txt
+# Además necesitas ffmpeg en el PATH (Auto-Cut): winget install Gyan.FFmpeg
+PyYAML>=6.0
+requests>=2.31
+Pillow>=10.0
+Markdown>=3.5
+pytest>=8.0

@@ -1,0 +1,69 @@
+# =============================================================================
+# Currículo del curso: "De $5/h a $25/h — Tutor de Español Online"
+# Fuente única de verdad. Los guiones, el roadmap visual, los workbooks y el
+# comando `status` se generan a partir de este archivo.
+#
+# Reglas:
+#   - `clave` = PalabraClave del nombre de archivo: solo letras ASCII y números,
+#     en CamelCase, sin tildes ni ñ (Resenas, no Reseñas).
+#   - Cambiar una clave renombra la lección: hazlo antes de grabar.
+# =============================================================================
+
+curso:
+  titulo: "De $5/h a $25/h: Tutor de Español Online"
+  promesa: "Consigue tus primeros alumnos y sube tu tarifa a $25/h en Preply e italki con un sistema repetible."
+  publico: "Hispanohablantes que empiezan (o están estancados) como tutores de español en plataformas online."
+  duracion_objetivo_leccion_min: 8
+
+modulos:
+  - numero: 1
+    titulo: "Estrategia: el mapa del tutor rentable"
+    hito: "Nicho elegido"
+    lecciones:
+      - { numero: 1, clave: "Nicho", titulo: "Elige un nicho que pague", objetivo: "Elegir un nicho concreto de alumno y problema." }
+      - { numero: 2, clave: "Algoritmo", titulo: "Cómo te muestran Preply e italki", objetivo: "Entender las señales que usa el algoritmo para posicionar tutores." }
+      - { numero: 3, clave: "Precio", titulo: "Tu precio de entrada", objetivo: "Fijar un precio inicial y un plan de subidas." }
+      - { numero: 4, clave: "Roadmap", titulo: "El Roadmap de Ingresos", objetivo: "Conocer las 6 etapas del curso y medir el punto de partida." }
+
+  - numero: 2
+    titulo: "Perfil que convierte"
+    hito: "Perfil publicado"
+    lecciones:
+      - { numero: 1, clave: "Foto", titulo: "Foto y primera impresión", objetivo: "Preparar una foto de perfil que genere confianza." }
+      - { numero: 2, clave: "Titular", titulo: "El titular que detiene el scroll", objetivo: "Escribir un titular orientado al resultado del alumno." }
+      - { numero: 3, clave: "Descripcion", titulo: "Descripción orientada a resultados", objetivo: "Redactar la descripción con la fórmula problema-método-prueba." }
+      - { numero: 4, clave: "VideoIntro", titulo: "Video de presentación", objetivo: "Grabar un video de 60-90 s que convierta visitas en reservas." }
+
+  - numero: 3
+    titulo: "La clase de prueba"
+    hito: "Primeras reservas"
+    lecciones:
+      - { numero: 1, clave: "Estructura", titulo: "Estructura de la clase de prueba", objetivo: "Dirigir una clase de prueba de 30 min con guion." }
+      - { numero: 2, clave: "Diagnostico", titulo: "Diagnóstico de nivel en 10 minutos", objetivo: "Evaluar el nivel y el objetivo real del alumno." }
+      - { numero: 3, clave: "Cierre", titulo: "Del 'gracias' al paquete", objetivo: "Proponer un plan y cerrar un paquete de clases sin presión." }
+
+  - numero: 4
+    titulo: "Método y materiales"
+    hito: "Sistema de clases"
+    lecciones:
+      - { numero: 1, clave: "Curriculo", titulo: "Tu currículo por niveles", objetivo: "Diseñar una progresión A1-C1 reutilizable." }
+      - { numero: 2, clave: "Materiales", titulo: "Materiales con IA en minutos", objetivo: "Crear fichas y ejercicios con IA manteniendo la calidad." }
+      - { numero: 3, clave: "Correccion", titulo: "Corregir sin desmotivar", objetivo: "Aplicar técnicas de corrección de errores en conversación." }
+      - { numero: 4, clave: "Herramientas", titulo: "Tu escritorio digital", objetivo: "Configurar pizarra, documentos compartidos y grabación." }
+
+  - numero: 5
+    titulo: "Retención y reseñas"
+    hito: "10 reseñas"
+    lecciones:
+      - { numero: 1, clave: "Seguimiento", titulo: "Seguimiento que retiene", objetivo: "Crear un sistema de tareas y mensajes entre clases." }
+      - { numero: 2, clave: "Resenas", titulo: "Conseguir reseñas de 5 estrellas", objetivo: "Pedir reseñas en el momento correcto." }
+      - { numero: 3, clave: "Paquetes", titulo: "Paquetes y suscripciones", objetivo: "Pasar de clases sueltas a compromisos mensuales." }
+
+  - numero: 6
+    titulo: "Escalar a $25/h"
+    hito: "$25/h"
+    lecciones:
+      - { numero: 1, clave: "SubirPrecio", titulo: "Subir el precio sin perder alumnos", objetivo: "Aplicar subidas escalonadas y comunicarlas." }
+      - { numero: 2, clave: "Especializacion", titulo: "Especialízate: DELE, negocios, viajes", objetivo: "Elegir una especialización premium." }
+      - { numero: 3, clave: "AlumnosDirectos", titulo: "Alumnos directos fuera de la plataforma", objetivo: "Crear un canal propio de forma ética y dentro de las normas." }
+      - { numero: 4, clave: "SistemaSemanal", titulo: "Tu sistema semanal de 25 horas", objetivo: "Organizar agenda, preparación y descanso." }

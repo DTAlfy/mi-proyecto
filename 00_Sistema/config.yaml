@@ -1,0 +1,105 @@
+# =============================================================================
+# SpanishWithAlfy Mentoring — Configuración central del pipeline
+# Todo lo que cambie entre máquinas, proveedores o modelos vive AQUÍ.
+# Las API keys NO van aquí: van en el archivo .env (ver .env.example).
+# =============================================================================
+
+proyecto:
+  nombre: "SpanishWithAlfy Mentoring"
+  autor: "Alfy"
+  marca:
+    color_primario: "#E63946"     # acentos, barra de progreso
+    color_secundario: "#1D3557"   # títulos
+    color_fondo: "#F8F9FB"        # fondo de slides
+    color_texto: "#1D3557"
+    color_suave: "#A8B2C1"        # hitos pendientes en el roadmap
+    fuente_ttf: ""                # ruta opcional a una fuente .ttf (vacío = fuente del sistema)
+  enlaces:
+    skool: "https://www.skool.com/TU-COMUNIDAD"
+    tidycal: "https://tidycal.com/TU-USUARIO/auditoria-perfil"
+    checkout: "https://TU-USUARIO.gumroad.com/l/curso"
+
+# Rutas relativas a la raíz del repositorio (la carpeta que contiene 00_Sistema).
+rutas:
+  guiones: "01_Guiones"
+  teleprompter: "01_Guiones/teleprompter"
+  bruto: "02_Bruto_OBS"
+  assets: "03_Assets_Generados"
+  workbooks: "04_Workbooks"
+  renders: "05_Renders_Finales"
+  ediciones: "00_Sistema/ediciones"   # planes de edición .json que lee DaVinci
+  logs: "00_Sistema/logs"
+  plantillas: "00_Sistema/templates"
+
+video:
+  ancho: 1920
+  alto: 1080
+  fps_por_defecto: 30        # se usa solo si ffprobe no puede leer el FPS real del RAW
+
+autocut:
+  umbral_db: -35             # por debajo de esto = silencio
+  silencio_min_s: 0.8        # silencios más cortos se conservan (respiraciones naturales)
+  margen_s: 0.15             # aire que se deja antes/después de cada frase
+  ffmpeg: "ffmpeg"           # o ruta completa: C:/ffmpeg/bin/ffmpeg.exe
+  ffprobe: "ffprobe"
+
+davinci:
+  proyecto_prefijo: "SWA"            # nombre del proyecto en DaVinci: SWA_M01_L01_Nicho
+  preset_render: "YouTube - 1080p"   # nombre exacto del preset en la página Deliver
+  zoom_punch_in: 1.15                # zoom alterno en cada corte para disimular jump-cuts
+  duracion_imagen_s: 5               # duración por defecto de IMG/SLIDE/ROADMAP en V2
+
+# ---------------------------------------------------------------------------
+# Proveedores de IA. Cambia aquí sin tocar código.
+# ---------------------------------------------------------------------------
+proveedores:
+  imagen: "apimart"
+  video: "apimart"
+  tts: "elevenlabs"          # "elevenlabs" o "apimart"
+  transcripcion: "apimart"   # alinea B-Roll con tu voz real; "ninguno" = estimación por palabras
+
+apimart:
+  # VERIFICA rutas y modelos en https://docs.apimart.ai antes del primer uso real.
+  base_url: "https://api.apimart.ai"
+  ruta_imagen: "/v1/images/generations"
+  ruta_video: "/v1/videos/generations"
+  ruta_tarea: "/v1/tasks/{task_id}"          # consulta de tareas asíncronas
+  ruta_tts: "/v1/audio/speech"
+  ruta_transcripcion: "/v1/audio/transcriptions"
+  modelo_imagen: "gpt-4o-image"
+  modelo_video: "wan2.5-preview"
+  modelo_tts: "tts-1"
+  voz_tts: "alloy"
+  modelo_transcripcion: "whisper-1"
+  # Parámetros extra que se envían tal cual (cada modelo tiene los suyos).
+  parametros_imagen:
+    size: "16:9"
+    n: 1
+  parametros_video:
+    duration: 5
+    resolution: "720p"       # 720p cuesta menos que 1080p y es suficiente para B-Roll
+    aspect_ratio: "16:9"
+  sondeo_intervalo_s: 8
+  sondeo_max_s: 900
+
+elevenlabs:
+  base_url: "https://api.elevenlabs.io"
+  modelo: "eleven_multilingual_v2"
+  voice_id: "PEGA_AQUI_EL_VOICE_ID"          # copia el ID desde tu Voice Library
+  formato: "mp3_44100_128"
+  estabilidad: 0.5
+  similitud: 0.75
+
+# Estilo que se añade a TODOS los prompts visuales (coherencia de marca).
+estilo_visual:
+  imagen: "clean modern flat illustration, soft natural light, warm colors, no text, 16:9"
+  video: "cinematic b-roll, natural light, shallow depth of field, no text, no logos"
+
+# Precio por llamada en USD. Rellénalo con TU tabla de precios de Apimart/ElevenLabs.
+# Con 0 el modo --dry-run cuenta llamadas pero no estima dinero.
+costos_usd:
+  imagen: 0.0
+  video: 0.0
+  tts: 0.0
+  transcripcion_por_minuto: 0.0
+presupuesto_max_usd_por_ejecucion: 5.0
