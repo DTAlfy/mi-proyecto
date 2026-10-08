@@ -26,6 +26,8 @@ rutas:
   bruto: "02_Bruto_OBS"
   assets: "03_Assets_Generados"
   workbooks: "04_Workbooks"
+  materiales: "04_Workbooks/Materiales"   # imágenes entregables (MCER, plantillas...)
+  audios: "04_Workbooks/Audios"           # packs de audio para descargar (listening, frases)
   renders: "05_Renders_Finales"
   ediciones: "00_Sistema/ediciones"   # planes de edición .json que lee DaVinci
   logs: "00_Sistema/logs"
@@ -47,7 +49,13 @@ davinci:
   proyecto_prefijo: "SWA"            # nombre del proyecto en DaVinci: SWA_M01_L01_Nicho
   preset_render: "YouTube - 1080p"   # nombre exacto del preset en la página Deliver
   zoom_punch_in: 1.15                # zoom alterno en cada corte para disimular jump-cuts
-  duracion_imagen_s: 5               # duración por defecto de IMG/SLIDE/ROADMAP en V2
+  duracion_imagen_s: 5               # duración por defecto de IMG/SLIDE/ROADMAP/OBJETIVOS en V2
+  pausa_tras_audio_s: 1.0            # silencio extra tras cada [AUDIO] intercalado (tiempo para repetir)
+
+# Escenas de OBS: el teleprompter avisa cuándo cambiar (ver docs/GUIA_GRABACION_OBS.md)
+obs:
+  escena_por_defecto: "Camara"       # hook, explicaciones, cierre
+  escena_pantalla: "Clase"           # se activa en cada [PANTALLA] y dura hasta el siguiente título
 
 # ---------------------------------------------------------------------------
 # Proveedores de IA. Cambia aquí sin tocar código.
@@ -69,11 +77,19 @@ apimart:
   modelo_imagen: "gpt-4o-image"
   modelo_video: "wan2.5-preview"
   modelo_tts: "tts-1"
-  voz_tts: "alloy"
+  voces:                     # solo si usas proveedores.tts: apimart
+    narrador: "alloy"
+    modelo_en: "nova"
+    estudiante_us: "echo"
+    estudiante_uk: "fable"
+    estudiante_no_nativo: "onyx"
   modelo_transcripcion: "whisper-1"
   # Parámetros extra que se envían tal cual (cada modelo tiene los suyos).
-  parametros_imagen:
+  parametros_imagen:          # [IMG] de los guiones
     size: "16:9"
+    n: 1
+  parametros_ilustracion:     # ilustraciones de módulos y materiales (van en un panel lateral)
+    size: "1:1"
     n: 1
   parametros_video:
     duration: 5
@@ -85,7 +101,15 @@ apimart:
 elevenlabs:
   base_url: "https://api.elevenlabs.io"
   modelo: "eleven_multilingual_v2"
-  voice_id: "PEGA_AQUI_EL_VOICE_ID"          # copia el ID desde tu Voice Library
+  # Voces por papel. En el guion: [AUDIO: estudiante_us | How long will it take?]
+  # Sin papel ([AUDIO: texto]) se usa voz_por_defecto. Copia los IDs desde tu Voice Library.
+  voz_por_defecto: "narrador"
+  voces:
+    narrador: "PEGA_VOICE_ID"              # voz neutra para citas en español
+    modelo_en: "PEGA_VOICE_ID"             # inglés nativo claro: frases modelo del tutor
+    estudiante_us: "PEGA_VOICE_ID"         # alumno adulto de EE. UU.
+    estudiante_uk: "PEGA_VOICE_ID"         # alumna del Reino Unido
+    estudiante_no_nativo: "PEGA_VOICE_ID"  # inglés con acento (alumnos de Alemania, Brasil, Japón...)
   formato: "mp3_44100_128"
   estabilidad: 0.5
   similitud: 0.75
@@ -93,6 +117,7 @@ elevenlabs:
 # Estilo que se añade a TODOS los prompts visuales (coherencia de marca).
 estilo_visual:
   imagen: "clean modern flat illustration, soft natural light, warm colors, no text, 16:9"
+  ilustracion: "flat vector illustration, warm coral and navy palette, soft shadows, plain light background, no text, no letters"
   video: "cinematic b-roll, natural light, shallow depth of field, no text, no logos"
 
 # Precio por llamada en USD. Rellénalo con TU tabla de precios de Apimart/ElevenLabs.
@@ -101,5 +126,6 @@ costos_usd:
   imagen: 0.0
   video: 0.0
   tts: 0.0
+  ilustracion: 0.0
   transcripcion_por_minuto: 0.0
 presupuesto_max_usd_por_ejecucion: 5.0

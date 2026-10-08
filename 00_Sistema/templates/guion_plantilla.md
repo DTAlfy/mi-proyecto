@@ -23,6 +23,9 @@ Escribe aquí el problema crítico que siente el alumno, en una o dos frases.
 [ROADMAP]
 Explica en qué punto de la hoja de ruta está el alumno y qué desbloquea esta lección.
 
+[OBJETIVOS: Primera meta | Segunda meta | Tercera meta]
+Enumera en voz alta lo que el alumno sabrá hacer al terminar.
+
 ## 3. El problema
 
 Describe el error habitual y su coste real (tiempo, dinero, alumnos perdidos).

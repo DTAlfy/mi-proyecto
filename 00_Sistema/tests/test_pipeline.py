@@ -169,14 +169,14 @@ def test_normalizar_quita_tildes_y_puntuacion():
 def _plan_ejemplo():
     lec = naming.buscar_leccion(CURRICULO, 1, 1)
     g = guion.cargar(CFG.ruta("guiones") / lec.guion)
-    return lec, assets.planificar(g, lec, CFG)
+    return lec, assets.planificar(g, lec, CFG, CURRICULO)
 
 
 def test_plan_de_assets_nombres_y_proveedores():
     lec, plan = _plan_ejemplo()
     por_tipo = {}
     for i in plan:
-        por_tipo.setdefault(i.etiqueta.tipo, []).append(i)
+        por_tipo.setdefault(i.tipo, []).append(i)
     assert [i.destino.name for i in por_tipo["BROLL"]] == ["M01_L01_001.mp4", "M01_L01_002.mp4"]
     assert por_tipo["ROADMAP"][0].destino.name == "M01_Roadmap.png"
     assert all(i.es_local for i in por_tipo["SLIDE"])
@@ -186,7 +186,7 @@ def test_plan_de_assets_nombres_y_proveedores():
 
 def test_cache_no_paga_dos_veces():
     _, plan = _plan_ejemplo()
-    item = next(i for i in plan if i.etiqueta.tipo == "BROLL")
+    item = next(i for i in plan if i.tipo == "BROLL")
     # Simula que el mismo prompt ya se pagó y se guardó con otro nombre
     otro = RAIZ / "03_Assets_Generados" / "_test_pagado.mp4"
     otro.write_bytes(b"x")
@@ -208,10 +208,10 @@ def test_presupuesto_bloquea(monkeypatch):
     datos = dict(CFG.datos, costos_usd={"video": 10.0, "imagen": 1.0, "tts": 1.0},
                  presupuesto_max_usd_por_ejecucion=5.0)
     cfg = type(CFG)(datos)
-    plan = assets.planificar(guion.cargar(CFG.ruta("guiones") / lec.guion), lec, cfg)
+    plan = assets.planificar(guion.cargar(CFG.ruta("guiones") / lec.guion), lec, cfg, CURRICULO)
     monkeypatch.setattr(assets, "cargar_manifest", lambda _c: {})
     with pytest.raises(RuntimeError, match="supera el tope"):
-        assets.generar([i for i in plan if not i.es_local], cfg, CURRICULO, lec, dry_run=True, informar=lambda _: None)
+        assets.generar([i for i in plan if not i.es_local], cfg, dry_run=True, informar=lambda _: None)
 
 
 # --- kit de grabación -------------------------------------------------------
@@ -235,6 +235,9 @@ class _Item:
     def GetClipProperty(self, k):
         return self.props.get(k)
 
+    def GetStart(self):
+        return self.start
+
     def SetProperty(self, k, v):
         self.set[k] = v
         return True
@@ -254,7 +257,7 @@ class _Timeline:
 
 class _MediaPool:
     def __init__(self):
-        self.clips, self.timeline = [], None
+        self.clips, self.timeline, self.cursor = [], None, 0
 
     def GetRootFolder(self): return self
     def SetCurrentFolder(self, _): return True
@@ -271,6 +274,11 @@ class _MediaPool:
             obj = _Item("tl")
             obj.__dict__.update(info)
             obj.get = info.get
+            if "recordFrame" in info:
+                obj.start = info["recordFrame"]
+            else:  # append secuencial al final de V1
+                obj.start = 108000 + self.cursor
+                self.cursor += info["endFrame"] - info["startFrame"] + 1
             self.timeline.items.append(obj)
         return infos
 
@@ -303,11 +311,16 @@ def test_script_davinci_monta_con_resolve_simulado(tmp_path, monkeypatch):
         "proyecto": "SWA_M01_L01_Nicho", "base": "M01_L01_Nicho", "raw": str(tmp_path / "raw.mp4"),
         "fps": 30.0, "duracion_raw_s": 12.0, "duracion_final_s": 8.1,
         "segmentos": [[0.0, 3.15], [4.85, 8.15], [10.35, 12.0]], "metodo_sincronizacion": "estimacion",
+        "secuencia": [
+            {"tipo": "raw", "inicio_s": 0.0, "fin_s": 3.15},
+            {"tipo": "pausa", "duracion_s": 2.0, "imagen": str(tmp_path / "e.png"), "audio": str(tmp_path / "a.mp3")},
+            {"tipo": "raw", "inicio_s": 4.85, "fin_s": 8.15},
+            {"tipo": "raw", "inicio_s": 10.35, "fin_s": 12.0},
+        ],
         "zoom_punch_in": 1.15,
         "inserciones": [
             {"tipo": "SLIDE", "archivo": str(tmp_path / "s.png"), "pista": "V2", "inicio_s": 1.0, "duracion_s": 5},
             {"tipo": "BROLL", "archivo": str(tmp_path / "b.mp4"), "pista": "V2", "inicio_s": 2.0, "duracion_s": None},
-            {"tipo": "AUDIO", "archivo": str(tmp_path / "a.mp3"), "pista": "A2", "inicio_s": 7.0, "duracion_s": None},
         ],
         "marcadores": [{"inicio_s": 6.0, "color": "Blue", "nombre": "PANTALLA", "nota": "abre Preply"}],
     }
@@ -323,17 +336,19 @@ def test_script_davinci_monta_con_resolve_simulado(tmp_path, monkeypatch):
     proyecto = falso.pm.p
     tl = proyecto.mp.timeline
     assert proyecto.ajustes["timelineFrameRate"] == "30"
-    base = [x for x in tl.items if "trackIndex" not in x.__dict__]
-    assert [(x.startFrame, x.endFrame) for x in base] == [(0, 94), (146, 244), (310, 360)]
+    v1 = [x for x in tl.items if "trackIndex" not in x.__dict__]
+    # tramo · tarjeta Escucha (2 s = 60 frames) · tramo · tramo
+    assert [(x.startFrame, x.endFrame) for x in v1] == [(0, 94), (0, 59), (146, 244), (310, 360)]
+    assert v1[1].start == 108095
     v2 = [x for x in tl.items if x.__dict__.get("trackIndex") == 2 and x.mediaType == 1]
     # el B-Roll pedido en 2 s se desplaza al final de la slide (1 s + 5 s) para no solaparse
     assert [x.recordFrame - 108000 for x in v2] == [30, 180]
     a2 = [x for x in tl.items if x.__dict__.get("mediaType") == 2]
-    assert a2[0].recordFrame - 108000 == 210
+    assert a2[0].recordFrame == 108095  # el audio suena sobre su tarjeta, no sobre tu voz
     assert tl.pistas == {"video": 2, "audio": 2}
     assert tl.marcadores[0][:3] == (180, "Blue", "PANTALLA")
-    zooms = [x.set.get("ZoomX") for x in base]
-    assert zooms == [None, 1.15, None]  # punch-in alterno
+    zooms = [x.set.get("ZoomX") for x in v1]
+    assert zooms == [None, None, 1.15, None]  # punch-in alterno solo en tramos de voz
 
 
 # --- cliente Apimart con HTTP simulado ----------------------------------------
@@ -366,3 +381,91 @@ def test_apimart_sondea_tarea_asincrona(monkeypatch):
     assert cliente.video("test") == b"MP4"
     assert llamadas[1] == ("GET", "https://api.apimart.ai/v1/tasks/t-1")
     assert llamadas[-1] == ("GET", "https://cdn.x/v.mp4")
+
+
+# --- voces, pausas de audio, escenas y materiales ----------------------------
+
+def test_separar_voz_por_papel():
+    assert assets.separar_voz("estudiante_us | How long?", CFG) == ("estudiante_us", "How long?")
+    assert assets.separar_voz("Specific beats generic.", CFG) == (None, "Specific beats generic.")
+
+
+def test_validar_voces_detecta_papel_inexistente():
+    g = guion.parsear("Hola. [AUDIO: profesor_fr | Bonjour]")
+    assert any("profesor_fr" in e for e in assets.validar_voces(g, CFG))
+    assert assets.validar_voces(guion.parsear("Hola. [AUDIO: modelo_en | Hi]"), CFG) == []
+
+
+def test_audio_con_voz_cambia_la_huella():
+    lec = naming.Leccion(7, 4, "Listening")
+    a = assets.planificar(guion.parsear("Uno. [AUDIO: estudiante_us | Hi]"), lec, CFG, CURRICULO)[0]
+    b = assets.planificar(guion.parsear("Uno. [AUDIO: estudiante_uk | Hi]"), lec, CFG, CURRICULO)[0]
+    assert (a.voz, a.prompt) == ("estudiante_us", "Hi")
+    assert a.huella != b.huella
+
+
+def test_objetivos_es_local_y_gratis():
+    lec = naming.Leccion(1, 1, "Nicho")
+    plan = assets.planificar(guion.parsear("Hola. [OBJETIVOS: Uno | Dos]"), lec, CFG, CURRICULO)
+    assert plan[0].es_local and plan[0].destino.name == "M01_L01_001.png" and plan[0].coste == 0
+
+
+def test_intercalar_pausas_parte_el_tramo():
+    seg = [(0.0, 4.0), (6.0, 10.0)]   # 8 s de voz
+    pausas = [{"en_s": 2.0, "duracion_s": 3.0, "orden": 1}, {"en_s": 8.0, "duracion_s": 1.0, "orden": 5}]
+    sec = autocut.intercalar_pausas(seg, pausas)
+    assert [(e["tipo"], e.get("inicio_s"), e.get("fin_s")) for e in sec] == [
+        ("raw", 0.0, 2.0), ("pausa", None, None), ("raw", 2.0, 4.0), ("raw", 6.0, 10.0), ("pausa", None, None)]
+
+
+def test_pausa_en_el_limite_va_antes_del_siguiente_tramo():
+    sec = autocut.intercalar_pausas([(0.0, 4.0), (6.0, 10.0)], [{"en_s": 4.0, "duracion_s": 1.0, "orden": 0}])
+    assert [e["tipo"] for e in sec] == ["raw", "pausa", "raw"]
+
+
+def test_desplazar_respeta_el_orden_del_guion():
+    pausas = [{"en_s": 5.0, "duracion_s": 2.0, "orden": 3}]
+    assert autocut.desplazar(4.0, 9, pausas) == 4.0
+    assert autocut.desplazar(5.0, 2, pausas) == 5.0   # visual antes del audio en el guion
+    assert autocut.desplazar(5.0, 4, pausas) == 7.0   # visual después del audio
+    assert autocut.desplazar(6.0, 9, pausas) == 8.0
+
+
+def test_plan_escenas_vuelve_a_camara_en_el_siguiente_titulo():
+    cuerpo = "## Hook\nHola.\n## Demo\n[PANTALLA: abre Preply]\nMira.\n## Cierre\nAdiós."
+    texto, cambios = kit.plan_escenas(cuerpo, "Camara", "Clase")
+    assert cambios == [("Camara", "inicio"), ("Clase", "Demo"), ("Camara", "Cierre")]
+    assert texto.index("[ESCENA: Clase]") < texto.index("[PANTALLA")
+
+
+def test_materiales_yaml_valido_y_plan():
+    from swa import materiales
+    datos = materiales.cargar()
+    assert materiales.validar(datos, CFG) == []
+    plan = materiales.planificar(CFG, CURRICULO, datos, {"MAT01", "AUD01"})
+    tipos = [i.tipo for i in plan]
+    assert tipos.count("ILUSTRACION") == 1 and tipos.count("MATERIAL") == 1
+    assert tipos.count("PISTA") == len(next(m for m in datos["materiales"] if m["id"] == "AUD01")["lineas"])
+    assert next(i for i in plan if i.tipo == "MATERIAL").destino.name == "MAT01_MapaMCER.png"
+
+
+def test_packs_de_audio_reutilizan_la_cache_de_los_guiones():
+    """Misma frase y voz en un guion y en materiales.yaml -> misma huella -> no se paga dos veces."""
+    from swa import materiales
+    pista = next(i for i in materiales.planificar(CFG, CURRICULO, materiales.cargar(), {"AUD02"}) if i.tipo == "PISTA")
+    lec = naming.Leccion(7, 1, "Presentacion")
+    tag = assets.planificar(guion.parsear(f"Hola. [AUDIO: {pista.voz} | {pista.prompt}]"), lec, CFG, CURRICULO)[0]
+    assert tag.huella == pista.huella
+
+
+def test_materiales_rechaza_ids_y_layouts_invalidos():
+    from swa import materiales
+    malo = {"materiales": [{"id": "X1", "clave": "Algo", "layout": "lista"},
+                           {"id": "MAT02", "clave": "Otro", "layout": "circulo"}]}
+    errores = materiales.validar(malo, CFG)
+    assert any("X1" in e for e in errores) and any("circulo" in e for e in errores)
+
+
+def test_roadmap_excluye_modulos_express():
+    assert all(m.get("tipo") != "express" for m in naming.modulos_roadmap(CURRICULO))
+    assert len(naming.modulos_roadmap(CURRICULO)) < len(CURRICULO["modulos"])

@@ -1,0 +1,178 @@
+# =============================================================================
+# Materiales entregables para los alumnos del curso (los tutores).
+# Generar:  python builder.py materiales            (dry-run + vista previa local gratis)
+#           python builder.py materiales --generar  (ilustraciones Apimart + audios ElevenLabs)
+#
+# Modelo HÍBRIDO: Apimart crea la ilustración (sin texto) y el texto exacto se
+# compone en local. Así ninguna cifra ni tilde sale deformada.
+#
+#   id/clave   -> 04_Workbooks/Materiales/MAT01_MapaMCER.png
+#   modulo     -> el material se incluye en el workbook de ese módulo
+#   layout     -> lista | escalera | linea_tiempo | plantilla | roadmap
+#   verificado -> false = sello "BORRADOR · VERIFICAR CIFRAS" hasta que lo revises
+#   tipo: audio -> pack de pistas MP3 (04_Workbooks/Audios/AUD01_.../AUD01_01.mp3)
+# =============================================================================
+
+fondos:
+  roadmap: "winding path up a gentle green hill to a sunny summit, wide landscape, lots of empty sky"
+
+materiales:
+  - id: MAT01
+    clave: MapaMCER
+    modulo: 4
+    layout: escalera
+    titulo: "Mapa MCER: del A1 al C2"
+    subtitulo: "Horas orientativas de clase guiada y exámenes oficiales por nivel"
+    ilustracion: "student climbing a staircase made of books toward a small flag"
+    verificado: false   # contrasta las horas con el Instituto Cervantes antes de publicar
+    nota: "Horas acumuladas orientativas: varían según lengua materna, intensidad y estudio autónomo."
+    niveles:
+      - { nivel: A1, nombre: "Acceso", lineas: ["Se presenta y usa frases básicas", "≈ 90-100 h", "DELE A1 · SIELE"] }
+      - { nivel: A2, nombre: "Plataforma", lineas: ["Resuelve situaciones cotidianas", "≈ 180-200 h", "DELE A2 · SIELE"] }
+      - { nivel: B1, nombre: "Umbral", lineas: ["Se desenvuelve al viajar y en el trabajo", "≈ 350-400 h", "DELE B1 · SIELE"] }
+      - { nivel: B2, nombre: "Avanzado", lineas: ["Conversa con fluidez y argumenta", "≈ 500-600 h", "DELE B2 · SIELE"] }
+      - { nivel: C1, nombre: "Dominio operativo", lineas: ["Uso flexible profesional y académico", "≈ 700-800 h", "DELE C1 · SIELE"] }
+      - { nivel: C2, nombre: "Maestría", lineas: ["Precisión y matices casi nativos", "≈ 1000-1200 h", "DELE C2"] }
+
+  - id: MAT02
+    clave: ObjetivosClase
+    modulo: 3
+    layout: plantilla
+    titulo: "Goals for today · Objetivos de hoy"
+    subtitulo: "Compártela al empezar cada clase y repásala al final"
+    ilustracion: "friendly teacher holding a checklist next to an open laptop"
+    campos:
+      - "Goal 1 · Objetivo 1"
+      - "Goal 2 · Objetivo 2"
+      - "New words · Palabras nuevas"
+      - "By the end of today I can… · Al final de hoy puedo…"
+
+  - id: MAT03
+    clave: RoadmapIngresos
+    modulo: 1
+    layout: roadmap
+    titulo: "Roadmap de Ingresos"
+
+  - id: MAT04
+    clave: ClasePrueba
+    modulo: 3
+    layout: linea_tiempo
+    titulo: "La clase de prueba de 30 minutos"
+    subtitulo: "Cada minuto tiene un objetivo: que el alumno quiera volver"
+    ilustracion: "stopwatch next to a video call window with a smiling student"
+    tramos:
+      - { nombre: "Bienvenida", minutos: 3, detalle: "Conexión y expectativas" }
+      - { nombre: "Diagnóstico", minutos: 10, detalle: "Nivel real y objetivo" }
+      - { nombre: "Victoria rápida", minutos: 10, detalle: "Mini-lección útil hoy" }
+      - { nombre: "Plan", minutos: 5, detalle: "Ruta personalizada" }
+      - { nombre: "Reserva", minutos: 2, detalle: "Propuesta de paquete" }
+
+  - id: MAT05
+    clave: IdiomaVehicular
+    modulo: 7
+    layout: escalera
+    titulo: "La escalera del idioma: cuánto inglés usar en clase"
+    subtitulo: "Desde B1, la clase es en español"
+    ilustracion: "two speech bubbles on a balance scale, one bigger than the other"
+    nota: "Guía orientativa del curso: adapta los porcentajes a cada alumno."
+    niveles:
+      - { nivel: A1, nombre: "≈ 40% inglés", lineas: ["Instrucciones y gramática nueva", "El vocabulario siempre en español"] }
+      - { nivel: A2, nombre: "≈ 20% inglés", lineas: ["Solo para gramática nueva", "Instrucciones ya en español"] }
+      - { nivel: B1, nombre: "≈ 5% inglés", lineas: ["Solo ante un bloqueo total", "Explica con ejemplos y sinónimos"] }
+      - { nivel: B2, nombre: "0% inglés", lineas: ["Clase 100% en español"] }
+      - { nivel: C1, nombre: "0% inglés", lineas: ["Matices, registro y cultura"] }
+
+  - id: MAT06
+    clave: LenguajeAula
+    modulo: 7
+    layout: lista
+    titulo: "Lenguaje de aula · Classroom language"
+    subtitulo: "Diez frases que cubren casi toda la clase con principiantes"
+    ilustracion: "smiling teacher pointing at a whiteboard during an online lesson"
+    items:
+      - { titulo: "Repeat after me.", detalle: "Repite después de mí." }
+      - { titulo: "Can you read this out loud?", detalle: "¿Puedes leer esto en voz alta?" }
+      - { titulo: "Take your time.", detalle: "Tómate tu tiempo." }
+      - { titulo: "Let's practice.", detalle: "Vamos a practicar." }
+      - { titulo: "Try to say it in Spanish.", detalle: "Intenta decirlo en español." }
+      - { titulo: "Does that make sense?", detalle: "¿Tiene sentido?" }
+      - { titulo: "Good job! Almost there.", detalle: "¡Muy bien! Casi." }
+      - { titulo: "Let's review.", detalle: "Vamos a repasar." }
+      - { titulo: "Any questions?", detalle: "¿Alguna pregunta?" }
+      - { titulo: "Your homework is…", detalle: "Tu tarea es…" }
+
+  - id: MAT07
+    clave: CicloClase
+    modulo: 4
+    layout: linea_tiempo
+    titulo: "El ciclo de una clase de 55 minutos"
+    subtitulo: "La misma estructura en todos los niveles"
+    ilustracion: "circular arrows around a tidy desk with books and a laptop"
+    tramos:
+      - { nombre: "Calentamiento", minutos: 5, detalle: "Charla breve" }
+      - { nombre: "Repaso", minutos: 5, detalle: "Tarea y clase anterior" }
+      - { nombre: "Presentación", minutos: 15, detalle: "Contenido nuevo" }
+      - { nombre: "Práctica guiada", minutos: 15, detalle: "Ejercicios con apoyo" }
+      - { nombre: "Producción", minutos: 10, detalle: "Uso libre" }
+      - { nombre: "Cierre", minutos: 5, detalle: "Feedback y tarea" }
+
+  - id: MAT08
+    clave: FeedbackClase
+    modulo: 5
+    layout: plantilla
+    titulo: "Feedback de la clase"
+    subtitulo: "Envíalo en menos de 5 minutos al terminar"
+    ilustracion: "notebook with check marks and a pencil beside a cup of coffee"
+    campos:
+      - "Lo que hiciste muy bien"
+      - "Para mejorar (máximo 2 puntos)"
+      - "Palabras y frases nuevas"
+      - "Tarea para la próxima clase"
+
+  - id: MAT09
+    clave: EscaleraPrecios
+    modulo: 6
+    layout: escalera
+    titulo: "Escalera de precios: de $5/h a $25/h"
+    subtitulo: "Sube un escalón cuando cumplas la condición, no antes"
+    ilustracion: "stacks of coins arranged as stairs going up, small plant on top"
+    nota: "Plan sugerido del curso, no una garantía: depende de tu nicho, tu mercado y tu constancia."
+    niveles:
+      - { nivel: "$5-8", nombre: "Arranque", lineas: ["0-5 reseñas", "Llenar agenda y aprender"] }
+      - { nivel: "$10-12", nombre: "Tracción", lineas: ["5-10 reseñas", "Agenda al 50%"] }
+      - { nivel: "$15", nombre: "Consolidación", lineas: ["10-20 reseñas", "Paquetes activos"] }
+      - { nivel: "$20", nombre: "Especialista", lineas: ["Nicho claro", "Lista de espera"] }
+      - { nivel: "$25", nombre: "Premium", lineas: ["Especialización", "Alumnos directos"] }
+
+  # --- Packs de audio (ElevenLabs) -------------------------------------------
+  # Usa EXACTAMENTE el mismo texto y voz que las etiquetas [AUDIO] de los guiones:
+  # la caché reutiliza la pista y no se paga dos veces.
+  - id: AUD01
+    clave: PreguntasAlumnos
+    modulo: 7
+    tipo: audio
+    titulo: "Listening: las preguntas que te harán tus alumnos"
+    lineas:
+      - { voz: estudiante_us, texto: "Hi! How long will it take me to have a basic conversation?", traduccion: "¿Cuánto tardaré en poder tener una conversación básica?" }
+      - { voz: estudiante_uk, texto: "Should I learn Spanish from Spain or from Latin America?", traduccion: "¿Debería aprender español de España o de Latinoamérica?" }
+      - { voz: estudiante_no_nativo, texto: "Can we focus on speaking? I don't really like grammar.", traduccion: "¿Podemos centrarnos en hablar? No me gusta mucho la gramática." }
+      - { voz: estudiante_us, texto: "What's the difference between ser and estar?", traduccion: "¿Cuál es la diferencia entre ser y estar?" }
+      - { voz: estudiante_uk, texto: "Do you give homework after each lesson?", traduccion: "¿Pones tarea después de cada clase?" }
+      - { voz: estudiante_no_nativo, texto: "Can I reschedule tomorrow's lesson?", traduccion: "¿Puedo cambiar la clase de mañana?" }
+      - { voz: estudiante_us, texto: "Sorry, can you speak a little more slowly?", traduccion: "Perdona, ¿puedes hablar un poco más despacio?" }
+      - { voz: estudiante_uk, texto: "Can we use English when I get stuck?", traduccion: "¿Podemos usar inglés cuando me bloquee?" }
+
+  - id: AUD02
+    clave: FrasesTutor
+    modulo: 7
+    tipo: audio
+    titulo: "Shadowing: frases modelo del tutor"
+    lineas:
+      - { voz: modelo_en, texto: "Hi! I'm your Spanish tutor. Nice to meet you.", traduccion: "¡Hola! Soy tu tutor de español. Encantado de conocerte." }
+      - { voz: modelo_en, texto: "Today we'll find out your level and your goals.", traduccion: "Hoy vamos a descubrir tu nivel y tus objetivos." }
+      - { voz: modelo_en, texto: "Don't worry about mistakes. They help you learn.", traduccion: "No te preocupes por los errores. Te ayudan a aprender." }
+      - { voz: modelo_en, texto: "Repeat after me.", traduccion: "Repite después de mí." }
+      - { voz: modelo_en, texto: "Take your time.", traduccion: "Tómate tu tiempo." }
+      - { voz: modelo_en, texto: "Does that make sense?", traduccion: "¿Tiene sentido?" }
+      - { voz: modelo_en, texto: "In Spanish, adjectives usually go after the noun.", traduccion: "En español, los adjetivos suelen ir después del sustantivo." }
+      - { voz: modelo_en, texto: "Now let's try it in Spanish.", traduccion: "Ahora intentémoslo en español." }

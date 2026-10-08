@@ -21,8 +21,9 @@ from typing import Any
 import markdown
 
 from . import guion as guion_mod
+from . import materiales as materiales_mod
 from .config import Config
-from .naming import Leccion, iterar_lecciones, workbook
+from .naming import Leccion, iterar_lecciones, pista_audio, roadmap as nombre_roadmap, workbook
 
 NAVEGADORES = (
     r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
@@ -82,7 +83,33 @@ def construir_html(modulo: int, cfg: Config, curriculo: dict[str, Any]) -> tuple
         partes.append("</section>")
         secciones.append("\n".join(partes))
 
-    roadmap = cfg.ruta("assets") / "ROADMAP" / f"M{modulo:02d}_Roadmap.png"
+    # Materiales entregables del módulo (materiales.yaml)
+    datos = materiales_mod.cargar()
+    piezas = []
+    for mat in materiales_mod.de_modulo(datos, modulo):
+        if mat.get("tipo") == "audio":
+            carpeta = materiales_mod.carpeta_audio(cfg, mat)
+            filas = "".join(
+                f"<tr><td>{pista_audio(mat['id'], i)}</td><td>{html.escape(ln['texto'])}</td>"
+                f"<td>{html.escape(ln.get('traduccion', ''))}</td></tr>"
+                for i, ln in enumerate(mat["lineas"], 1))
+            piezas.append(f'<div class="bloque recurso"><h3>🎧 {html.escape(mat["titulo"])}</h3>'
+                          f'<p>Audios en <code>{carpeta.name}/</code></p>'
+                          f'<table><tr><th>Pista</th><th>Inglés</th><th>Español</th></tr>{filas}</table></div>')
+        else:
+            img = materiales_mod.ruta_imagen(cfg, mat)
+            if img.exists():
+                piezas.append(f'<figure class="material"><img src="{_data_uri(img)}">'
+                              f'<figcaption>{mat["id"]} · {html.escape(mat["titulo"])}</figcaption></figure>')
+            else:
+                avisos.append(f"{img.name} no existe: ejecuta `builder.py materiales`")
+            if mat.get("verificado") is False:
+                avisos.append(f"{mat['id']} tiene cifras sin verificar (sale con sello BORRADOR)")
+    if piezas:
+        secciones.append('<section class="leccion"><p class="id">MATERIALES</p><h2>Materiales para tus clases</h2>'
+                         '<p class="objetivo">Descárgalos y úsalos con tus alumnos.</p>' + "\n".join(piezas) + "</section>")
+
+    roadmap = cfg.ruta("assets") / "ROADMAP" / nombre_roadmap(modulo)
     portada_img = f'<img class="roadmap" src="{_data_uri(roadmap)}">' if roadmap.exists() else ""
     plantilla = (cfg.ruta("plantillas") / "workbook.html").read_text(encoding="utf-8")
     reemplazos = {

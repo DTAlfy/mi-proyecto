@@ -54,8 +54,9 @@ class Apimart:
         return peticion("GET", url, timeout=300).content
 
     # -- API pública ---------------------------------------------------------
-    def imagen(self, prompt: str) -> bytes:
-        cuerpo = {"model": self.cfg["modelo_imagen"], "prompt": prompt, **self.cfg.get("parametros_imagen", {})}
+    def imagen(self, prompt: str, params: dict[str, Any] | None = None) -> bytes:
+        extra = self.cfg.get("parametros_imagen", {}) if params is None else params
+        cuerpo = {"model": self.cfg["modelo_imagen"], "prompt": prompt, **extra}
         r = peticion("POST", self.base + self.cfg["ruta_imagen"], headers=self._cabeceras, json=cuerpo).json()
         b64 = buscar_valor(r, "b64_json")
         if b64:
@@ -68,8 +69,10 @@ class Apimart:
         r = peticion("POST", self.base + self.cfg["ruta_video"], headers=self._cabeceras, json=cuerpo).json()
         return self._descargar(self._esperar_resultado(r))
 
-    def tts(self, texto: str) -> bytes:
-        cuerpo = {"model": self.cfg["modelo_tts"], "input": texto, "voice": self.cfg["voz_tts"], "response_format": "mp3"}
+    def tts(self, texto: str, voz: str | None = None) -> bytes:
+        voces = self.cfg.get("voces", {})
+        cuerpo = {"model": self.cfg["modelo_tts"], "input": texto,
+                  "voice": voces.get(voz or "narrador", "alloy"), "response_format": "mp3"}
         return peticion("POST", self.base + self.cfg["ruta_tts"], headers=self._cabeceras, json=cuerpo).content
 
     def transcribir(self, audio: Path) -> dict[str, Any]:

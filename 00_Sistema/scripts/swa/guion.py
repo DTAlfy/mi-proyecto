@@ -1,8 +1,10 @@
 """Parser de guiones .md: etiquetas, bloques, texto hablado y validación.
 
 Formato de etiquetas (ver docs/FORMATO_GUION.md):
-  En línea:  [BROLL: desc]  [IMG: desc]  [AUDIO: frase]  [SLIDE: Título | punto | punto]
-             [ROADMAP]  [PANTALLA: qué mostrar]  [NOTA: indicación que no se lee]
+  En línea:  [BROLL: desc]  [IMG: desc]  [SLIDE: Título | punto | punto]
+             [OBJETIVOS: meta | meta | meta]  [ROADMAP]
+             [AUDIO: frase]  o  [AUDIO: papel | frase]  (papel = voz de config.yaml)
+             [PANTALLA: qué mostrar]  [NOTA: indicación que no se lee]
   Bloques:   [TAREA: título] ... [/TAREA]   [RECURSO: título] ... [/RECURSO]
 
 Cada etiqueta guarda la posición (en palabras habladas) donde aparece, que es lo
@@ -18,10 +20,10 @@ from typing import Any
 
 import yaml
 
-ETIQUETAS_LINEA = ("BROLL", "IMG", "AUDIO", "SLIDE", "ROADMAP", "PANTALLA", "NOTA")
+ETIQUETAS_LINEA = ("BROLL", "IMG", "AUDIO", "SLIDE", "OBJETIVOS", "ROADMAP", "PANTALLA", "NOTA")
 ETIQUETAS_BLOQUE = ("TAREA", "RECURSO")
 # Etiquetas que producen un archivo (y por tanto cuestan o se generan).
-ETIQUETAS_ASSET = ("BROLL", "IMG", "AUDIO", "SLIDE", "ROADMAP")
+ETIQUETAS_ASSET = ("BROLL", "IMG", "AUDIO", "SLIDE", "OBJETIVOS", "ROADMAP")
 PALABRAS_POR_MINUTO = 150  # ritmo de lectura natural en español
 
 PATRON_ETIQUETA = re.compile(r"\[(?P<cierre>/)?(?P<tipo>[A-Z]+)(?::\s*(?P<valor>[^\]]*?))?\s*\]")
@@ -167,6 +169,11 @@ def validar(g: Guion, leccion: Any | None = None, minutos_objetivo: float | None
 
     if not g.de_tipo("ROADMAP"):
         g.avisos.append("Falta [ROADMAP]: el alumno debe ver dónde está en la hoja de ruta.")
+    if not g.de_tipo("OBJETIVOS"):
+        g.avisos.append("Falta [OBJETIVOS: meta | meta | meta]: tarjeta de objetivos de la clase.")
+    for e in g.de_tipo("OBJETIVOS"):
+        if not 1 <= len(e.partes) <= 4:
+            g.avisos.append(f"Línea {e.linea}: [OBJETIVOS] funciona mejor con 2-3 metas.")
     if not g.palabras:
         g.errores.append("El guion no tiene texto para leer.")
     elif len(g.palabras) >= 40 and g.etiquetas and g.etiquetas[0].palabra > 40:

@@ -1,7 +1,8 @@
 """DaVinci Resolve: monta la lección a partir del plan de edición.
 
-Pasos: proyecto -> Media Pool -> timeline solo con tramos de voz (Auto-Cut) ->
-punch-in alterno -> B-Roll/imágenes en V2 y audios en A2 -> marcadores.
+Pasos: proyecto -> Media Pool -> timeline solo con tramos de voz (Auto-Cut) y
+tarjetas "Escucha" donde suena cada [AUDIO] -> punch-in alterno -> visuales en V2,
+audios en A2 -> marcadores.
 
 Se lanza desde Workspace > Scripts > Edit > "SWA 1 - Montar leccion".
 Antes, en la terminal: python builder.py editar M01 L01
@@ -56,10 +57,15 @@ def main(g):
     mp.SetCurrentFolder(raiz)
     raw = item_por_ruta(mp, raiz, plan["raw"])
     fps_clip = float(raw.GetClipProperty("FPS") or fps)
+    secuencia = plan.get("secuencia") or [{"tipo": "raw", "inicio_s": a, "fin_s": b} for a, b in plan["segmentos"]]
     assets = {}
-    for ins in plan["inserciones"]:
-        if ins["archivo"] not in assets:
-            assets[ins["archivo"]] = item_por_ruta(mp, raiz, ins["archivo"])
+    rutas = [ins["archivo"] for ins in plan["inserciones"]]
+    for ev in secuencia:
+        if ev["tipo"] == "pausa":
+            rutas += [ev["imagen"], ev["audio"]]
+    for ruta in rutas:
+        if ruta not in assets:
+            assets[ruta] = item_por_ruta(mp, raiz, ruta)
     log("Media Pool: RAW + %d assets" % len(assets))
 
     # 3. Timeline nuevo con solo los tramos de voz (= cortes + ripple delete)
@@ -71,18 +77,30 @@ def main(g):
         nombre = "%s_v%d" % (plan["base"], n)
     timeline = mp.CreateEmptyTimeline(nombre)
     proyecto.SetCurrentTimeline(timeline)
-    clips = [{"mediaPoolItem": raw, "startFrame": int(round(a * fps_clip)), "endFrame": int(round(b * fps_clip))}
-             for a, b in plan["segmentos"]]
+    clips = []
+    for ev in secuencia:
+        if ev["tipo"] == "raw":
+            clips.append({"mediaPoolItem": raw, "startFrame": int(round(ev["inicio_s"] * fps_clip)),
+                          "endFrame": int(round(ev["fin_s"] * fps_clip))})
+        else:  # tarjeta "Escucha" fija mientras suena el audio
+            clips.append({"mediaPoolItem": assets[ev["imagen"]], "startFrame": 0,
+                          "endFrame": int(round(ev["duracion_s"] * fps)) - 1})
     mp.AppendToTimeline(clips)
-    log("Auto-Cut: %d tramos, %.1f s -> %.1f s" % (len(clips), plan["duracion_raw_s"], plan["duracion_final_s"]))
+    n_pausas = sum(1 for ev in secuencia if ev["tipo"] == "pausa")
+    log("Auto-Cut: %d tramos + %d pausas de audio, %.1f s -> %.1f s"
+        % (len(clips) - n_pausas, n_pausas, plan["duracion_raw_s"], plan["duracion_final_s"]))
 
-    # 4. Punch-in alterno: disimula los jump-cuts sin parecer aleatorio
+    # 4. Punch-in alterno (solo tramos de voz): disimula los jump-cuts sin parecer aleatorio
+    v1 = timeline.GetItemListInTrack("video", 1) or []
+    alineado = len(v1) == len(secuencia)
     zoom = float(plan.get("zoom_punch_in") or 1.0)
-    if zoom > 1.0:
-        for i, item in enumerate(timeline.GetItemListInTrack("video", 1) or []):
-            if i % 2 == 1:
+    n_raw = 0
+    for ev, item in zip(secuencia, v1):
+        if ev["tipo"] == "raw":
+            if zoom > 1.0 and n_raw % 2 == 1:
                 item.SetProperty("ZoomX", zoom)
                 item.SetProperty("ZoomY", zoom)
+            n_raw += 1
 
     # 5. Pistas V2 / A2 y assets sincronizados con el texto
     while timeline.GetTrackCount("video") < 2:
@@ -91,6 +109,17 @@ def main(g):
         timeline.AddTrack("audio", "stereo")
     inicio_tl = timeline.GetStartFrame()
     fps_tl = float(proyecto.GetSetting("timelineFrameRate") or fps)
+
+    # Audios de las pausas en A2, alineados con su tarjeta "Escucha" real en V1
+    t_final = 0.0
+    for i, ev in enumerate(secuencia):
+        if ev["tipo"] == "pausa":
+            record = v1[i].GetStart() if alineado else inicio_tl + int(round(t_final * fps_tl))
+            mp.AppendToTimeline([{"mediaPoolItem": assets[ev["audio"]], "startFrame": 0,
+                                  "endFrame": frames_de_clip(assets[ev["audio"]], fps_tl) - 1,
+                                  "trackIndex": 2, "recordFrame": record, "mediaType": 2}])
+        t_final += ev["duracion_s"] if ev["tipo"] == "pausa" else ev["fin_s"] - ev["inicio_s"]
+
     fin_pista = {"V2": 0, "A2": 0}
     for ins in plan["inserciones"]:
         clip = assets[ins["archivo"]]

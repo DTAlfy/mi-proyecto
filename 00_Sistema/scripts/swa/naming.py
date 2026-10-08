@@ -20,6 +20,7 @@ PATRON_LECCION = re.compile(
 )
 PATRON_ASSET = re.compile(r"^M(?P<m>\d{2})_L(?P<l>\d{2})_(?P<n>\d{3})$")
 PATRON_CLAVE = re.compile(r"^[A-Z][A-Za-z0-9]*$")
+PATRON_MATERIAL = re.compile(r"^(MAT|AUD)\d{2}$")
 
 
 @dataclass(frozen=True)
@@ -62,6 +63,26 @@ def workbook(modulo: int, ext: str = ".pdf") -> str:
     return f"M{modulo:02d}_Workbook{ext}"
 
 
+def roadmap(modulo: int | None) -> str:
+    return "Roadmap_General.png" if modulo is None else f"M{modulo:02d}_Roadmap.png"
+
+
+def ilustracion_modulo(modulo: int) -> str:
+    return f"M{modulo:02d}_Modulo.png"
+
+
+def material(id_: str, clave: str, ext: str = ".png") -> str:
+    """MAT01_MapaMCER.png · AUD01_PreguntasAlumnos (carpeta de un pack de audio)"""
+    if not PATRON_MATERIAL.match(id_):
+        raise ValueError(f"Id de material inválido '{id_}': usa MAT01..MAT99 o AUD01..AUD99")
+    validar_clave(clave)
+    return f"{id_}_{clave}{ext}"
+
+
+def pista_audio(id_: str, n: int) -> str:
+    return f"{id_}_{n:02d}.mp3"
+
+
 def analizar(nombre_sin_ext: str) -> dict[str, Any] | None:
     """Descompone un nombre válido; devuelve None si no cumple la convención."""
     m = PATRON_LECCION.match(nombre_sin_ext)
@@ -97,6 +118,11 @@ def iterar_lecciones(curriculo: dict[str, Any]) -> Iterator[Leccion]:
                 objetivo=lec.get("objetivo", ""),
                 modulo_titulo=mod.get("titulo", ""),
             )
+
+
+def modulos_roadmap(curriculo: dict[str, Any]) -> list[dict[str, Any]]:
+    """Etapas del Roadmap de Ingresos: los módulos express (de apoyo) no cuentan."""
+    return [m for m in curriculo["modulos"] if m.get("tipo") != "express"]
 
 
 def buscar_leccion(curriculo: dict[str, Any], modulo: int, numero: int) -> Leccion:

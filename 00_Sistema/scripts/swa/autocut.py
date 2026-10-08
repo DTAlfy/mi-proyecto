@@ -34,6 +34,15 @@ def info_video(ruta: Path, ffprobe: str = "ffprobe") -> dict[str, float]:
     return {"duracion": float(datos["format"]["duration"]), "fps": float(num) / float(den or 1)}
 
 
+def duracion_media(ruta: Path, ffprobe: str = "ffprobe") -> float:
+    """Duración (s) de cualquier archivo de audio o video."""
+    salida = subprocess.run(
+        [ffprobe, "-v", "error", "-show_entries", "format=duration", "-of", "json", str(ruta)],
+        capture_output=True, text=True, check=True,
+    ).stdout
+    return float(json.loads(salida)["format"]["duration"])
+
+
 def parsear_silencedetect(stderr: str, duracion: float) -> list[Segmento]:
     """Convierte la salida de ffmpeg silencedetect en [(inicio, fin), ...]."""
     silencios: list[Segmento] = []
@@ -103,6 +112,42 @@ def raw_a_final(t: float, segmentos: list[Segmento]) -> float:
             return acumulado + (t - ini)
         acumulado += fin - ini
     return acumulado
+
+
+def intercalar_pausas(segmentos: list[Segmento], pausas: list[dict]) -> list[dict]:
+    """Inserta pausas (para los [AUDIO]) en la secuencia de tramos de voz.
+
+    `pausas`: [{"en_s": tiempo en el video cortado, "duracion_s": ...}, ...]
+    Devuelve la secuencia de V1: {"tipo": "raw", "inicio_s", "fin_s"} | {"tipo": "pausa", ...}
+    Una pausa en el límite entre dos tramos va antes del segundo.
+    """
+    pendientes = sorted(pausas, key=lambda p: p["en_s"])
+    secuencia: list[dict] = []
+    cursor = 0.0  # tiempo en el video cortado
+    for ini, fin in segmentos:
+        a = ini
+        while pendientes and pendientes[0]["en_s"] < cursor + (fin - a):
+            p = pendientes.pop(0)
+            corte = a + max(0.0, p["en_s"] - cursor)
+            if corte > a:
+                secuencia.append({"tipo": "raw", "inicio_s": round(a, 3), "fin_s": round(corte, 3)})
+                cursor += corte - a
+                a = corte
+            secuencia.append({"tipo": "pausa", **p})
+        if fin > a:
+            secuencia.append({"tipo": "raw", "inicio_s": round(a, 3), "fin_s": round(fin, 3)})
+            cursor += fin - a
+    secuencia.extend({"tipo": "pausa", **p} for p in pendientes)  # pausas al final del video
+    return secuencia
+
+
+def desplazar(t: float, orden: int, pausas: list[dict]) -> float:
+    """Tiempo en el video cortado -> tiempo final con las pausas ya intercaladas.
+
+    Un elemento empuja si su pausa ocurre antes, o en el mismo instante pero antes en el guion.
+    """
+    return t + sum(p["duracion_s"] for p in pausas
+                   if p["en_s"] < t or (p["en_s"] == t and p["orden"] < orden))
 
 
 def extraer_audio_ligero(ruta: Path, destino: Path, ffmpeg: str = "ffmpeg") -> Path:

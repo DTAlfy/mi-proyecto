@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python builder.py validar:*)",
+      "Bash(python builder.py contexto:*)",
+      "Bash(python builder.py estado:*)",
+      "Bash(python builder.py kit:*)",
+      "Bash(python builder.py nuevo:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(python3 builder.py validar:*)",
+      "Bash(python3 builder.py contexto:*)",
+      "Bash(python3 builder.py estado:*)",
+      "Bash(python3 -m pytest:*)"
+    ],
+    "deny": [
+      "Read(./.env)"
+    ]
+  }
+}

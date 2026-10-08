@@ -11,6 +11,7 @@ Flujo por lección (ejemplo M01 L01):
     python builder.py editar 01 01         # Auto-Cut + sincronización -> plan de edición
     DaVinci: Workspace > Scripts > SWA 1 - Montar leccion  ->  revisar  ->  SWA 2 - Render
   POR MÓDULO
+    python builder.py materiales [--generar] # ilustraciones + materiales entregables + audios
     python builder.py workbook 01
   GLOBAL
     python builder.py estado
@@ -28,7 +29,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from swa import assets, guion, kit, naming, visuales  # noqa: E402
+from swa import assets, guion, kit, naming  # noqa: E402
+from swa import materiales as materiales_mod  # noqa: E402
 from swa.config import RAIZ, SISTEMA, cargar_config, cargar_curriculo  # noqa: E402
 
 log = logging.getLogger("swa")
@@ -53,6 +55,7 @@ def _guion_validado(cfg, curriculo, lec, estricto: bool = True) -> guion.Guion:
     if not ruta.exists():
         sys.exit(f"✗ No existe {ruta.relative_to(RAIZ)}. Créalo con: builder.py nuevo {lec.modulo:02d} {lec.numero:02d}")
     g = guion.validar(guion.cargar(ruta), lec, curriculo["curso"].get("duracion_objetivo_leccion_min"))
+    g.errores += assets.validar_voces(g, cfg)
     for a in g.avisos:
         print(f"  ⚠ {a}")
     for e in g.errores:
@@ -82,7 +85,12 @@ def cmd_validar(cfg, curriculo, args) -> None:
         g = _guion_validado(cfg, curriculo, lec, estricto=False)
         total += len(g.errores)
         if not g.errores:
-            print(f"  ✓ {len(g.etiquetas)} etiquetas · {len(g.bloques)} bloques · ~{g.minutos_estimados:.1f} min")
+            print(f"  ✓ {len(g.etiquetas)} etiquetas · {len(g.bloques)} bloques · "
+                  f"{len(g.palabras)} palabras · ~{g.minutos_estimados:.1f} min")
+    if not args.modulo:
+        for e in materiales_mod.validar(materiales_mod.cargar(), cfg):
+            print(f"  ✗ materiales.yaml: {e}")
+            total += 1
     # Archivos sueltos con nombre inválido en las carpetas de ingesta
     for carpeta in ("guiones", "bruto"):
         for p in cfg.ruta(carpeta).iterdir():
@@ -111,21 +119,21 @@ def cmd_nuevo(cfg, curriculo, args) -> None:
 def cmd_assets(cfg, curriculo, args) -> None:
     lec = _leccion(curriculo, args)
     g = _guion_validado(cfg, curriculo, lec)
-    plan = assets.planificar(g, lec, cfg)
+    plan = assets.planificar(g, lec, cfg, curriculo)
     print(f"\nAssets de {lec.base} ({'GENERAR' if args.generar else 'dry-run'}):")
     try:
-        assets.generar(plan, cfg, curriculo, lec, dry_run=not args.generar,
-                       forzar_presupuesto=args.forzar_presupuesto)
+        assets.generar(plan, cfg, dry_run=not args.generar, forzar_presupuesto=args.forzar_presupuesto,
+                       informar=print if not args.breve else (lambda t: t.startswith("  Llamadas") and print(t)))
     except RuntimeError as e:
         sys.exit(f"✗ {e}")
 
 
-def cmd_kit(cfg, curriculo, args) -> None:
+def cmd_kit(cfg, curriculo, args, renderizar: bool = True) -> None:
     lec = _leccion(curriculo, args)
     g = _guion_validado(cfg, curriculo, lec)
-    plan = assets.planificar(g, lec, cfg)
-    # Los visuales locales son gratis: se generan siempre para que el checklist los vea.
-    assets.generar([i for i in plan if i.es_local], cfg, curriculo, lec, dry_run=False, informar=lambda _: None)
+    plan = assets.planificar(g, lec, cfg, curriculo)
+    if renderizar:  # visuales locales gratis (slides, objetivos, roadmap)
+        assets.generar([i for i in plan if i.es_local], cfg, dry_run=True, informar=lambda _: None)
     tp = kit.teleprompter(g, lec, cfg)
     cl = kit.checklist(g, lec, cfg, plan)
     print(f"✓ Teleprompter: {tp.relative_to(RAIZ)}")
@@ -133,9 +141,8 @@ def cmd_kit(cfg, curriculo, args) -> None:
 
 
 def cmd_preparar(cfg, curriculo, args) -> None:
-    cmd_assets(cfg, curriculo, args)
-    print()
-    cmd_kit(cfg, curriculo, args)
+    cmd_assets(cfg, curriculo, args)  # ya renderiza los visuales locales
+    cmd_kit(cfg, curriculo, args, renderizar=False)
 
 
 def cmd_editar(cfg, curriculo, args) -> None:
@@ -166,31 +173,90 @@ def cmd_editar(cfg, curriculo, args) -> None:
             finally:
                 audio.unlink(missing_ok=True)
 
-    plan_assets = assets.planificar(g, lec, cfg)
+    plan_assets = assets.planificar(g, lec, cfg, curriculo)
     plan = edicion.construir(g, lec, cfg, plan_assets, raw, transcripcion)
     destino = edicion.guardar(plan, cfg, lec)
     print(f"✓ Plan de edición: {destino.relative_to(RAIZ)}")
-    print(f"  {len(plan['segmentos'])} tramos · {plan['duracion_raw_s']:.0f}s → {plan['duracion_final_s']:.0f}s · "
-          f"{len(plan['inserciones'])} inserciones · sincronización: {plan['metodo_sincronizacion']}")
+    pausas = sum(1 for ev in plan["secuencia"] if ev["tipo"] == "pausa")
+    print(f"  {len(plan['segmentos'])} tramos · {pausas} audios intercalados · {plan['duracion_raw_s']:.0f}s → "
+          f"{plan['duracion_final_s']:.0f}s · {len(plan['inserciones'])} inserciones · "
+          f"sincronización: {plan['metodo_sincronizacion']}")
     print("  Siguiente: DaVinci › Workspace › Scripts › SWA 1 - Montar leccion")
 
 
 def cmd_workbook(cfg, curriculo, args) -> None:
     from swa import workbook
     modulo = int(args.modulo)
-    roadmap = cfg.ruta("assets") / "ROADMAP" / f"M{modulo:02d}_Roadmap.png"
-    visuales.roadmap(curriculo, modulo, roadmap, cfg["proyecto"]["marca"])
+    # Piezas locales del módulo (roadmap + materiales) al día antes de montar el PDF: gratis.
+    datos = materiales_mod.cargar()
+    ids = {m["id"] for m in materiales_mod.de_modulo(datos, modulo)} | {"roadmap"}
+    plan = materiales_mod.planificar(cfg, curriculo, datos, ids)
+    assets.generar([i for i in plan if i.es_local], cfg, dry_run=True, informar=lambda _: None)
     destino, avisos = workbook.generar(modulo, cfg, curriculo, solo_html=args.solo_html)
     for a in avisos:
         print(f"  ⚠ {a}")
     print(f"✓ Workbook: {destino.relative_to(RAIZ)}")
 
 
-def cmd_roadmap(cfg, curriculo, args) -> None:
-    for mod in curriculo["modulos"]:
-        destino = cfg.ruta("assets") / "ROADMAP" / f"M{mod['numero']:02d}_Roadmap.png"
-        visuales.roadmap(curriculo, mod["numero"], destino, cfg["proyecto"]["marca"])
-        print(f"✓ {destino.relative_to(RAIZ)}")
+def cmd_materiales(cfg, curriculo, args) -> None:
+    """Ilustraciones de módulo (Apimart), materiales entregables y packs de audio (ElevenLabs)."""
+    datos = materiales_mod.cargar()
+    errores = materiales_mod.validar(datos, cfg)
+    if errores:
+        sys.exit("✗ materiales.yaml:\n  " + "\n  ".join(errores))
+    plan = materiales_mod.planificar(cfg, curriculo, datos, set(args.ids) or None)
+    print(f"Materiales ({'GENERAR' if args.generar else 'dry-run'}):")
+    try:
+        assets.generar(plan, cfg, dry_run=not args.generar, forzar_presupuesto=args.forzar_presupuesto,
+                       informar=print if not args.breve else (lambda t: t.startswith("  Llamadas") and print(t)))
+    except RuntimeError as e:
+        sys.exit(f"✗ {e}")
+    for pendiente in materiales_mod.pendientes_de_verificar(datos):
+        print(f"  ⚠ {pendiente}: cifras sin verificar (lleva sello BORRADOR). Revisa y pon verificado: true")
+
+
+def _resumen_guion(ruta: Path, n: int = 45) -> str:
+    g = guion.cargar(ruta)
+    return " ".join(g.palabras[-n:])
+
+
+def cmd_contexto(cfg, curriculo, args) -> None:
+    """Resumen compacto para /guion: solo lo necesario, sin leer YAML ni guiones enteros."""
+    modulo = int(args.modulo)
+    mod = next((m for m in curriculo["modulos"] if m["numero"] == modulo), None)
+    if mod is None:
+        sys.exit(f"✗ El módulo {modulo} no existe")
+    minutos = curriculo["curso"].get("duracion_objetivo_leccion_min", 7)
+    lecciones = [l for l in naming.iterar_lecciones(curriculo) if l.modulo == modulo]
+    dir_g = cfg.ruta("guiones")
+    print(f"CURSO: {curriculo['curso']['titulo']} · público: {curriculo['curso']['publico']}")
+    print(f"OBJETIVO DE LONGITUD: {minutos} min ≈ {minutos * 150} palabras leídas por lección")
+    print(f"MÓDULO {modulo}/{len(curriculo['modulos'])}: {mod['titulo']} · hito: {mod.get('hito', '')}"
+          + (" · EXPRESS (fuera del roadmap)" if mod.get("tipo") == "express" else ""))
+    for l in lecciones:
+        ruta = dir_g / l.guion
+        estado = "no existe"
+        if ruta.exists():
+            g = guion.cargar(ruta)
+            estado = f"{len(g.palabras)} palabras, {g.meta.get('estado', '?')}"
+        print(f"  {l.id} {l.clave:<16} {l.titulo} — {l.objetivo} [{estado}]")
+    objetivo = [l for l in lecciones if not args.leccion or l.numero == int(args.leccion)]
+    for l in objetivo:
+        todas = list(naming.iterar_lecciones(curriculo))
+        i = todas.index(l)
+        if i > 0 and (dir_g / todas[i - 1].guion).exists():
+            print(f"CIERRE DE {todas[i - 1].id}: …{_resumen_guion(dir_g / todas[i - 1].guion)}")
+        if i + 1 < len(todas):
+            print(f"SIGUIENTE DE {l.id}: {todas[i + 1].id} {todas[i + 1].titulo}")
+    datos = materiales_mod.cargar()
+    mats = materiales_mod.de_modulo(datos, modulo)
+    if mats:
+        print("MATERIALES DEL MÓDULO (cítalos en [RECURSO]): " + "; ".join(f"{m['id']} {m['titulo']}" for m in mats))
+        for m in mats:
+            if m.get("tipo") == "audio":
+                for ln in m["lineas"]:
+                    print(f"  [AUDIO: {ln['voz']} | {ln['texto']}]")
+    print("VOCES [AUDIO]: " + ", ".join(sorted(assets.voces_disponibles(cfg))))
 
 
 def cmd_estado(cfg, curriculo, args) -> None:
@@ -202,7 +268,7 @@ def cmd_estado(cfg, curriculo, args) -> None:
         col_assets = "·"
         if ruta_g.exists():
             g = guion.cargar(ruta_g)
-            plan = assets.planificar(g, lec, cfg)
+            plan = assets.planificar(g, lec, cfg, curriculo)
             listos = sum(1 for i in plan if i.destino.exists())
             col_assets = f"{listos}/{len(plan)}"
         marca = lambda p: "✓" if p.exists() else "·"  # noqa: E731
@@ -246,7 +312,7 @@ def cmd_comparar_voces(cfg, curriculo, args) -> None:
     carpeta.mkdir(parents=True, exist_ok=True)
     for nombre, cliente in (("elevenlabs", ElevenLabs(cfg["elevenlabs"])), ("apimart", Apimart(cfg["apimart"]))):
         try:
-            (carpeta / f"{nombre}.mp3").write_bytes(cliente.tts(args.frase))
+            (carpeta / f"{nombre}.mp3").write_bytes(cliente.tts(args.frase, args.voz))
             print(f"✓ {(carpeta / f'{nombre}.mp3').relative_to(RAIZ)}")
         except Exception as e:
             print(f"✗ {nombre}: {e}")
@@ -271,16 +337,24 @@ def main(argv: list[str] | None = None) -> None:
         sp = con_leccion(nombre, ayuda)
         sp.add_argument("--generar", action="store_true", help="Gasta saldo de verdad (sin esto: dry-run)")
         sp.add_argument("--forzar-presupuesto", action="store_true")
+        sp.add_argument("--breve", action="store_true", help="Solo el resumen de coste (ahorra tokens en Claude)")
     con_leccion("kit", "Teleprompter + checklist + slides/roadmap locales")
     con_leccion("editar", "Auto-Cut + sincronización -> plan para DaVinci").add_argument(
         "--sin-transcripcion", action="store_true", help="No transcribir: coloca visuales por estimación")
     wb = sub.add_parser("workbook", help="Genera el workbook PDF de un módulo")
     wb.add_argument("modulo")
     wb.add_argument("--solo-html", action="store_true")
-    sub.add_parser("roadmap", help="Regenera las imágenes del Roadmap de Ingresos")
+    mt = sub.add_parser("materiales", help="Ilustraciones, materiales entregables y packs de audio")
+    mt.add_argument("ids", nargs="*", help="Filtra: MAT01 AUD02 M03 roadmap ... (vacío = todo)")
+    mt.add_argument("--generar", action="store_true", help="Gasta saldo de verdad (sin esto: dry-run)")
+    mt.add_argument("--forzar-presupuesto", action="store_true")
+    mt.add_argument("--breve", action="store_true")
+    con_leccion("contexto", "Resumen compacto de un módulo/lección para escribir guiones", opcional=True)
     sub.add_parser("estado", help="Tabla de avance de todas las lecciones")
     sub.add_parser("instalar-davinci", help="Instala los scripts en DaVinci Resolve").add_argument("--destino")
-    sub.add_parser("comparar-voces", help="Misma frase con ElevenLabs y Apimart").add_argument("frase")
+    cv = sub.add_parser("comparar-voces", help="Misma frase con ElevenLabs y Apimart")
+    cv.add_argument("frase")
+    cv.add_argument("--voz", default=None, help="Papel de config.yaml (narrador, modelo_en...)")
 
     for flujo in (sys.stdout, sys.stderr):  # consola de Windows: que los ✓ y las tildes no rompan
         if hasattr(flujo, "reconfigure"):
@@ -288,6 +362,8 @@ def main(argv: list[str] | None = None) -> None:
     args = p.parse_args(argv)
     if args.cmd == "validar" and bool(args.modulo) != bool(args.leccion):
         p.error("validar: indica módulo Y lección, o ninguno")
+    if args.cmd == "contexto" and not args.modulo:
+        p.error("contexto: indica al menos el módulo")
     cfg = cargar_config()
     _configurar_logs(cfg)
     curriculo = cargar_curriculo()

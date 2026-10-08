@@ -1,24 +1,21 @@
 ---
 name: guion
-description: Escribe o reescribe el guion de una lección del curso (o de todas las lecciones de un módulo) siguiendo la estructura pedagógica y las etiquetas del pipeline. Úsala cuando Alfy pida "guion de M01 L02", "escribe el módulo 3" o "mejora este guion".
+description: Escribe o mejora guiones de lecciones del curso (una lección o un módulo entero) con la estructura y etiquetas del pipeline.
+argument-hint: "MM [LL]"
 ---
 
-# Skill: Generador de guiones
+# /guion $ARGUMENTS
 
-Argumentos: `MM LL` (una lección) o `MM` (todas las lecciones del módulo que aún no tengan guion).
+1. Ejecuta `python builder.py contexto $ARGUMENTS` (ya trae el currículo, los vecinos, el cierre anterior, los materiales y las voces). No abras los YAML ni otros guiones salvo que el contexto no baste.
+2. Escribe cada guion en `01_Guiones/M[MM]_L[LL]_[Clave].md` de una sola vez (Write, sin borradores intermedios).
+3. `python builder.py validar MM LL`. Corrige solo lo que marque y no vuelvas a leer el archivo entero para comprobarlo.
+4. Responde con una línea por lección: palabras, minutos y visuales de pago (BROLL/IMG/AUDIO).
 
-## Pasos
-1. Lee `00_Sistema/curriculum.yaml` (título, objetivo, módulo, hito y lecciones vecinas) y `docs/FORMATO_GUION.md`.
-2. Si existe, lee el guion de la lección anterior para encadenar el cierre con la apertura. Si no hay guion, crea el esqueleto con `python builder.py nuevo MM LL`.
-3. Escribe el guion completo en `01_Guiones/M[MM]_L[LL]_[Clave].md` respetando:
-   - Frontmatter con `leccion`, `clave`, `titulo`, `modulo`, `objetivo`, `duracion_objetivo_min` y `estado: borrador`.
-   - Estructura: Hook (15 s, un problema crítico) → `[ROADMAP]` (dónde estamos) → Problema → Solución (método en pasos) → Demostración con `[PANTALLA: ...]` → `[TAREA]` + `[RECURSO]` → Cierre con un puente a la siguiente lección.
-   - Entre 1.100 y 1.300 palabras leídas para 8 min (unas 150 palabras por minuto).
-   - Un visual cada 20 o 30 segundos de lectura: `[BROLL]` para emoción o contexto, `[SLIDE]` para listas o fórmulas, `[IMG]` para metáforas. Como máximo 3 `[BROLL]` por lección (son lo más caro).
-   - Prompts visuales en inglés, de 3 a 6 palabras, concretos (sujeto + acción + lugar), sin texto ni marcas.
-   - `[TAREA]` accionable en menos de 30 min, con plantilla o tabla para rellenar. `[RECURSO]` con ejemplos o plantillas listas.
-   - Ningún dato inventado: `[NOTA: verificar ...]` cuando haga falta una cifra.
-4. Ejecuta `python builder.py validar MM LL` y corrige hasta que no haya errores (los avisos de duración también cuentan).
-5. Resume para Alfy: duración estimada, número de visuales por tipo y llamadas de pago que generará (ejecuta `python builder.py assets MM LL`, que es un dry-run).
-
-Para un módulo completo, repite los pasos por lección en orden y valida cada una antes de seguir.
+## Formato (estricto)
+Frontmatter: `leccion`, `clave`, `titulo`, `modulo`, `objetivo`, `duracion_objetivo_min`, `estado: borrador`.
+Secciones `##`: 1 Hook (15 s, problema crítico) · 2 Dónde estamos (`[ROADMAP]` + `[OBJETIVOS: meta | meta | meta]`) · 3 Problema · 4 Solución (método en pasos, `[SLIDE: Título | punto | punto]`) · 5 Demostración (`[PANTALLA: qué abrir]`) · 6 Tarea (`[TAREA: título]…[/TAREA]` + `[RECURSO: título]…[/RECURSO]`) · 7 Cierre (idea clave + puente a la siguiente).
+- Entre 950 y 1.150 palabras leídas. Frases de 20 palabras como máximo, tú, español neutro.
+- Visuales cada 20-30 s. Máximo 2 `[BROLL]` y 2 `[IMG]` (prompts en inglés, de 3 a 6 palabras, sin texto). Todo texto en pantalla va en `[SLIDE]`.
+- `[AUDIO: papel | frase]` solo cuando aporte (frases modelo, preguntas de alumnos). Reutiliza literalmente las líneas de los packs de audio que da el contexto.
+- Sin cifras inventadas: `[NOTA: verificar …]`.
+- Módulo Express de inglés: explica en español, el inglés solo en `[AUDIO]`/`[SLIDE]`, nivel sencillo (A2-B1).

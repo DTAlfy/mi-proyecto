@@ -1,24 +1,25 @@
 # =============================================================================
 # Currículo del curso: "De $5/h a $25/h — Tutor de Español Online"
-# Fuente única de verdad. Los guiones, el roadmap visual, los workbooks y el
-# comando `status` se generan a partir de este archivo.
+# Fuente única de verdad: guiones, roadmap, workbooks y `estado` salen de aquí.
 #
 # Reglas:
-#   - `clave` = PalabraClave del nombre de archivo: solo letras ASCII y números,
-#     en CamelCase, sin tildes ni ñ (Resenas, no Reseñas).
-#   - Cambiar una clave renombra la lección: hazlo antes de grabar.
+#   - `clave` = PalabraClave del nombre de archivo: CamelCase ASCII, sin tildes ni ñ.
+#   - `ilustracion` = prompt (inglés, sin texto) de la ilustración del módulo
+#     (Apimart). Se reutiliza en las tarjetas [OBJETIVOS] y en la portada del workbook.
+#   - `tipo: express` = módulo de apoyo: no es una etapa del Roadmap de Ingresos.
 # =============================================================================
 
 curso:
   titulo: "De $5/h a $25/h: Tutor de Español Online"
   promesa: "Consigue tus primeros alumnos y sube tu tarifa a $25/h en Preply e italki con un sistema repetible."
   publico: "Hispanohablantes que empiezan (o están estancados) como tutores de español en plataformas online."
-  duracion_objetivo_leccion_min: 8
+  duracion_objetivo_leccion_min: 7
 
 modulos:
   - numero: 1
     titulo: "Estrategia: el mapa del tutor rentable"
     hito: "Nicho elegido"
+    ilustracion: "spanish tutor planning on a big map with a compass, laptop on desk"
     lecciones:
       - { numero: 1, clave: "Nicho", titulo: "Elige un nicho que pague", objetivo: "Elegir un nicho concreto de alumno y problema." }
       - { numero: 2, clave: "Algoritmo", titulo: "Cómo te muestran Preply e italki", objetivo: "Entender las señales que usa el algoritmo para posicionar tutores." }
@@ -28,6 +29,7 @@ modulos:
   - numero: 2
     titulo: "Perfil que convierte"
     hito: "Perfil publicado"
+    ilustracion: "friendly tutor profile card on a giant smartphone screen with stars"
     lecciones:
       - { numero: 1, clave: "Foto", titulo: "Foto y primera impresión", objetivo: "Preparar una foto de perfil que genere confianza." }
       - { numero: 2, clave: "Titular", titulo: "El titular que detiene el scroll", objetivo: "Escribir un titular orientado al resultado del alumno." }
@@ -37,6 +39,7 @@ modulos:
   - numero: 3
     titulo: "La clase de prueba"
     hito: "Primeras reservas"
+    ilustracion: "tutor and student smiling on a video call, calendar with booked slots"
     lecciones:
       - { numero: 1, clave: "Estructura", titulo: "Estructura de la clase de prueba", objetivo: "Dirigir una clase de prueba de 30 min con guion." }
       - { numero: 2, clave: "Diagnostico", titulo: "Diagnóstico de nivel en 10 minutos", objetivo: "Evaluar el nivel y el objetivo real del alumno." }
@@ -45,6 +48,7 @@ modulos:
   - numero: 4
     titulo: "Método y materiales"
     hito: "Sistema de clases"
+    ilustracion: "organized teacher desk with level folders A1 to C1, books and tablet"
     lecciones:
       - { numero: 1, clave: "Curriculo", titulo: "Tu currículo por niveles", objetivo: "Diseñar una progresión A1-C1 reutilizable." }
       - { numero: 2, clave: "Materiales", titulo: "Materiales con IA en minutos", objetivo: "Crear fichas y ejercicios con IA manteniendo la calidad." }
@@ -54,6 +58,7 @@ modulos:
   - numero: 5
     titulo: "Retención y reseñas"
     hito: "10 reseñas"
+    ilustracion: "happy students leaving five star reviews, hearts and speech bubbles"
     lecciones:
       - { numero: 1, clave: "Seguimiento", titulo: "Seguimiento que retiene", objetivo: "Crear un sistema de tareas y mensajes entre clases." }
       - { numero: 2, clave: "Resenas", titulo: "Conseguir reseñas de 5 estrellas", objetivo: "Pedir reseñas en el momento correcto." }
@@ -62,8 +67,21 @@ modulos:
   - numero: 6
     titulo: "Escalar a $25/h"
     hito: "$25/h"
+    ilustracion: "tutor climbing a rising bar chart toward a mountain summit flag"
     lecciones:
       - { numero: 1, clave: "SubirPrecio", titulo: "Subir el precio sin perder alumnos", objetivo: "Aplicar subidas escalonadas y comunicarlas." }
       - { numero: 2, clave: "Especializacion", titulo: "Especialízate: DELE, negocios, viajes", objetivo: "Elegir una especialización premium." }
       - { numero: 3, clave: "AlumnosDirectos", titulo: "Alumnos directos fuera de la plataforma", objetivo: "Crear un canal propio de forma ética y dentro de las normas." }
       - { numero: 4, clave: "SistemaSemanal", titulo: "Tu sistema semanal de 25 horas", objetivo: "Organizar agenda, preparación y descanso." }
+
+  - numero: 7
+    tipo: express
+    titulo: "Express: inglés de apoyo para tutores"
+    hito: "Inglés de aula"
+    ilustracion: "spanish tutor with headset, english and spanish speech bubbles balanced on a scale"
+    lecciones:
+      - { numero: 1, clave: "Presentacion", titulo: "Preséntate en inglés en 60 segundos", objetivo: "Presentarte en inglés sencillo en la clase de prueba y en tu video." }
+      - { numero: 2, clave: "Instrucciones", titulo: "Lenguaje de aula: las instrucciones clave", objetivo: "Dar instrucciones de clase en inglés con frases cortas y fijas." }
+      - { numero: 3, clave: "Explicaciones", titulo: "Explicar en los momentos clave", objetivo: "Explicar gramática y comprobar comprensión con el mínimo inglés." }
+      - { numero: 4, clave: "Listening", titulo: "Las preguntas que te harán", objetivo: "Entender y responder las preguntas típicas de alumnos principiantes." }
+      - { numero: 5, clave: "Transicion", titulo: "Del inglés al español: la escalera del idioma", objetivo: "Reducir el inglés nivel a nivel hasta dar la clase solo en español desde B1." }
