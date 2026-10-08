@@ -13,7 +13,7 @@ curso:
   titulo: "De $5/h a $25/h: Tutor de Español Online"
   promesa: "Consigue tus primeros alumnos y sube tu tarifa a $25/h en Preply e italki con un sistema repetible."
   publico: "Hispanohablantes que empiezan (o están estancados) como tutores de español en plataformas online."
-  duracion_objetivo_leccion_min: 7
+  duracion_objetivo_leccion_min: 5   # minutos de LECTURA; con demos el video final ronda 6-8 min
 
 modulos:
   - numero: 1

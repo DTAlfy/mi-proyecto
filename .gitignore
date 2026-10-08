@@ -16,6 +16,9 @@
 04_Workbooks/*.pdf
 04_Workbooks/*.html
 01_Guiones/teleprompter/*.html
+01_Guiones/teleprompter/*_CHECKLIST.md
+04_Workbooks/Materiales/*
+04_Workbooks/Audios/*
 
 # Generados por el pipeline
 00_Sistema/logs/*

@@ -132,7 +132,7 @@ def _borrador(img: Image.Image, marca: dict[str, Any], texto: str = "BORRADOR ·
 
 def slide(titulo: str, puntos: list[str], destino: Path, marca: dict[str, Any],
           tam: Tam = (1920, 1080), pie: str = "") -> Path:
-    """Slide 16:9: título grande + hasta 4 viñetas."""
+    """Slide 16:9: título grande + hasta 5 viñetas."""
     w, h = tam
     img, d = _lienzo(marca, tam)
     m = int(w * 0.08)
@@ -140,7 +140,7 @@ def slide(titulo: str, puntos: list[str], destino: Path, marca: dict[str, Any],
     y = _texto(d, (m, int(h * 0.14)), titulo, _fuente(marca, int(h * 0.075)), _hex(marca["color_secundario"]), w - 2 * m, 1.25)
     y += int(h * 0.04)
     f_punto, r = _fuente(marca, int(h * 0.048)), int(h * 0.011)
-    for punto in puntos[:4]:
+    for punto in puntos[:5]:
         cy = y + int(h * 0.028)
         d.ellipse([m, cy - r, m + 2 * r, cy + r], fill=_hex(marca["color_primario"]))
         y = _texto(d, (m + 4 * r, y), punto, f_punto, _hex(marca["color_texto"]), w - 2 * m - 4 * r, 1.35) + int(h * 0.025)

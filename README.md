@@ -1,8 +1,9 @@
 # SpanishWithAlfy Mentoring: fábrica de cursos
 
 Pipeline para producir el curso **"De $5/h a $25/h: Tutor de Español Online"**, en el que tú solo
-**grabas leyendo**. Claude Code escribe los guiones; Apimart y ElevenLabs generan los visuales y las voces;
-el resto (teleprompter, Auto-Cut, montaje en DaVinci, render y workbooks PDF) es automático.
+**grabas leyendo**. Claude Code escribe los guiones (ya están los 27: 6 módulos + Express de inglés);
+Apimart genera B-Roll e ilustraciones; ElevenLabs, las voces; y el resto (materiales entregables,
+teleprompter con cambios de escena, Auto-Cut, montaje en DaVinci, render y workbooks PDF) es automático.
 
 ```
 curriculum.yaml ─► /guion ─► 01_Guiones/M01_L01_Nicho.md
@@ -42,13 +43,15 @@ Los scripts aparecen en **Workspace › Scripts**.
 
 | Momento | Comando | Coste |
 |---|---|---|
-| Escribir guion | `/guion 01 02` en Claude Code | créditos de Claude |
+| Escribir o mejorar un guion | `/guion 01 02` en Claude Code | créditos de Claude |
+| Contexto compacto de una lección | `python builder.py contexto 01 02` | $0 |
 | Comprobar | `python builder.py validar 01 02` | $0 |
 | Ver qué costará | `python builder.py preparar 01 02` | $0 (dry-run) |
 | Generar assets | `python builder.py preparar 01 02 --generar` | Apimart/ElevenLabs |
 | Grabar | teleprompter `01_Guiones/teleprompter/…html` | tu tiempo |
 | Auto-Cut | `python builder.py editar 01 02` | Whisper (opcional, en caché) |
 | Montar y render | DaVinci › Workspace › Scripts › SWA 1 / SWA 2 | $0 |
+| Materiales entregables y packs de audio | `python builder.py materiales [--generar]` | Apimart/ElevenLabs |
 | Workbook | `python builder.py workbook 1` | $0 |
 | Ver avance | `python builder.py estado` | $0 |
 
@@ -58,6 +61,7 @@ Los scripts aparecen en **Workspace › Scripts**.
 00_Sistema/
   config.yaml           ← proveedores, modelos, marca, presupuesto, umbrales
   curriculum.yaml       ← módulos y lecciones (fuente de verdad)
+  materiales.yaml       ← materiales entregables (MCER, plantillas, packs de audio)
   scripts/builder.py    ← CLI
   scripts/swa/          ← librería: nomenclatura, parser, assets, autocut, edición, kit, workbook
   scripts/resolve/      ← scripts que corren DENTRO de DaVinci (solo librería estándar)
@@ -65,10 +69,10 @@ Los scripts aparecen en **Workspace › Scripts**.
   tests/                ← python -m pytest 00_Sistema/tests -q
 01_Guiones/             ← M01_L01_Nicho.md (+ teleprompter/ y checklists)
 02_Bruto_OBS/           ← M01_L01_Nicho_RAW.mp4
-03_Assets_Generados/    ← BROLL/ IMAGENES/ AUDIO/ SLIDES/ ROADMAP/ CAPTURAS/ + manifest.json (caché)
-04_Workbooks/           ← M01_Workbook.pdf
+03_Assets_Generados/    ← BROLL/ IMAGENES/ AUDIO/ SLIDES/ OBJETIVOS/ ROADMAP/ ILUSTRACIONES/ CAPTURAS/ + manifest.json
+04_Workbooks/           ← M01_Workbook.pdf + Materiales/ (MAT01_MapaMCER.png…) + Audios/ (AUD01_…/)
 05_Renders_Finales/     ← M01_L01_Nicho_FINAL.mp4
-.claude/skills/         ← /guion /preparar-grabacion /postproduccion /workbook /captacion
+.claude/skills/         ← /guion /materiales /produccion /captacion
 docs/                   ← formato de guion, guía OBS, proveedores, plan de producción
 ```
 

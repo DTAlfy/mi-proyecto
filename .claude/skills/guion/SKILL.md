@@ -14,7 +14,7 @@ argument-hint: "MM [LL]"
 ## Formato (estricto)
 Frontmatter: `leccion`, `clave`, `titulo`, `modulo`, `objetivo`, `duracion_objetivo_min`, `estado: borrador`.
 Secciones `##`: 1 Hook (15 s, problema crítico) · 2 Dónde estamos (`[ROADMAP]` + `[OBJETIVOS: meta | meta | meta]`) · 3 Problema · 4 Solución (método en pasos, `[SLIDE: Título | punto | punto]`) · 5 Demostración (`[PANTALLA: qué abrir]`) · 6 Tarea (`[TAREA: título]…[/TAREA]` + `[RECURSO: título]…[/RECURSO]`) · 7 Cierre (idea clave + puente a la siguiente).
-- Entre 950 y 1.150 palabras leídas. Frases de 20 palabras como máximo, tú, español neutro.
+- Entre 700 y 900 palabras leídas (unos 5 min; con demos el video dura 6-8). Frases de 20 palabras como máximo, tú, español neutro.
 - Visuales cada 20-30 s. Máximo 2 `[BROLL]` y 2 `[IMG]` (prompts en inglés, de 3 a 6 palabras, sin texto). Todo texto en pantalla va en `[SLIDE]`.
 - `[AUDIO: papel | frase]` solo cuando aporte (frases modelo, preguntas de alumnos). Reutiliza literalmente las líneas de los packs de audio que da el contexto.
 - Sin cifras inventadas: `[NOTA: verificar …]`.

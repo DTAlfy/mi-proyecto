@@ -184,8 +184,8 @@ def validar(g: Guion, leccion: Any | None = None, minutos_objetivo: float | None
         if n > 8:
             g.avisos.append(f"Línea {e.linea}: [BROLL] largo ({n} palabras); prompts cortos = resultados más predecibles.")
     for e in g.de_tipo("SLIDE"):
-        if len(e.partes) > 5:
-            g.avisos.append(f"Línea {e.linea}: [SLIDE] con más de 4 puntos se lee mal en pantalla.")
+        if len(e.partes) > 6:
+            g.avisos.append(f"Línea {e.linea}: [SLIDE] admite título + 5 puntos; el resto no se mostrará.")
 
     if minutos_objetivo and g.palabras:
         dur = g.minutos_estimados
