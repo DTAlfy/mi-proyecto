@@ -20,7 +20,7 @@ PATRON_LECCION = re.compile(
 )
 PATRON_ASSET = re.compile(r"^M(?P<m>\d{2})_L(?P<l>\d{2})_(?P<n>\d{3})$")
 PATRON_CLAVE = re.compile(r"^[A-Z][A-Za-z0-9]*$")
-PATRON_MATERIAL = re.compile(r"^(MAT|AUD)\d{2}$")
+PATRON_MATERIAL = re.compile(r"^(MAT|AUD|WEB)\d{2}$")
 
 
 @dataclass(frozen=True)
@@ -74,7 +74,7 @@ def ilustracion_modulo(modulo: int) -> str:
 def material(id_: str, clave: str, ext: str = ".png") -> str:
     """MAT01_MapaMCER.png · AUD01_PreguntasAlumnos (carpeta de un pack de audio)"""
     if not PATRON_MATERIAL.match(id_):
-        raise ValueError(f"Id de material inválido '{id_}': usa MAT01..MAT99 o AUD01..AUD99")
+        raise ValueError(f"Id de material inválido '{id_}': usa MAT01..MAT99, AUD01..AUD99 o WEB01..WEB99")
     validar_clave(clave)
     return f"{id_}_{clave}{ext}"
 

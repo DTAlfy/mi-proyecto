@@ -67,7 +67,7 @@ Un currículo por niveles y materiales que reutilizas, sin preparar todo desde c
 **Etapa cinco: retención y reseñas.** El hito son tus primeras diez reseñas.
 Aquí conviertes alumnos sueltos en alumnos que se quedan meses.
 
-**Etapa seis: escalar.** El hito es cobrar veinticinco dólares la hora.
+**Etapa seis: escalar.** El hito es cobrar veinticinco dólares la hora y superar los mil dólares al mes.
 Subidas de precio, especialización y alumnos directos.
 
 Y además tienes un módulo Express de inglés.
@@ -93,8 +93,12 @@ Te enseño dónde encontrar estos datos.
 En el panel del tutor tienes tus alumnos, tus horas y tus reseñas.
 Las pruebas convertidas a veces no aparecen directamente.
 En ese caso, cuéntalas tú: anota cada prueba y si el alumno compró después.
-Te recomiendo una hoja muy simple con una fila por semana.
-Cinco columnas, cinco números. Dos minutos cada lunes.
+Después, llevo los cinco números al diagnóstico interactivo de tus materiales.
+
+[PANTALLA: Diagnóstico interactivo WEB02 con los cinco números y la etapa recomendada]
+Introduzco mis números y el diagnóstico me dice en qué etapa estoy y cuál es mi única prioridad.
+Pulso "Guardar medición" y queda en mi historial.
+Cada lunes repito: dos minutos, y veo mi evolución semana a semana.
 
 ## 6. Tu tarea
 
@@ -113,9 +117,9 @@ Cinco columnas, cinco números. Dos minutos cada lunes.
 3. Escribe tu única prioridad para los próximos 30 días.
 [/TAREA]
 
-[RECURSO: Roadmap de Ingresos (MAT03)]
+[RECURSO: Roadmap de Ingresos (MAT03), diagnóstico (WEB02) y checklist de hitos (WEB03)]
 Imprime el Roadmap de Ingresos de tus materiales y pégalo cerca de tu escritorio.
-Tacha cada hito cuando lo cumplas.
+Usa el diagnóstico interactivo WEB02 cada lunes y marca tus acciones en el checklist WEB03 "De 0 a Tutor PRO".
 [/RECURSO]
 
 Tu tarea está en el workbook del módulo uno.

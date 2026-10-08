@@ -13,6 +13,7 @@ Flujo por lección (ejemplo M01 L01):
   POR MÓDULO
     python builder.py materiales [--generar] # ilustraciones + materiales entregables + audios
     python builder.py workbook 01
+    python builder.py web [--capturas]       # materiales interactivos HTML
   GLOBAL
     python builder.py estado
 """
@@ -215,6 +216,23 @@ def cmd_materiales(cfg, curriculo, args) -> None:
         print(f"  ⚠ {pendiente}: cifras sin verificar (lleva sello BORRADOR). Revisa y pon verificado: true")
 
 
+def cmd_web(cfg, curriculo, args) -> None:
+    """Materiales web interactivos (HTML/CSS/JS autocontenidos): gratis, sin APIs."""
+    from swa import web, workbook
+    try:
+        paginas = web.generar(cfg, curriculo, set(args.ids) or None)
+    except ValueError as e:
+        sys.exit(f"✗ {e}")
+    for p in paginas:
+        print(f"✓ {p.relative_to(RAIZ)}")
+    if args.capturas:
+        navegador = workbook.buscar_navegador()
+        if not navegador:
+            sys.exit("✗ No encontré Edge/Chrome para las capturas (define SWA_NAVEGADOR).")
+        for png in web.capturar([p for p in paginas if p.name != "index.html"], navegador, cfg.ruta("web") / "capturas"):
+            print(f"✓ {png.relative_to(RAIZ)}")
+
+
 def _resumen_guion(ruta: Path, n: int = 45) -> str:
     g = guion.cargar(ruta)
     return " ".join(g.palabras[-n:])
@@ -256,6 +274,11 @@ def cmd_contexto(cfg, curriculo, args) -> None:
             if m.get("tipo") == "audio":
                 for ln in m["lineas"]:
                     print(f"  [AUDIO: {ln['voz']} | {ln['texto']}]")
+    from swa import web
+    paginas = web.de_modulo(web.cargar(), modulo)
+    if paginas:
+        print("MATERIALES WEB (úsalos en [PANTALLA] y [RECURSO]): "
+              + "; ".join(f"{p['id']} {p['clave']} ({p['componente']})" for p in paginas))
     print("VOCES [AUDIO]: " + ", ".join(sorted(assets.voces_disponibles(cfg))))
 
 
@@ -350,6 +373,9 @@ def main(argv: list[str] | None = None) -> None:
     mt.add_argument("--forzar-presupuesto", action="store_true")
     mt.add_argument("--breve", action="store_true")
     con_leccion("contexto", "Resumen compacto de un módulo/lección para escribir guiones", opcional=True)
+    wb_ = sub.add_parser("web", help="Materiales web interactivos (HTML) + índice")
+    wb_.add_argument("ids", nargs="*", help="Filtra: WEB01 WEB05 ... (vacío = todo)")
+    wb_.add_argument("--capturas", action="store_true", help="Además, PNG 1920x1080 de cada página")
     sub.add_parser("estado", help="Tabla de avance de todas las lecciones")
     sub.add_parser("instalar-davinci", help="Instala los scripts en DaVinci Resolve").add_argument("--destino")
     cv = sub.add_parser("comparar-voces", help="Misma frase con ElevenLabs y Apimart")

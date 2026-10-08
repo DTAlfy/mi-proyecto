@@ -1,8 +1,10 @@
 # Plan de producción final
 
 **Estado de partida (ya hecho en el repo):** 27 guiones validados (6 módulos + Express de inglés,
-unos 100 min de lectura), 9 materiales entregables, 2 packs de audio, teleprompter y checklist de
-cada lección, scripts de DaVinci y workbooks automáticos.
+unos 100 min de lectura), 9 materiales entregables (PNG), 2 packs de audio, 7 materiales web interactivos
+(HTML), teleprompter y checklist de cada lección, scripts de DaVinci y workbooks automáticos.
+
+**Calendario día a día (9 oct → 13 nov 2026):** `docs/CALENDARIO.md`.
 
 **Presupuesto de APIs del curso completo:** 84 llamadas únicas = 28 B-Roll de video + 25 imágenes
 + 15 ilustraciones (Apimart) + 16 audios (ElevenLabs). Los 17 `[AUDIO]` de los guiones reutilizan las
@@ -36,7 +38,8 @@ Cada fase termina con un **entregable comprobable**. No pases a la siguiente sin
 - [ ] `python builder.py materiales MAT01 --generar` → **una sola** prueba; revisa la ilustración y el resultado híbrido
 - [ ] Si te gusta el estilo: `python builder.py materiales --generar` (ilustraciones de módulo, fondos, materiales y packs de audio)
 - [ ] Verifica las horas del mapa MCER (MAT01) y pon `verificado: true`
-- **Entregable:** `04_Workbooks/Materiales/` con 9 imágenes finales y `04_Workbooks/Audios/` con 16 pistas.
+- [ ] `python builder.py web --capturas` → centro de materiales interactivos (`04_Workbooks/Web/index.html`)
+- **Entregable:** `04_Workbooks/Materiales/` con 9 imágenes finales, `04_Workbooks/Audios/` con 16 pistas y `04_Workbooks/Web/` con 7 materiales web.
 
 ## Fase 4: Lección piloto M01_L01 (1 día)
 Valida la cadena completa con UNA lección antes de producir en serie.
@@ -75,7 +78,7 @@ Un módulo por sesión, misma ropa, luz y encuadre. Cada lección: unos 4 min de
 - **Entregable:** 27 `_FINAL.mp4` + 7 workbooks PDF.
 
 ## Fase 8: Lanzamiento minimalista
-- [ ] Skool: aula con videos, workbooks, materiales y audios; comunidad para dudas entre alumnos
+- [ ] Skool: aula con videos, workbooks, materiales, audios y materiales web; comunidad para dudas entre alumnos
 - [ ] Checkout (Gumroad o Stripe): curso self-paced como producto de entrada
 - [ ] TidyCal: "Auditoría de Perfil 1 a 1" (ya enlazada en cada workbook y en la última lección)
 - [ ] `/captacion`: lead magnet (mini-curso del Módulo 1), página de ventas y Shorts "antes y después" con un único CTA

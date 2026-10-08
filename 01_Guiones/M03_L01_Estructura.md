@@ -91,6 +91,9 @@ Escribo dos objetivos delante del alumno.
 Al final de la clase volvemos a esta plantilla y marcamos lo conseguido.
 Ver los objetivos cumplidos es una prueba visual de que la clase funcionó.
 
+Y en otra pestaña tengo abierto el cronómetro de la clase de prueba de tus materiales.
+Me avisa al cambiar de fase y me recuerda qué decir en cada una.
+
 ## 6. Tu tarea
 
 [TAREA: Tu guion de clase de prueba]
@@ -111,6 +114,7 @@ Ensaya la prueba completa con un amigo y cronométrala.
 [RECURSO: Plantillas para la prueba (MAT02 y MAT04)]
 - MAT04: la línea de tiempo de la clase de prueba de 30 minutos.
 - MAT02: la plantilla "Goals for today · Objetivos de hoy" para compartir en pantalla.
+- WEB05: el cronómetro interactivo de la prueba, con avisos de fase y frases para cada momento.
 [/RECURSO]
 
 Tu tarea está en el workbook del módulo tres.

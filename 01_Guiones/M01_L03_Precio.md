@@ -97,6 +97,13 @@ Mira: los tutores con más reseñas no son los más baratos.
 Eso confirma que el precio bajo no es lo que llena una agenda a largo plazo.
 Con estos datos, elijo un precio de entrada ligeramente por debajo del promedio.
 
+[PANTALLA: Calculadora de ingresos WEB01 con precio, comisión, impuestos y horas]
+Ahora llevo ese precio a la calculadora de ingresos de tus materiales.
+Muevo el precio, la comisión de mi plataforma y las horas por semana.
+La calculadora me dice lo que gano de verdad al mes y cuántas horas necesito para llegar a mil dólares netos.
+Fíjate en la tabla de abajo: cada escalón de precio reduce las horas que necesitas.
+Esa es la razón de tener una escalera.
+
 ## 6. Tu tarea
 
 [TAREA: Tu precio de entrada y tu plan de subidas]
@@ -111,8 +118,9 @@ Con estos datos, elijo un precio de entrada ligeramente por debajo del promedio.
 4. Escribe tu escalera con 3 escalones y una condición medible para cada uno.
 [/TAREA]
 
-[RECURSO: Escalera de precios (MAT09)]
+[RECURSO: Escalera de precios (MAT09) y calculadora de ingresos (WEB01)]
 Usa la imagen de la escalera de precios de tus materiales como referencia.
+Abre la calculadora interactiva WEB01 para ver cuántas horas necesitas en cada escalón para llegar a $1000 al mes.
 Es un plan sugerido, no una garantía: ajústalo a tu nicho y a tu mercado.
 [/RECURSO]
 

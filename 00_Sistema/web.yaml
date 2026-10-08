@@ -1,0 +1,172 @@
+# =============================================================================
+# Materiales web interactivos (HTML + CSS + JS autocontenidos, sin dependencias)
+# Generar:  python builder.py web            -> 04_Workbooks/Web/*.html + index.html
+#           python builder.py web --capturas -> además, PNG 1920x1080 de cada página
+#
+# Cada página = un componente + sus datos. Para crear una página nueva basta con
+# añadir una entrada aquí usando un componente existente:
+#   calculadora | diagnostico | hitos | titular | cronometro | niveles | tarjetas
+# Los datos que ya existen en materiales.yaml se referencian con `fuente:` para no
+# duplicarlos (una sola fuente de verdad).
+# Títulos: *palabra* se muestra destacada en cursiva de color.
+# =============================================================================
+
+comun:
+  marca: "SpanishWithAlfy"
+  curso_corto: "Tutor PRO"
+  aviso: "Resultados no garantizados: dependen de tu nicho, tu mercado y tu constancia."
+  moneda: "$"
+  meta_mensual: 1000
+  semanas_por_mes: 4.33
+
+paginas:
+  - id: WEB01
+    clave: CalculadoraIngresos
+    modulo: 1
+    componente: calculadora
+    titulo: "Tu camino a *$1000 al mes*"
+    lead: "Calcula cuánto ganas de verdad por hora y cuántas horas a la semana necesitas en cada escalón de precio."
+    datos:
+      valores: { precio: 15, comision: 20, impuestos: 10, horas: 12 }
+      escalones: [5, 10, 15, 20, 25, 30]
+      nota_comision: "La comisión cambia según la plataforma y tus horas acumuladas: pon la tuya."
+      nota: "Cálculo orientativo. Revisa la comisión real de tu plataforma y tu fiscalidad: no son consejo financiero."
+
+  - id: WEB02
+    clave: DiagnosticoInicial
+    modulo: 1
+    componente: diagnostico
+    titulo: "¿En qué *etapa* estás hoy?"
+    lead: "Introduce tus cinco números y descubre tu etapa del Roadmap y tu única prioridad para este mes."
+    datos:
+      campos:
+        - { id: nicho, etiqueta: "¿Tienes tu nicho escrito en una frase?", tipo: sino }
+        - { id: prep, etiqueta: "¿Preparas cada clase en menos de 10 minutos?", tipo: sino }
+        - { id: alumnos, etiqueta: "Alumnos activos (últimas 2 semanas)", corto: "Alumnos", tipo: numero }
+        - { id: horas, etiqueta: "Horas de clase por semana", corto: "Horas/sem", tipo: numero }
+        - { id: resenas, etiqueta: "Reseñas", corto: "Reseñas", tipo: numero }
+        - { id: precio, etiqueta: "Precio por hora ($)", corto: "Precio", tipo: numero }
+        - { id: conversion, etiqueta: "Pruebas convertidas de cada 10", corto: "Conversión", tipo: numero, ayuda: "Si aún no has dado pruebas, deja 0." }
+      # Se aplica la PRIMERA regla que se cumpla (de arriba abajo).
+      reglas:
+        - si: [{ campo: nicho, op: "==", valor: "no" }]
+          etapa: 1
+          nombre: "Estrategia"
+          prioridad: "Define tu nicho en una frase: alumno concreto, problema urgente y resultado medible."
+          leccion: "M01_L01 · Elige un nicho que pague"
+        - si: [{ campo: horas, op: "==", valor: 0 }, { campo: resenas, op: "==", valor: 0 }]
+          etapa: 2
+          nombre: "Perfil que convierte"
+          prioridad: "Publica tu perfil completo: foto, titular, descripción y video."
+          leccion: "M02_L01 · Foto y primera impresión"
+        - si: [{ campo: conversion, op: "<", valor: 3 }]
+          etapa: 3
+          nombre: "La clase de prueba"
+          prioridad: "Convierte más pruebas: estructura de 30 minutos, diagnóstico y cierre."
+          leccion: "M03_L01 · Estructura de la clase de prueba"
+        - si: [{ campo: prep, op: "==", valor: "no" }]
+          etapa: 4
+          nombre: "Método y materiales"
+          prioridad: "Construye tu currículo por unidades y tu biblioteca de materiales."
+          leccion: "M04_L01 · Tu currículo por niveles"
+        - si: [{ campo: resenas, op: "<", valor: 10 }]
+          etapa: 5
+          nombre: "Retención y reseñas"
+          prioridad: "Seguimiento entre clases y petición de reseñas después de cada victoria."
+          leccion: "M05_L01 · Seguimiento que retiene"
+        - si: [{ campo: precio, op: "<", valor: 25 }]
+          etapa: 6
+          nombre: "Escalar"
+          prioridad: "Aplica el siguiente escalón de tu escalera de precios."
+          leccion: "M06_L01 · Subir el precio sin perder alumnos"
+        - si: []
+          etapa: "PRO"
+          nombre: "Tutor PRO"
+          prioridad: "Protege tu semana tipo y haz crecer tu canal propio."
+          leccion: "M06_L04 · Tu sistema semanal"
+
+  - id: WEB03
+    clave: HitosRoadmap
+    modulo: 1
+    componente: hitos
+    titulo: "De 0 a *Tutor PRO*"
+    lead: "Todas las acciones del curso en una sola lista. Márcalas a medida que avanzas y mira crecer tu progreso."
+    datos:
+      etapas:
+        - titulo: "Estrategia"
+          hito: "Nicho elegido"
+          items: ["Nicho escrito en una frase", "10 tutores de tu nicho analizados", "Precio neto calculado", "Escalera de precios con condiciones", "Tus 5 números de partida anotados"]
+        - titulo: "Perfil que convierte"
+          hito: "Perfil publicado"
+          items: ["Foto elegida con el test de 5 personas", "Titular publicado", "Descripción problema-método-prueba", "Video de 60-90 segundos", "Perfil 100% completo"]
+        - titulo: "La clase de prueba"
+          hito: "Primeras reservas"
+          items: ["Guion de prueba ensayado", "Kit de diagnóstico listo", "Respuestas a las dudas frecuentes", "Primeras 10 pruebas medidas", "Primer paquete vendido"]
+        - titulo: "Método y materiales"
+          hito: "Sistema de clases"
+          items: ["Mapa de tus primeras 10 unidades", "3 fichas creadas con IA y revisadas", "Registro de errores por alumno", "Escritorio digital organizado", "Rutina de preparación de 5 minutos"]
+        - titulo: "Retención y reseñas"
+          hito: "10 reseñas"
+          items: ["Feedback de 5 minutos tras cada clase", "Revisión de progreso mensual programada", "Primeras 10 reseñas", "Dos paquetes ligados a objetivos"]
+        - titulo: "Escalar"
+          hito: "$25/h · $1000+/mes"
+          items: ["Primera subida de precio aplicada", "Especialización visible en tu titular", "Canal propio activo", "Semana tipo en tu calendario", "$1000+ netos en un mes"]
+
+  - id: WEB04
+    clave: GeneradorTitular
+    modulo: 2
+    componente: titular
+    titulo: "Tu titular en *30 segundos*"
+    lead: "Escribe las tres piezas y obtén varias versiones en español y en inglés, listas para copiar."
+    datos:
+      campos:
+        - { id: alumno, etiqueta: "Para quién", ejemplo: "enfermeras" }
+        - { id: resultado, etiqueta: "Qué resultado", ejemplo: "habla con tus pacientes sin traductor" }
+        - { id: diferencia, etiqueta: "Qué te hace diferente", ejemplo: "de una exenfermera" }
+        - { id: plazo, etiqueta: "Plazo realista (opcional)", ejemplo: "en 3 meses", opcional: true }
+        - { id: alumno_en, etiqueta: "Para quién (en inglés)", ejemplo: "nurses" }
+        - { id: resultado_en, etiqueta: "Resultado (en inglés)", ejemplo: "talk to your patients in Spanish", ayuda: "Para alumnos principiantes que leen tu perfil en inglés." }
+      plantillas:
+        - { idioma: es, texto: "Español para {alumno}: {resultado} {plazo}" }
+        - { idioma: es, texto: "{resultado}, {diferencia}" }
+        - { idioma: es, texto: "Español para {alumno}, {diferencia}" }
+        - { idioma: en, texto: "Spanish for {alumno_en}: {resultado_en}, step by step" }
+        - { idioma: en, texto: "{resultado_en}. Spanish lessons for {alumno_en}" }
+      nota: "Comprueba el límite de caracteres del titular en tu plataforma antes de publicarlo."
+
+  - id: WEB05
+    clave: CronometroPrueba
+    modulo: 3
+    componente: cronometro
+    titulo: "Tu clase de prueba, *minuto a minuto*"
+    lead: "Déjalo abierto durante tus clases de prueba: te avisa al cambiar de fase y te recuerda qué decir."
+    datos:
+      fuente: MAT04          # nombres, minutos y detalle salen de materiales.yaml
+      frases:
+        Bienvenida: ["Hi! I'm your Spanish tutor. Nice to meet you.", "Primero vemos tu nivel, después practicamos algo útil y al final te propongo un plan."]
+        Diagnóstico: ["¿Para qué quieres el español?", "¿Para cuándo lo necesitas?", "¿Qué has probado antes y por qué no funcionó?"]
+        Victoria rápida: ["Enseña algo pequeño y útil para su objetivo.", "Que salga sabiendo hacer algo que antes no sabía."]
+        Plan: ["Resume su objetivo con sus palabras.", "Propón camino, frecuencia y primeras metas."]
+        Reserva: ["¿Quieres que empecemos la semana que viene?", "Después de preguntar: calla y escucha."]
+
+  - id: WEB06
+    clave: MapaMCERInteractivo
+    modulo: 4
+    componente: niveles
+    titulo: "El mapa *MCER*, nivel a nivel"
+    lead: "Explícale a tu alumno dónde está, qué examen puede hacer y cuánto inglés usarás en clase en cada etapa."
+    datos:
+      fuente_niveles: MAT01
+      fuente_idioma: MAT05
+      aviso_verificar: "Cifras orientativas pendientes de verificar con el Instituto Cervantes."
+
+  - id: WEB07
+    clave: PracticaIngles
+    modulo: 7
+    componente: tarjetas
+    titulo: "Inglés de aula: *escucha y repite*"
+    lead: "Practica las frases modelo del tutor y entrena el oído con las preguntas reales de tus alumnos."
+    datos:
+      mazos:
+        - { fuente: AUD02, modo: shadowing, titulo: "Frases del tutor", instruccion: "Escucha la frase modelo y repítela en voz alta tres veces." }
+        - { fuente: AUD01, modo: listening, titulo: "Preguntas de alumnos", instruccion: "Escucha sin leer. Intenta entender la pregunta y después da la vuelta a la tarjeta." }

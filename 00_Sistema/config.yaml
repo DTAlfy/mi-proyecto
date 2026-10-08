@@ -28,6 +28,7 @@ rutas:
   workbooks: "04_Workbooks"
   materiales: "04_Workbooks/Materiales"   # imágenes entregables (MCER, plantillas...)
   audios: "04_Workbooks/Audios"           # packs de audio para descargar (listening, frases)
+  web: "04_Workbooks/Web"                 # materiales interactivos HTML (web.yaml)
   renders: "05_Renders_Finales"
   ediciones: "00_Sistema/ediciones"   # planes de edición .json que lee DaVinci
   logs: "00_Sistema/logs"

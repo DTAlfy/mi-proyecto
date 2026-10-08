@@ -1,6 +1,6 @@
 # SpanishWithAlfy Mentoring: fábrica de cursos
 
-Pipeline para producir el curso **"De $5/h a $25/h: Tutor de Español Online"**, en el que tú solo
+Pipeline para producir el curso **"De 0 a Tutor PRO: $1000+ al mes enseñando español online"**, en el que tú solo
 **grabas leyendo**. Claude Code escribe los guiones (ya están los 27: 6 módulos + Express de inglés);
 Apimart genera B-Roll e ilustraciones; ElevenLabs, las voces; y el resto (materiales entregables,
 teleprompter con cambios de escena, Auto-Cut, montaje en DaVinci, render y workbooks PDF) es automático.
@@ -52,6 +52,7 @@ Los scripts aparecen en **Workspace › Scripts**.
 | Auto-Cut | `python builder.py editar 01 02` | Whisper (opcional, en caché) |
 | Montar y render | DaVinci › Workspace › Scripts › SWA 1 / SWA 2 | $0 |
 | Materiales entregables y packs de audio | `python builder.py materiales [--generar]` | Apimart/ElevenLabs |
+| Materiales web interactivos (HTML) | `python builder.py web [--capturas]` | $0 |
 | Workbook | `python builder.py workbook 1` | $0 |
 | Ver avance | `python builder.py estado` | $0 |
 
@@ -62,18 +63,19 @@ Los scripts aparecen en **Workspace › Scripts**.
   config.yaml           ← proveedores, modelos, marca, presupuesto, umbrales
   curriculum.yaml       ← módulos y lecciones (fuente de verdad)
   materiales.yaml       ← materiales entregables (MCER, plantillas, packs de audio)
+  web.yaml              ← materiales web interactivos (calculadora, diagnóstico, cronómetro...)
   scripts/builder.py    ← CLI
   scripts/swa/          ← librería: nomenclatura, parser, assets, autocut, edición, kit, workbook
   scripts/resolve/      ← scripts que corren DENTRO de DaVinci (solo librería estándar)
-  templates/            ← guion, teleprompter, workbook
+  templates/            ← guion, teleprompter, workbook, web (swa.css + swa.js), obs
   tests/                ← python -m pytest 00_Sistema/tests -q
 01_Guiones/             ← M01_L01_Nicho.md (+ teleprompter/ y checklists)
 02_Bruto_OBS/           ← M01_L01_Nicho_RAW.mp4
 03_Assets_Generados/    ← BROLL/ IMAGENES/ AUDIO/ SLIDES/ OBJETIVOS/ ROADMAP/ ILUSTRACIONES/ CAPTURAS/ + manifest.json
-04_Workbooks/           ← M01_Workbook.pdf + Materiales/ (MAT01_MapaMCER.png…) + Audios/ (AUD01_…/)
+04_Workbooks/           ← M01_Workbook.pdf + Materiales/ (PNG) + Audios/ (packs) + Web/ (index.html + WEB01…)
 05_Renders_Finales/     ← M01_L01_Nicho_FINAL.mp4
 .claude/skills/         ← /guion /materiales /produccion /captacion
-docs/                   ← formato de guion, guía OBS, proveedores, plan de producción
+docs/                   ← formato de guion, guía OBS, proveedores, materiales web, plan y calendario
 ```
 
 ## Protecciones contra gastos

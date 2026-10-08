@@ -469,3 +469,59 @@ def test_materiales_rechaza_ids_y_layouts_invalidos():
 def test_roadmap_excluye_modulos_express():
     assert all(m.get("tipo") != "express" for m in naming.modulos_roadmap(CURRICULO))
     assert len(naming.modulos_roadmap(CURRICULO)) < len(CURRICULO["modulos"])
+
+
+# --- materiales web interactivos ---------------------------------------------
+
+def _isla(html_texto):
+    import re as _re
+    m = _re.search(r'<script type="application/json" id="swa-datos">(.*?)</script>', html_texto, _re.S)
+    return json.loads(m.group(1).replace("<\\/", "</"))
+
+
+def test_web_yaml_valido_y_cubre_todos_los_componentes():
+    from swa import materiales, web
+    datos = web.cargar()
+    assert web.validar(datos, materiales.cargar()) == []
+    usados = {p["componente"] for p in datos["paginas"]}
+    assert usados == set(web.COMPONENTES)   # cada componente JS tiene al menos una página de ejemplo
+
+
+def test_web_rechaza_componente_y_fuente_inexistentes():
+    from swa import materiales, web
+    malo = {"paginas": [{"id": "WEB01", "clave": "Algo", "componente": "carrusel", "datos": {"fuente": "MAT99"}}]}
+    errores = web.validar(malo, materiales.cargar())
+    assert any("carrusel" in e for e in errores) and any("MAT99" in e for e in errores)
+
+
+def test_web_resuelve_fuentes_de_materiales():
+    from swa import materiales, web
+    w, mats = web.cargar(), materiales.cargar()
+    pag = {p["id"]: p for p in w["paginas"]}
+    crono = web.resolver_datos(pag["WEB05"], w, mats, CFG)
+    tramos = next(m for m in mats["materiales"] if m["id"] == "MAT04")["tramos"]
+    assert [f["minutos"] for f in crono["fases"]] == [t["minutos"] for t in tramos]
+    assert crono["fases"][0]["frases"]   # las frases se emparejan por nombre de fase
+    niveles = web.resolver_datos(pag["WEB06"], w, mats, CFG)
+    a1 = niveles["niveles"][0]
+    assert a1["nivel"] == "A1" and "DELE" in a1["examenes"] and "inglés" in a1["ingles"]
+    assert niveles["verificado"] is False   # hereda el aviso de MAT01 hasta que se verifique
+    tarjetas = web.resolver_datos(pag["WEB07"], w, mats, CFG)
+    assert tarjetas["mazos"][0]["tarjetas"][0]["audio"] == "../Audios/AUD02_FrasesTutor/AUD02_01.mp3"
+
+
+def test_web_genera_paginas_autocontenidas_y_seguras(tmp_path, monkeypatch):
+    from swa import web
+    datos = web.cargar()
+    datos["paginas"][0]["datos"]["nota"] = "</script><script>alert(1)</script>"   # intento de inyección
+    monkeypatch.setattr(web, "cargar", lambda ruta=None: datos)
+    cfg = type(CFG)(dict(CFG.datos, rutas=dict(CFG["rutas"], web=str(tmp_path))))  # RAIZ / absoluta = absoluta
+    salida = web.generar(cfg, CURRICULO)
+    assert len(salida) == len(datos["paginas"]) + 1 and salida[-1].name == "index.html"
+    pagina = salida[0].read_text(encoding="utf-8")
+    assert "<script src=" not in pagina and 'href="swa.css"' not in pagina  # CSS/JS incrustados
+    assert pagina.count("</script>") == 2          # la isla de datos no se puede cerrar desde dentro
+    assert _isla(pagina)["datos"]["nota"].startswith("</script>")
+    assert "<em>" in pagina                          # *destacado* del título
+    indice = salida[-1].read_text(encoding="utf-8")
+    assert all(p.name in indice for p in salida[:-1])

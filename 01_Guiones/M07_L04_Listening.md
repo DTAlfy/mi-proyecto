@@ -92,6 +92,7 @@ Esta respuesta prepara el camino de la última lección del módulo.
 En tu workbook tienes la transcripción y la traducción de las ocho preguntas.
 Te recomiendo este orden: primero escucha sin leer, después lee la transcripción y, por último, vuelve a escuchar.
 Repite el pack una vez al día durante una semana.
+Y si prefieres practicar con tarjetas, abre la práctica interactiva de tus materiales: escuchas, piensas y das la vuelta.
 
 ## 7. Tu tarea
 
@@ -115,6 +116,7 @@ Repite el pack una vez al día durante una semana.
 
 [RECURSO: Pack de audio AUD01 Preguntas de alumnos]
 Ocho preguntas con voces de distintos acentos, con transcripción y traducción en este workbook.
+Practica también con las tarjetas interactivas WEB07 (modo "Preguntas de alumnos").
 [/RECURSO]
 
 Tu tarea está en el workbook.

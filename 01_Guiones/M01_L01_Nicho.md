@@ -21,7 +21,7 @@ Y cuando todos parecen iguales, el alumno elige por una sola cosa: **el precio m
 
 [ROADMAP]
 Bienvenido al curso. Este es tu Roadmap de Ingresos.
-Son seis etapas, desde tu primer perfil hasta cobrar veinticinco dólares la hora.
+Son seis etapas, desde cero hasta Tutor PRO: cobrar veinticinco dólares la hora y superar los mil dólares al mes.
 Estamos en la primera: la estrategia.
 Y la primera decisión de la estrategia es tu nicho. Todo lo demás se construye encima: tu perfil, tu precio y tus clases.
 

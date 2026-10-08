@@ -83,6 +83,9 @@ Si la respuesta a la última pregunta es sí, la descarto.
 Me quedo con la mejor y miro cómo se ve en la vista previa.
 Si se corta, quito palabras de relleno: "muy", "realmente", "todos".
 
+Y si te bloqueas, usa el generador de titulares de tus materiales.
+Escribes las tres piezas y te propone varias versiones en español y en inglés, listas para copiar.
+
 ## 6. Tu tarea
 
 [TAREA: Tu titular en cinco versiones]
@@ -96,7 +99,7 @@ Si se corta, quito palabras de relleno: "muy", "realmente", "todos".
 3. Elige uno, publícalo y revisa cómo se ve en los resultados de búsqueda.
 [/TAREA]
 
-[RECURSO: Plantillas de titular]
+[RECURSO: Plantillas de titular y generador interactivo (WEB04)]
 - "[Resultado] para [alumno], con [diferencia]"
 - "Español para [alumno]: [resultado] en [plazo realista]"
 - "[Diferencia] te ayuda a [resultado]"

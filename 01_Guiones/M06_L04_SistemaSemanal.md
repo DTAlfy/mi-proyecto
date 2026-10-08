@@ -82,7 +82,8 @@ En la plataforma, mi disponibilidad coincide exactamente con los bloques naranja
 Así nadie puede reservar en mis horas de preparación o descanso.
 
 Fíjate en el total: unas veinticinco horas de clase, más preparación, administración y canal.
-Con tu precio en la escalera, esa semana se acerca a tu objetivo.
+Con tu precio en la escalera, esa semana supera con margen los mil dólares al mes.
+Compruébalo con tus números en la calculadora de ingresos.
 Y es una semana que puedes repetir.
 
 ## 6. Tu tarea
@@ -118,6 +119,6 @@ Compáralos con los del primer módulo. Ese es tu progreso real.
 
 La idea clave: un negocio de clases sostenible se construye con bloques, no con horas sueltas.
 Con esto completas el Roadmap de Ingresos.
-Has pasado de un perfil genérico a un sistema que puedes repetir y escalar.
+Has pasado de cero a un sistema de Tutor PRO que puedes repetir y escalar.
 Si quieres acelerar el siguiente paso, en tu workbook tienes el enlace a una auditoría de perfil uno a uno.
 Gracias por llegar hasta aquí. Nos vemos en la comunidad.

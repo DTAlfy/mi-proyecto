@@ -103,6 +103,7 @@ Regla: empieza siempre por la situación real y ordena de más fácil a más dif
 [RECURSO: Materiales del módulo]
 - MAT01 Mapa MCER: niveles, horas orientativas y exámenes (verifica las horas antes de usarlo con alumnos).
 - MAT07 Ciclo de una clase de 55 minutos: la estructura que usarás en cada unidad.
+- WEB06 Mapa MCER interactivo: para explicarle a cada alumno su nivel, sus exámenes y cuánto inglés usarás.
 [/RECURSO]
 
 Tu tarea está en el workbook del módulo cuatro.

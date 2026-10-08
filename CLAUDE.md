@@ -1,9 +1,11 @@
 # SpanishWithAlfy Mentoring
 
-Pipeline que produce el curso "De $5/h a $25/h: Tutor de Español Online". Alfy solo graba leyendo en OBS;
-el repo genera guiones, visuales (Apimart), voces (ElevenLabs), teleprompter, edición DaVinci y workbooks.
+Pipeline que produce el curso "De 0 a Tutor PRO: $1000+ al mes enseñando español online". Alfy solo graba
+leyendo en OBS; el repo genera guiones, visuales (Apimart), voces (ElevenLabs), materiales web interactivos,
+teleprompter, edición DaVinci y workbooks.
 
-Fuentes de verdad: `00_Sistema/curriculum.yaml` (lecciones), `00_Sistema/materiales.yaml` (entregables),
+Fuentes de verdad: `00_Sistema/curriculum.yaml` (lecciones), `00_Sistema/materiales.yaml` (entregables PNG/audio),
+`00_Sistema/web.yaml` (materiales HTML interactivos, ver `docs/MATERIALES_WEB.md`),
 `00_Sistema/config.yaml` (proveedores, voces, marca, presupuesto). Formato de guion: `docs/FORMATO_GUION.md`.
 Skills: `/guion`, `/materiales`, `/produccion`, `/captacion`.
 

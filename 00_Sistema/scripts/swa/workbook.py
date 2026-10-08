@@ -23,7 +23,7 @@ import markdown
 from . import guion as guion_mod
 from . import materiales as materiales_mod
 from .config import Config
-from .naming import Leccion, iterar_lecciones, pista_audio, roadmap as nombre_roadmap, workbook
+from .naming import Leccion, iterar_lecciones, material, pista_audio, roadmap as nombre_roadmap, workbook
 
 NAVEGADORES = (
     r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
@@ -105,6 +105,16 @@ def construir_html(modulo: int, cfg: Config, curriculo: dict[str, Any]) -> tuple
                 avisos.append(f"{img.name} no existe: ejecuta `builder.py materiales`")
             if mat.get("verificado") is False:
                 avisos.append(f"{mat['id']} tiene cifras sin verificar (sale con sello BORRADOR)")
+    from . import web as web_mod
+    interactivos = web_mod.de_modulo(web_mod.cargar(), modulo)
+    if interactivos:
+        filas = "".join(
+            f"<tr><td><b>{html.escape(re.sub(r'[*]', '', p['titulo']))}</b><br>{html.escape(p.get('lead', ''))}</td>"
+            f"<td><code>{material(p['id'], p['clave'], '.html')}</code></td></tr>" for p in interactivos)
+        piezas.append('<div class="bloque recurso"><h3>🖥 Materiales interactivos</h3>'
+                      '<p>Ábrelos en tu navegador desde la carpeta <code>Web/</code> (empieza por <code>index.html</code>). '
+                      'Funcionan sin conexión y guardan tu progreso.</p>'
+                      f'<table><tr><th>Material</th><th>Archivo</th></tr>{filas}</table></div>')
     if piezas:
         secciones.append('<section class="leccion"><p class="id">MATERIALES</p><h2>Materiales para tus clases</h2>'
                          '<p class="objetivo">Descárgalos y úsalos con tus alumnos.</p>' + "\n".join(piezas) + "</section>")
