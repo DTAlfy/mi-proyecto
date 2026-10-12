@@ -1,0 +1,40 @@
+filters:
+  and:
+    - 'tipo == "nodo"'
+views:
+  - type: table
+    name: Árbol por nivel
+    groupBy:
+      property: nivel
+      direction: ASC
+    order:
+      - codigo
+      - file.name
+      - rama
+      - requiere
+      - estado
+  - type: table
+    name: Situaciones (misiones)
+    filters:
+      and:
+        - 'rama == "situacion"'
+    groupBy:
+      property: nivel
+      direction: ASC
+    order:
+      - codigo
+      - file.name
+      - requiere
+      - estado
+  - type: table
+    name: Por desarrollar
+    filters:
+      and:
+        - 'estado == "esqueleto"'
+    groupBy:
+      property: rama
+      direction: ASC
+    order:
+      - codigo
+      - file.name
+      - nivel

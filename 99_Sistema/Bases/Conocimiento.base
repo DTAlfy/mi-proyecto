@@ -11,7 +11,7 @@ views:
       - file.name
       - area
       - estado
-      - unidades
+      - nodos
       - fuentes
   - type: table
     name: Por área

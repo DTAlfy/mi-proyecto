@@ -2,11 +2,15 @@
 tipo: sesion
 alumno: 
 fecha: {{date:YYYY-MM-DD}}
-unidad: 
+practicados: []
+logrados: []
 conceptos: []
 duracion_min: 50
 ---
 # {{title}}
+
+<!-- practicados: nodos del árbol trabajados hoy (situaciones, gramática, vocabulario).
+     logrados: nodos cuyos goals cumplió sin ayuda → se marcan como dominados en su árbol. -->
 
 ## Qué hicimos
 - 

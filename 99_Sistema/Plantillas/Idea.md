@@ -1,6 +1,7 @@
 ---
 tipo: idea
 audiencia: tutores
+embudo: atraer
 pilar: 
 origen: 
 estado: idea

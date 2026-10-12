@@ -1,6 +1,7 @@
 ---
 tipo: contenido
 audiencia: tutores
+embudo: atraer
 pilar: 
 plataforma: instagram
 formato: reel

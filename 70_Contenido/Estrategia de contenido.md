@@ -6,6 +6,35 @@ tipo: sistema
 > Regla de oro: **no se crea contenido desde cero**. Todo nace de una nota de `20_Conocimiento`,
 > de una lección del curso o de un error real de una sesión (anonimizado).
 
+## Embudo: de redes a Skool de pago
+
+```
+ ATRAER (redes)          CAPTAR (gratis)                 CONVERTIR (pago)          RETENER
+ Reels, carruseles,  →   Lead magnet (PDF/HTML)      →   Curso de Nuevos Tutores →  Comunidad, lives,
+ YouTube, LinkedIn       + Comunidad Skool gratuita      (Skool de pago)            árbol de progreso,
+                         (M0, retos, 1 live/mes)                                    premium / mentoría
+```
+
+| Etapa | Objetivo | Métrica |
+|---|---|---|
+| `atraer` | Que te descubran | Alcance, seguidores nuevos, guardados |
+| `captar` | Que se unan gratis | Descargas del lead magnet, miembros nuevos en Skool gratis |
+| `convertir` | Que paguen | % gratis → pago, ventas por lanzamiento |
+| `retener` | Que se queden y te recomienden | Bajas mensuales, finalización de módulos, testimonios |
+
+Cada pieza de contenido lleva `embudo:` para saber qué etapa alimenta. **Regla:** cada semana, al menos
+1 pieza de `captar` (invitar a Skool gratis o al lead magnet) por cada 4 de `atraer`.
+
+**Lead magnets iniciales (propuesta):**
+1. *El árbol de habilidades A0–B2* (PDF/HTML): el mapa de tu método. Sirve a tutores y estudiantes.
+2. *10 situaciones listas para tu primera clase* (PDF con goals): para tutores nuevos.
+3. *Plantilla de plan de clase 80/20*.
+
+## Las situaciones son tu mina de contenido
+Cada situación del árbol ya trae misión, goals y errores típicos. Eso es un guion:
+- Para estudiantes: *"Cómo negociar tu alquiler en español (B2)"*, *"Lo que tienes que saber decir en el médico"*.
+- Para tutores: *"Así convierto 'negociar un alquiler' en una clase de 50 minutos"*.
+
 ## Audiencias
 | Audiencia | Qué quiere | A dónde la llevamos |
 |---|---|---|

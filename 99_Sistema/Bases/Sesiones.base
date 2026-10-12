@@ -7,8 +7,8 @@ views:
     order:
       - fecha
       - alumno
-      - unidad
-      - conceptos
+      - practicados
+      - logrados
   - type: table
     name: Por alumno
     groupBy:
@@ -16,5 +16,5 @@ views:
       direction: ASC
     order:
       - fecha
-      - unidad
-      - conceptos
+      - practicados
+      - logrados

@@ -1,11 +1,9 @@
 ---
 tipo: alumno
 estado: activo
-nivel_inicial: A1
-nivel_actual: A1
-nivel_objetivo: B1
-unidad_actual: 
-progreso: 0
+nivel_base: 
+dominados: []
+meta: 
 objetivo: 
 lengua_materna: inglés
 frecuencia: 1x_semana
@@ -21,9 +19,12 @@ proxima_evaluacion:
 - **Intereses (para personalizar clases):** 
 - **Cómo aprende mejor:** 
 
-## Descriptores del nivel actual
-<!-- Copia aquí los descriptores de 30_Curriculum/MCER/<nivel> y márcalos al lograrlos. -->
-- [ ] 
+## Progreso
+<!-- No se escribe a mano: lo calcula `arbol.py` a partir de las sesiones y evaluaciones.
+     Mira la nota "<Nombre> - Ruta" y el árbol en 60_Estudiantes/Arboles/.
+     · nivel_base: para alumnos antiguos, todo lo de ese nivel o inferior cuenta como dominado (p. ej. A1).
+     · dominados: nodos sueltos que ya domina aunque no los hayas registrado en sesiones.
+     · meta: la situación que quiere lograr (p. ej. [[B2.S01 Lee un contrato de alquiler y negocia]]). -->
 
 ## Errores recurrentes
 - 

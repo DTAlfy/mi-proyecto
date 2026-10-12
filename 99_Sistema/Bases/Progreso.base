@@ -1,0 +1,37 @@
+filters:
+  and:
+    - 'tipo == "ruta"'
+views:
+  - type: table
+    name: Progreso de alumnos
+    order:
+      - alumno
+      - estado_alumno
+      - nivel_completado
+      - nivel_en_curso
+      - progreso
+      - logrados_30d
+      - sesiones
+      - ultima_sesion
+      - meta
+      - pasos_hasta_meta
+  - type: table
+    name: Por nivel en curso
+    groupBy:
+      property: nivel_en_curso
+      direction: ASC
+    order:
+      - alumno
+      - progreso
+      - logrados_30d
+      - meta
+  - type: table
+    name: Antiguos (para recuperar)
+    filters:
+      and:
+        - 'estado_alumno == "antiguo"'
+    order:
+      - alumno
+      - nivel_completado
+      - ultima_sesion
+      - meta

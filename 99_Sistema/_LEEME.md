@@ -1,5 +1,8 @@
 # 99 Sistema
 - [[Taxonomia]]: propiedades y valores permitidos.
-- `Plantillas/`: configura *Ajustes → Plantillas → Ubicación de la carpeta* = `99_Sistema/Plantillas`.
+- `Plantillas/`: ya configurada como carpeta de plantillas (`.obsidian/templates.json`).
 - `Bases/`: tableros (requiere el plugin núcleo **Bases**).
-- `scripts/`: `exportar_flashcards.py` (exporta a Anki).
+- `scripts/`:
+  - `arbol.py`: calcula el progreso y genera los árboles. `--validar` revisa el árbol.
+  - `exportar_flashcards.py`: exporta a Anki.
+  - `boveda.py`: utilidades compartidas (no se ejecuta solo).

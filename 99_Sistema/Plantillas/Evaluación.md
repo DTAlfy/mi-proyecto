@@ -3,7 +3,7 @@ tipo: evaluacion
 alumno: 
 fecha: {{date:YYYY-MM-DD}}
 nivel_evaluado: 
-unidad: 
+logrados: []
 cl: 
 ca: 
 ee: 
@@ -15,7 +15,8 @@ resultado: mantiene
 
 Escala 1–5 (ver [[Taxonomia]]): CL comprensión lectora · CA comprensión auditiva · EE expresión escrita · EO expresión oral · IO interacción.
 
-## Descriptores logrados desde la última evaluación
+## Nodos comprobados
+<!-- Añade a `logrados` los nodos que el alumno demuestra dominar en esta evaluación. -->
 - 
 
 ## Puntos fuertes
@@ -25,4 +26,4 @@ Escala 1–5 (ver [[Taxonomia]]): CL comprensión lectora · CA comprensión aud
 - 
 
 ## Decisión
-<!-- ¿Avanza de unidad? ¿Sube de nivel? Actualiza la ficha del alumno: nivel_actual, unidad_actual, progreso, proxima_evaluacion. -->
+<!-- Tras guardarla, ejecuta `python 99_Sistema/scripts/arbol.py`: su árbol, su ruta y el panel se actualizan solos. -->

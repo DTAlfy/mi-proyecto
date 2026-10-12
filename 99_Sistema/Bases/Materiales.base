@@ -1,0 +1,14 @@
+filters:
+  and:
+    - 'tipo == "material"'
+views:
+  - type: table
+    name: Por nivel
+    groupBy:
+      property: nivel
+      direction: ASC
+    order:
+      - file.name
+      - formato
+      - nodos
+      - estado

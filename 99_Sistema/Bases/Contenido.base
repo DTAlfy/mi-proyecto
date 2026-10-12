@@ -16,6 +16,7 @@ views:
       - plataforma
       - formato
       - audiencia
+      - embudo
       - pilar
       - fecha_publicacion
   - type: table

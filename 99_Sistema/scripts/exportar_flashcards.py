@@ -15,24 +15,9 @@ import argparse
 import re
 from pathlib import Path
 
-CARPETAS = ["20_Conocimiento", "50_Cursos", "40_Clases"]
+import boveda as bv
 
-
-def leer_frontmatter(texto):
-    props = {}
-    if not texto.startswith("---"):
-        return props
-    fin = texto.find("\n---", 3)
-    if fin == -1:
-        return props
-    for linea in texto[3:fin].splitlines():
-        if ":" in linea and not linea.startswith(" "):
-            clave, valor = linea.split(":", 1)
-            valor = valor.strip()
-            if valor.startswith("[") and valor.endswith("]"):
-                valor = [v.strip().strip("\"'") for v in valor[1:-1].split(",") if v.strip()]
-            props[clave.strip()] = valor
-    return props
+CARPETAS = ["20_Conocimiento", "30_Curriculum", "40_Clases", "50_Cursos"]
 
 
 def extraer_tarjetas(texto):
@@ -57,7 +42,7 @@ def etiqueta(texto):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--boveda", default=".", help="Ruta a la raíz de la bóveda (por defecto: carpeta actual)")
+    parser.add_argument("--boveda", default=str(Path(__file__).resolve().parents[2]), help="Raíz de la bóveda")
     parser.add_argument("--nivel", help="Exportar solo un nivel (A0, A1, A2, B1, B2, tutor)")
     parser.add_argument("--salida", default="flashcards.tsv", help="Archivo de salida")
     args = parser.parse_args()
@@ -67,9 +52,8 @@ def main():
     for carpeta in CARPETAS:
         for nota in sorted((boveda / carpeta).rglob("*.md")):
             texto = nota.read_text(encoding="utf-8")
-            props = leer_frontmatter(texto)
-            niveles = props.get("nivel") or []
-            niveles = niveles if isinstance(niveles, list) else [niveles]
+            props, _ = bv.separar(texto)
+            niveles = bv.como_lista(props.get("nivel"))
             if args.nivel and args.nivel not in niveles:
                 continue
             tags = [f"nivel_{n}" for n in niveles]

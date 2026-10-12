@@ -13,7 +13,7 @@ MCER y PCIC en la práctica: saber en qué nivel está un alumno en la primera c
 ## Lecciones
 <!-- Cada lección → nota con la plantilla "Lección de curso" en esta carpeta, nombrada "M2.N Título". -->
 - [ ] M2.1 El MCER en 10 minutos
-- [ ] M2.2 El roadmap A0-B2 de este curso
+- [ ] M2.2 El árbol de habilidades A0-B2 de este curso
 - [ ] M2.3 La clase de prueba y el diagnóstico
 - [ ] M2.4 Fijar objetivos con el alumno
 

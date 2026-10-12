@@ -3,7 +3,10 @@ tipo: concepto
 area: gramatica
 nivel: [A1, A2, B1]
 destrezas: [expresion_oral, expresion_escrita]
-unidades: ["[[A1.01 Ser - identidad, origen y profesión]]", "[[A1.04 Estar y hay - ubicación y existencia]]", "[[B1.10 Ser y estar - usos avanzados]]"]
+nodos:
+  - "[[A1.G01 Ser - identidad, origen y profesión]]"
+  - "[[A1.G04 Estar y hay - ubicación y existencia]]"
+  - "[[B1.G10 Ser y estar - usos avanzados]]"
 fuentes: []
 usos: [clase, curso_tutores, curso_en, redes, flashcards]
 aliases: [ser y estar, ser o estar]
@@ -53,5 +56,7 @@ ser listo / estar listo :: ser inteligente / estar preparado
 ser aburrido / estar aburrido :: no ser divertido / sentir aburrimiento
 
 ## Relacionado
-- [[A1.01 Ser - identidad, origen y profesión]]
-- [[A1.04 Estar y hay - ubicación y existencia]]
+- [[A1.G01 Ser - identidad, origen y profesión]]
+- [[A1.G04 Estar y hay - ubicación y existencia]]
+- [[B1.G10 Ser y estar - usos avanzados]]
+- Situaciones donde se usa: [[A1.S01 Presenta a tu familia]], [[A1.S02 Describe tu casa y tu barrio]]

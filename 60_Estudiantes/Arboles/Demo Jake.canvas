@@ -1,0 +1,1741 @@
+{
+ "nodes": [
+  {
+   "id": "banda_A0",
+   "type": "group",
+   "label": "A0",
+   "x": 3,
+   "y": 42,
+   "width": 1871,
+   "height": 332
+  },
+  {
+   "id": "banda_A1",
+   "type": "group",
+   "label": "A1",
+   "x": 3,
+   "y": 409,
+   "width": 1871,
+   "height": 710
+  },
+  {
+   "id": "banda_A2",
+   "type": "group",
+   "label": "A2",
+   "x": 3,
+   "y": 1155,
+   "width": 1871,
+   "height": 836
+  },
+  {
+   "id": "banda_B1",
+   "type": "group",
+   "label": "B1",
+   "x": 3,
+   "y": 2026,
+   "width": 1871,
+   "height": 836
+  },
+  {
+   "id": "banda_B2",
+   "type": "group",
+   "label": "B2",
+   "x": 3,
+   "y": 2898,
+   "width": 1871,
+   "height": 836
+  },
+  {
+   "id": "n_A0_S01",
+   "type": "text",
+   "text": "✅ [[A0.S01 Saluda y preséntate]]",
+   "x": 33,
+   "y": 112,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A0_S02",
+   "type": "text",
+   "text": "✅ [[A0.S02 Intercambia datos de contacto]]",
+   "x": 324,
+   "y": 112,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A0_S03",
+   "type": "text",
+   "text": "✅ [[A0.S03 Sobrevive en clase]]",
+   "x": 33,
+   "y": 238,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A0_G01",
+   "type": "text",
+   "text": "✅ [[A0.G01 Alfabeto y sonidos]]",
+   "x": 649,
+   "y": 112,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A0_G02",
+   "type": "text",
+   "text": "✅ [[A0.G02 Género y número - primera idea]]",
+   "x": 940,
+   "y": 112,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A0_V01",
+   "type": "text",
+   "text": "✅ [[A0.V01 Saludos y despedidas]]",
+   "x": 1265,
+   "y": 112,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A0_V02",
+   "type": "text",
+   "text": "✅ [[A0.V02 Números del 0 al 100]]",
+   "x": 1556,
+   "y": 112,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A0_V03",
+   "type": "text",
+   "text": "✅ [[A0.V03 Frases de clase y supervivencia]]",
+   "x": 1265,
+   "y": 238,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_S01",
+   "type": "text",
+   "text": "✅ [[A1.S01 Presenta a tu familia]]",
+   "x": 33,
+   "y": 479,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_S02",
+   "type": "text",
+   "text": "✅ [[A1.S02 Describe tu casa y tu barrio]]",
+   "x": 324,
+   "y": 479,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_S03",
+   "type": "text",
+   "text": "✅ [[A1.S03 Cuenta tu rutina diaria]]",
+   "x": 33,
+   "y": 605,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_S04",
+   "type": "text",
+   "text": "✅ [[A1.S04 Pide en un restaurante]]",
+   "x": 324,
+   "y": 605,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_S05",
+   "type": "text",
+   "text": "✅ [[A1.S05 Haz planes con un amigo]]",
+   "x": 33,
+   "y": 731,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_S06",
+   "type": "text",
+   "text": "✅ [[A1.S06 Compra ropa en una tienda]]",
+   "x": 324,
+   "y": 731,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_S07",
+   "type": "text",
+   "text": "✅ [[A1.S07 Lee una historia corta y cuéntala]]",
+   "x": 33,
+   "y": 857,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_S08",
+   "type": "text",
+   "text": "✅ [[A1.S08 Escribe un mensaje de presentación]]",
+   "x": 324,
+   "y": 857,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G01",
+   "type": "text",
+   "text": "✅ [[A1.G01 Ser - identidad, origen y profesión]]",
+   "x": 649,
+   "y": 479,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G02",
+   "type": "text",
+   "text": "✅ [[A1.G02 Artículos, género y número]]",
+   "x": 940,
+   "y": 479,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G03",
+   "type": "text",
+   "text": "✅ [[A1.G03 Presente regular]]",
+   "x": 649,
+   "y": 605,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G04",
+   "type": "text",
+   "text": "✅ [[A1.G04 Estar y hay - ubicación y existencia]]",
+   "x": 940,
+   "y": 605,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G05",
+   "type": "text",
+   "text": "✅ [[A1.G05 Presente irregular]]",
+   "x": 649,
+   "y": 731,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G06",
+   "type": "text",
+   "text": "✅ [[A1.G06 Verbos reflexivos]]",
+   "x": 940,
+   "y": 731,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G07",
+   "type": "text",
+   "text": "✅ [[A1.G07 Gustar y verbos similares]]",
+   "x": 649,
+   "y": 857,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G08",
+   "type": "text",
+   "text": "✅ [[A1.G08 Posesivos y demostrativos]]",
+   "x": 940,
+   "y": 857,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G09",
+   "type": "text",
+   "text": "✅ [[A1.G09 Ir a + infinitivo]]",
+   "x": 649,
+   "y": 983,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_G10",
+   "type": "text",
+   "text": "✅ [[A1.G10 Tener que, hay que y poder]]",
+   "x": 940,
+   "y": 983,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_V01",
+   "type": "text",
+   "text": "✅ [[A1.V01 Familia y personas]]",
+   "x": 1265,
+   "y": 479,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_V02",
+   "type": "text",
+   "text": "✅ [[A1.V02 Casa, barrio y ciudad]]",
+   "x": 1556,
+   "y": 479,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_V03",
+   "type": "text",
+   "text": "✅ [[A1.V03 Rutina, hora y días]]",
+   "x": 1265,
+   "y": 605,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_V04",
+   "type": "text",
+   "text": "✅ [[A1.V04 Comida y bebida]]",
+   "x": 1556,
+   "y": 605,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_V05",
+   "type": "text",
+   "text": "✅ [[A1.V05 Tiempo libre y gustos]]",
+   "x": 1265,
+   "y": 731,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A1_V06",
+   "type": "text",
+   "text": "✅ [[A1.V06 Ropa, compras y precios]]",
+   "x": 1556,
+   "y": 731,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_S01",
+   "type": "text",
+   "text": "✅ [[A2.S01 Cuenta tu último viaje]]",
+   "x": 33,
+   "y": 1225,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_S02",
+   "type": "text",
+   "text": "✅ [[A2.S02 Describe tu infancia]]",
+   "x": 324,
+   "y": 1225,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_S03",
+   "type": "text",
+   "text": "🔓 [[A2.S03 Ve al médico]]",
+   "x": 33,
+   "y": 1351,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_A2_S04",
+   "type": "text",
+   "text": "🔒 [[A2.S04 Resuelve un problema en el hotel]]",
+   "x": 324,
+   "y": 1351,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_A2_S05",
+   "type": "text",
+   "text": "🔒 [[A2.S05 Pregunta por un piso en alquiler]]",
+   "x": 33,
+   "y": 1477,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_A2_S06",
+   "type": "text",
+   "text": "🔒 [[A2.S06 Explica una receta]]",
+   "x": 324,
+   "y": 1477,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_A2_S07",
+   "type": "text",
+   "text": "🔒 [[A2.S07 Lee un relato y cuenta qué pasó]]",
+   "x": 33,
+   "y": 1603,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_A2_S08",
+   "type": "text",
+   "text": "🔒 [[A2.S08 Habla de tus planes de futuro]]",
+   "x": 324,
+   "y": 1603,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_A2_G01",
+   "type": "text",
+   "text": "✅ [[A2.G01 Pretérito perfecto - experiencias]]",
+   "x": 649,
+   "y": 1225,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_G02",
+   "type": "text",
+   "text": "✅ [[A2.G02 Pretérito indefinido regular]]",
+   "x": 940,
+   "y": 1225,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_G03",
+   "type": "text",
+   "text": "✅ [[A2.G03 Pretérito indefinido irregular]]",
+   "x": 649,
+   "y": 1351,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_G04",
+   "type": "text",
+   "text": "✅ [[A2.G04 Pretérito imperfecto]]",
+   "x": 940,
+   "y": 1351,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_G05",
+   "type": "text",
+   "text": "🟡 [[A2.G05 Contraste indefinido-imperfecto]]",
+   "x": 649,
+   "y": 1477,
+   "width": 274,
+   "height": 101,
+   "color": "3"
+  },
+  {
+   "id": "n_A2_G06",
+   "type": "text",
+   "text": "🔓 [[A2.G06 Pronombres de objeto directo e indirecto]]",
+   "x": 940,
+   "y": 1477,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_A2_G07",
+   "type": "text",
+   "text": "🔓 [[A2.G07 Imperativo afirmativo]]",
+   "x": 649,
+   "y": 1603,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_A2_G08",
+   "type": "text",
+   "text": "🔓 [[A2.G08 Comparativos y superlativos]]",
+   "x": 940,
+   "y": 1603,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_A2_G09",
+   "type": "text",
+   "text": "🔓 [[A2.G09 Futuro simple]]",
+   "x": 649,
+   "y": 1729,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_A2_G10",
+   "type": "text",
+   "text": "🔓 [[A2.G10 Estar + gerundio]]",
+   "x": 940,
+   "y": 1729,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_A2_G11",
+   "type": "text",
+   "text": "🔓 [[A2.G11 Por y para - usos básicos]]",
+   "x": 649,
+   "y": 1855,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_A2_V01",
+   "type": "text",
+   "text": "✅ [[A2.V01 Viajes y transporte]]",
+   "x": 1265,
+   "y": 1225,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_V02",
+   "type": "text",
+   "text": "✅ [[A2.V02 Salud y cuerpo]]",
+   "x": 1556,
+   "y": 1225,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_V03",
+   "type": "text",
+   "text": "✅ [[A2.V03 Vivienda y anuncios de pisos]]",
+   "x": 1265,
+   "y": 1351,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_A2_V04",
+   "type": "text",
+   "text": "🔓 [[A2.V04 Trabajo y estudios]]",
+   "x": 1556,
+   "y": 1351,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_A2_V05",
+   "type": "text",
+   "text": "✅ [[A2.V05 Carácter y descripción física]]",
+   "x": 1265,
+   "y": 1477,
+   "width": 274,
+   "height": 101,
+   "color": "4"
+  },
+  {
+   "id": "n_B1_S01",
+   "type": "text",
+   "text": "⬛ [[B1.S01 Entrevista de trabajo]]",
+   "x": 33,
+   "y": 2096,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_S02",
+   "type": "text",
+   "text": "⬛ [[B1.S02 Reclama por un servicio]]",
+   "x": 324,
+   "y": 2096,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_S03",
+   "type": "text",
+   "text": "⬛ [[B1.S03 Aconseja a un amigo]]",
+   "x": 33,
+   "y": 2222,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_S04",
+   "type": "text",
+   "text": "⬛ [[B1.S04 Cuenta una anécdota]]",
+   "x": 324,
+   "y": 2222,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_S05",
+   "type": "text",
+   "text": "⬛ [[B1.S05 Opina, acuerda y discrepa]]",
+   "x": 33,
+   "y": 2348,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_S06",
+   "type": "text",
+   "text": "⬛ [[B1.S06 Llama al casero por una avería]]",
+   "x": 324,
+   "y": 2348,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_S07",
+   "type": "text",
+   "text": "⬛ [[B1.S07 Cuenta lo que te dijeron]]",
+   "x": 33,
+   "y": 2474,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G01",
+   "type": "text",
+   "text": "🔒 [[B1.G01 Contraste de los pasados]]",
+   "x": 649,
+   "y": 2096,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G02",
+   "type": "text",
+   "text": "⬛ [[B1.G02 Pluscuamperfecto]]",
+   "x": 940,
+   "y": 2096,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G03",
+   "type": "text",
+   "text": "🔒 [[B1.G03 Presente de subjuntivo - formas]]",
+   "x": 649,
+   "y": 2222,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G04",
+   "type": "text",
+   "text": "⬛ [[B1.G04 Subjuntivo - deseos, peticiones y consejos]]",
+   "x": 940,
+   "y": 2222,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G05",
+   "type": "text",
+   "text": "⬛ [[B1.G05 Subjuntivo - valoración y sentimientos]]",
+   "x": 649,
+   "y": 2348,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G06",
+   "type": "text",
+   "text": "⬛ [[B1.G06 Imperativo negativo y con pronombres]]",
+   "x": 940,
+   "y": 2348,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G07",
+   "type": "text",
+   "text": "🔒 [[B1.G07 Condicional simple]]",
+   "x": 649,
+   "y": 2474,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G08",
+   "type": "text",
+   "text": "🔒 [[B1.G08 Estilo indirecto]]",
+   "x": 940,
+   "y": 2474,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G09",
+   "type": "text",
+   "text": "⬛ [[B1.G09 Oraciones de relativo]]",
+   "x": 649,
+   "y": 2600,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_G10",
+   "type": "text",
+   "text": "🔓 [[B1.G10 Ser y estar - usos avanzados]]",
+   "x": 940,
+   "y": 2600,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_B1_G11",
+   "type": "text",
+   "text": "🔒 [[B1.G11 Conectores y argumentación]]",
+   "x": 649,
+   "y": 2726,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_V01",
+   "type": "text",
+   "text": "🔒 [[B1.V01 Trabajo y entrevistas]]",
+   "x": 1265,
+   "y": 2096,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_V02",
+   "type": "text",
+   "text": "🔓 [[B1.V02 Vivienda - contratos, gastos y averías]]",
+   "x": 1556,
+   "y": 2096,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_B1_V03",
+   "type": "text",
+   "text": "🔓 [[B1.V03 Sentimientos y relaciones]]",
+   "x": 1265,
+   "y": 2222,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_B1_V04",
+   "type": "text",
+   "text": "🔒 [[B1.V04 Medios, noticias y opinión]]",
+   "x": 1556,
+   "y": 2222,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B1_V05",
+   "type": "text",
+   "text": "🔓 [[B1.V05 Quejas y reclamaciones]]",
+   "x": 1265,
+   "y": 2348,
+   "width": 274,
+   "height": 101,
+   "color": "5"
+  },
+  {
+   "id": "n_B2_S01",
+   "type": "text",
+   "text": "⬛ [[B2.S01 Lee un contrato de alquiler y negocia]]",
+   "x": 33,
+   "y": 2968,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_S02",
+   "type": "text",
+   "text": "⬛ [[B2.S02 Debate un tema de actualidad]]",
+   "x": 324,
+   "y": 2968,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_S03",
+   "type": "text",
+   "text": "⬛ [[B2.S03 Escribe una reclamación formal]]",
+   "x": 33,
+   "y": 3094,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_S04",
+   "type": "text",
+   "text": "⬛ [[B2.S04 Negocia condiciones laborales]]",
+   "x": 324,
+   "y": 3094,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_S05",
+   "type": "text",
+   "text": "⬛ [[B2.S05 Media en un conflicto entre vecinos]]",
+   "x": 33,
+   "y": 3220,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_S06",
+   "type": "text",
+   "text": "⬛ [[B2.S06 Simulacro DELE B2]]",
+   "x": 324,
+   "y": 3220,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G01",
+   "type": "text",
+   "text": "⬛ [[B2.G01 Imperfecto de subjuntivo]]",
+   "x": 649,
+   "y": 2968,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G02",
+   "type": "text",
+   "text": "⬛ [[B2.G02 Oraciones condicionales]]",
+   "x": 940,
+   "y": 2968,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G03",
+   "type": "text",
+   "text": "⬛ [[B2.G03 Subjuntivo en oraciones temporales]]",
+   "x": 649,
+   "y": 3094,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G04",
+   "type": "text",
+   "text": "⬛ [[B2.G04 Subjuntivo en concesivas y finales]]",
+   "x": 940,
+   "y": 3094,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G05",
+   "type": "text",
+   "text": "⬛ [[B2.G05 Perfecto y pluscuamperfecto de subjuntivo]]",
+   "x": 649,
+   "y": 3220,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G06",
+   "type": "text",
+   "text": "⬛ [[B2.G06 Correlación de tiempos]]",
+   "x": 940,
+   "y": 3220,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G07",
+   "type": "text",
+   "text": "⬛ [[B2.G07 Voz pasiva y pasiva refleja]]",
+   "x": 649,
+   "y": 3346,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G08",
+   "type": "text",
+   "text": "🔒 [[B2.G08 Perífrasis verbales avanzadas]]",
+   "x": 940,
+   "y": 3346,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G09",
+   "type": "text",
+   "text": "⬛ [[B2.G09 Estilo indirecto completo]]",
+   "x": 649,
+   "y": 3472,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G10",
+   "type": "text",
+   "text": "⬛ [[B2.G10 Marcadores discursivos]]",
+   "x": 940,
+   "y": 3472,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_G11",
+   "type": "text",
+   "text": "⬛ [[B2.G11 Registro formal e informal]]",
+   "x": 649,
+   "y": 3598,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_V01",
+   "type": "text",
+   "text": "🔒 [[B2.V01 Lenguaje jurídico y contratos]]",
+   "x": 1265,
+   "y": 2968,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_V02",
+   "type": "text",
+   "text": "⬛ [[B2.V02 Economía y mundo laboral]]",
+   "x": 1556,
+   "y": 2968,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_V03",
+   "type": "text",
+   "text": "⬛ [[B2.V03 Sociedad y temas de debate]]",
+   "x": 1265,
+   "y": 3094,
+   "width": 274,
+   "height": 101
+  },
+  {
+   "id": "n_B2_V04",
+   "type": "text",
+   "text": "🔒 [[B2.V04 Expresiones idiomáticas]]",
+   "x": 1556,
+   "y": 3094,
+   "width": 274,
+   "height": 101
+  }
+ ],
+ "edges": [
+  {
+   "id": "e_n_A0_V01_n_A0_S01",
+   "fromNode": "n_A0_V01",
+   "toNode": "n_A0_S01"
+  },
+  {
+   "id": "e_n_A0_G01_n_A0_S01",
+   "fromNode": "n_A0_G01",
+   "toNode": "n_A0_S01"
+  },
+  {
+   "id": "e_n_A0_S01_n_A0_S02",
+   "fromNode": "n_A0_S01",
+   "toNode": "n_A0_S02"
+  },
+  {
+   "id": "e_n_A0_V02_n_A0_S02",
+   "fromNode": "n_A0_V02",
+   "toNode": "n_A0_S02"
+  },
+  {
+   "id": "e_n_A0_V03_n_A0_S03",
+   "fromNode": "n_A0_V03",
+   "toNode": "n_A0_S03"
+  },
+  {
+   "id": "e_n_A1_G01_n_A1_S01",
+   "fromNode": "n_A1_G01",
+   "toNode": "n_A1_S01"
+  },
+  {
+   "id": "e_n_A1_G08_n_A1_S01",
+   "fromNode": "n_A1_G08",
+   "toNode": "n_A1_S01"
+  },
+  {
+   "id": "e_n_A1_V01_n_A1_S01",
+   "fromNode": "n_A1_V01",
+   "toNode": "n_A1_S01"
+  },
+  {
+   "id": "e_n_A1_G04_n_A1_S02",
+   "fromNode": "n_A1_G04",
+   "toNode": "n_A1_S02"
+  },
+  {
+   "id": "e_n_A1_V02_n_A1_S02",
+   "fromNode": "n_A1_V02",
+   "toNode": "n_A1_S02"
+  },
+  {
+   "id": "e_n_A1_G06_n_A1_S03",
+   "fromNode": "n_A1_G06",
+   "toNode": "n_A1_S03"
+  },
+  {
+   "id": "e_n_A1_V03_n_A1_S03",
+   "fromNode": "n_A1_V03",
+   "toNode": "n_A1_S03"
+  },
+  {
+   "id": "e_n_A1_G05_n_A1_S04",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A1_S04"
+  },
+  {
+   "id": "e_n_A1_V04_n_A1_S04",
+   "fromNode": "n_A1_V04",
+   "toNode": "n_A1_S04"
+  },
+  {
+   "id": "e_n_A1_G07_n_A1_S05",
+   "fromNode": "n_A1_G07",
+   "toNode": "n_A1_S05"
+  },
+  {
+   "id": "e_n_A1_G09_n_A1_S05",
+   "fromNode": "n_A1_G09",
+   "toNode": "n_A1_S05"
+  },
+  {
+   "id": "e_n_A1_V05_n_A1_S05",
+   "fromNode": "n_A1_V05",
+   "toNode": "n_A1_S05"
+  },
+  {
+   "id": "e_n_A1_G08_n_A1_S06",
+   "fromNode": "n_A1_G08",
+   "toNode": "n_A1_S06"
+  },
+  {
+   "id": "e_n_A1_V06_n_A1_S06",
+   "fromNode": "n_A1_V06",
+   "toNode": "n_A1_S06"
+  },
+  {
+   "id": "e_n_A1_G03_n_A1_S07",
+   "fromNode": "n_A1_G03",
+   "toNode": "n_A1_S07"
+  },
+  {
+   "id": "e_n_A1_G05_n_A1_S07",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A1_S07"
+  },
+  {
+   "id": "e_n_A1_V03_n_A1_S07",
+   "fromNode": "n_A1_V03",
+   "toNode": "n_A1_S07"
+  },
+  {
+   "id": "e_n_A1_S01_n_A1_S08",
+   "fromNode": "n_A1_S01",
+   "toNode": "n_A1_S08"
+  },
+  {
+   "id": "e_n_A1_G03_n_A1_S08",
+   "fromNode": "n_A1_G03",
+   "toNode": "n_A1_S08"
+  },
+  {
+   "id": "e_n_A0_S01_n_A1_G01",
+   "fromNode": "n_A0_S01",
+   "toNode": "n_A1_G01"
+  },
+  {
+   "id": "e_n_A0_G02_n_A1_G02",
+   "fromNode": "n_A0_G02",
+   "toNode": "n_A1_G02"
+  },
+  {
+   "id": "e_n_A1_G01_n_A1_G03",
+   "fromNode": "n_A1_G01",
+   "toNode": "n_A1_G03"
+  },
+  {
+   "id": "e_n_A1_G01_n_A1_G04",
+   "fromNode": "n_A1_G01",
+   "toNode": "n_A1_G04"
+  },
+  {
+   "id": "e_n_A1_G03_n_A1_G05",
+   "fromNode": "n_A1_G03",
+   "toNode": "n_A1_G05"
+  },
+  {
+   "id": "e_n_A1_G05_n_A1_G06",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A1_G06"
+  },
+  {
+   "id": "e_n_A1_G03_n_A1_G07",
+   "fromNode": "n_A1_G03",
+   "toNode": "n_A1_G07"
+  },
+  {
+   "id": "e_n_A1_G02_n_A1_G08",
+   "fromNode": "n_A1_G02",
+   "toNode": "n_A1_G08"
+  },
+  {
+   "id": "e_n_A1_G05_n_A1_G09",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A1_G09"
+  },
+  {
+   "id": "e_n_A1_G05_n_A1_G10",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A1_G10"
+  },
+  {
+   "id": "e_n_A0_V01_n_A1_V01",
+   "fromNode": "n_A0_V01",
+   "toNode": "n_A1_V01"
+  },
+  {
+   "id": "e_n_A0_V03_n_A1_V02",
+   "fromNode": "n_A0_V03",
+   "toNode": "n_A1_V02"
+  },
+  {
+   "id": "e_n_A0_V02_n_A1_V03",
+   "fromNode": "n_A0_V02",
+   "toNode": "n_A1_V03"
+  },
+  {
+   "id": "e_n_A0_V02_n_A1_V04",
+   "fromNode": "n_A0_V02",
+   "toNode": "n_A1_V04"
+  },
+  {
+   "id": "e_n_A0_V03_n_A1_V05",
+   "fromNode": "n_A0_V03",
+   "toNode": "n_A1_V05"
+  },
+  {
+   "id": "e_n_A0_V02_n_A1_V06",
+   "fromNode": "n_A0_V02",
+   "toNode": "n_A1_V06"
+  },
+  {
+   "id": "e_n_A2_G03_n_A2_S01",
+   "fromNode": "n_A2_G03",
+   "toNode": "n_A2_S01"
+  },
+  {
+   "id": "e_n_A2_V01_n_A2_S01",
+   "fromNode": "n_A2_V01",
+   "toNode": "n_A2_S01"
+  },
+  {
+   "id": "e_n_A2_G04_n_A2_S02",
+   "fromNode": "n_A2_G04",
+   "toNode": "n_A2_S02"
+  },
+  {
+   "id": "e_n_A2_V05_n_A2_S02",
+   "fromNode": "n_A2_V05",
+   "toNode": "n_A2_S02"
+  },
+  {
+   "id": "e_n_A2_V02_n_A2_S03",
+   "fromNode": "n_A2_V02",
+   "toNode": "n_A2_S03"
+  },
+  {
+   "id": "e_n_A2_G01_n_A2_S03",
+   "fromNode": "n_A2_G01",
+   "toNode": "n_A2_S03"
+  },
+  {
+   "id": "e_n_A2_V01_n_A2_S04",
+   "fromNode": "n_A2_V01",
+   "toNode": "n_A2_S04"
+  },
+  {
+   "id": "e_n_A2_G06_n_A2_S04",
+   "fromNode": "n_A2_G06",
+   "toNode": "n_A2_S04"
+  },
+  {
+   "id": "e_n_A2_V03_n_A2_S05",
+   "fromNode": "n_A2_V03",
+   "toNode": "n_A2_S05"
+  },
+  {
+   "id": "e_n_A2_G08_n_A2_S05",
+   "fromNode": "n_A2_G08",
+   "toNode": "n_A2_S05"
+  },
+  {
+   "id": "e_n_A2_G07_n_A2_S06",
+   "fromNode": "n_A2_G07",
+   "toNode": "n_A2_S06"
+  },
+  {
+   "id": "e_n_A1_V04_n_A2_S06",
+   "fromNode": "n_A1_V04",
+   "toNode": "n_A2_S06"
+  },
+  {
+   "id": "e_n_A2_G05_n_A2_S07",
+   "fromNode": "n_A2_G05",
+   "toNode": "n_A2_S07"
+  },
+  {
+   "id": "e_n_A1_S07_n_A2_S07",
+   "fromNode": "n_A1_S07",
+   "toNode": "n_A2_S07"
+  },
+  {
+   "id": "e_n_A2_G09_n_A2_S08",
+   "fromNode": "n_A2_G09",
+   "toNode": "n_A2_S08"
+  },
+  {
+   "id": "e_n_A1_S05_n_A2_S08",
+   "fromNode": "n_A1_S05",
+   "toNode": "n_A2_S08"
+  },
+  {
+   "id": "e_n_A1_G05_n_A2_G01",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A2_G01"
+  },
+  {
+   "id": "e_n_A1_G03_n_A2_G02",
+   "fromNode": "n_A1_G03",
+   "toNode": "n_A2_G02"
+  },
+  {
+   "id": "e_n_A2_G02_n_A2_G03",
+   "fromNode": "n_A2_G02",
+   "toNode": "n_A2_G03"
+  },
+  {
+   "id": "e_n_A1_G05_n_A2_G04",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A2_G04"
+  },
+  {
+   "id": "e_n_A2_G03_n_A2_G05",
+   "fromNode": "n_A2_G03",
+   "toNode": "n_A2_G05"
+  },
+  {
+   "id": "e_n_A2_G04_n_A2_G05",
+   "fromNode": "n_A2_G04",
+   "toNode": "n_A2_G05"
+  },
+  {
+   "id": "e_n_A1_G07_n_A2_G06",
+   "fromNode": "n_A1_G07",
+   "toNode": "n_A2_G06"
+  },
+  {
+   "id": "e_n_A1_G05_n_A2_G07",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A2_G07"
+  },
+  {
+   "id": "e_n_A1_G02_n_A2_G08",
+   "fromNode": "n_A1_G02",
+   "toNode": "n_A2_G08"
+  },
+  {
+   "id": "e_n_A1_G09_n_A2_G09",
+   "fromNode": "n_A1_G09",
+   "toNode": "n_A2_G09"
+  },
+  {
+   "id": "e_n_A1_G04_n_A2_G10",
+   "fromNode": "n_A1_G04",
+   "toNode": "n_A2_G10"
+  },
+  {
+   "id": "e_n_A1_G05_n_A2_G10",
+   "fromNode": "n_A1_G05",
+   "toNode": "n_A2_G10"
+  },
+  {
+   "id": "e_n_A1_G03_n_A2_G11",
+   "fromNode": "n_A1_G03",
+   "toNode": "n_A2_G11"
+  },
+  {
+   "id": "e_n_A1_V02_n_A2_V01",
+   "fromNode": "n_A1_V02",
+   "toNode": "n_A2_V01"
+  },
+  {
+   "id": "e_n_A1_V01_n_A2_V02",
+   "fromNode": "n_A1_V01",
+   "toNode": "n_A2_V02"
+  },
+  {
+   "id": "e_n_A1_V02_n_A2_V03",
+   "fromNode": "n_A1_V02",
+   "toNode": "n_A2_V03"
+  },
+  {
+   "id": "e_n_A1_V03_n_A2_V04",
+   "fromNode": "n_A1_V03",
+   "toNode": "n_A2_V04"
+  },
+  {
+   "id": "e_n_A1_V01_n_A2_V05",
+   "fromNode": "n_A1_V01",
+   "toNode": "n_A2_V05"
+  },
+  {
+   "id": "e_n_B1_V01_n_B1_S01",
+   "fromNode": "n_B1_V01",
+   "toNode": "n_B1_S01"
+  },
+  {
+   "id": "e_n_B1_G07_n_B1_S01",
+   "fromNode": "n_B1_G07",
+   "toNode": "n_B1_S01"
+  },
+  {
+   "id": "e_n_B1_G01_n_B1_S01",
+   "fromNode": "n_B1_G01",
+   "toNode": "n_B1_S01"
+  },
+  {
+   "id": "e_n_B1_V05_n_B1_S02",
+   "fromNode": "n_B1_V05",
+   "toNode": "n_B1_S02"
+  },
+  {
+   "id": "e_n_B1_G04_n_B1_S02",
+   "fromNode": "n_B1_G04",
+   "toNode": "n_B1_S02"
+  },
+  {
+   "id": "e_n_B1_G06_n_B1_S02",
+   "fromNode": "n_B1_G06",
+   "toNode": "n_B1_S02"
+  },
+  {
+   "id": "e_n_B1_G04_n_B1_S03",
+   "fromNode": "n_B1_G04",
+   "toNode": "n_B1_S03"
+  },
+  {
+   "id": "e_n_B1_V03_n_B1_S03",
+   "fromNode": "n_B1_V03",
+   "toNode": "n_B1_S03"
+  },
+  {
+   "id": "e_n_B1_G01_n_B1_S04",
+   "fromNode": "n_B1_G01",
+   "toNode": "n_B1_S04"
+  },
+  {
+   "id": "e_n_B1_G02_n_B1_S04",
+   "fromNode": "n_B1_G02",
+   "toNode": "n_B1_S04"
+  },
+  {
+   "id": "e_n_B1_G05_n_B1_S05",
+   "fromNode": "n_B1_G05",
+   "toNode": "n_B1_S05"
+  },
+  {
+   "id": "e_n_B1_G11_n_B1_S05",
+   "fromNode": "n_B1_G11",
+   "toNode": "n_B1_S05"
+  },
+  {
+   "id": "e_n_B1_V04_n_B1_S05",
+   "fromNode": "n_B1_V04",
+   "toNode": "n_B1_S05"
+  },
+  {
+   "id": "e_n_B1_V02_n_B1_S06",
+   "fromNode": "n_B1_V02",
+   "toNode": "n_B1_S06"
+  },
+  {
+   "id": "e_n_B1_G04_n_B1_S06",
+   "fromNode": "n_B1_G04",
+   "toNode": "n_B1_S06"
+  },
+  {
+   "id": "e_n_A2_S05_n_B1_S06",
+   "fromNode": "n_A2_S05",
+   "toNode": "n_B1_S06"
+  },
+  {
+   "id": "e_n_B1_G08_n_B1_S07",
+   "fromNode": "n_B1_G08",
+   "toNode": "n_B1_S07"
+  },
+  {
+   "id": "e_n_A2_G05_n_B1_G01",
+   "fromNode": "n_A2_G05",
+   "toNode": "n_B1_G01"
+  },
+  {
+   "id": "e_n_A2_G01_n_B1_G01",
+   "fromNode": "n_A2_G01",
+   "toNode": "n_B1_G01"
+  },
+  {
+   "id": "e_n_B1_G01_n_B1_G02",
+   "fromNode": "n_B1_G01",
+   "toNode": "n_B1_G02"
+  },
+  {
+   "id": "e_n_A2_G07_n_B1_G03",
+   "fromNode": "n_A2_G07",
+   "toNode": "n_B1_G03"
+  },
+  {
+   "id": "e_n_B1_G03_n_B1_G04",
+   "fromNode": "n_B1_G03",
+   "toNode": "n_B1_G04"
+  },
+  {
+   "id": "e_n_B1_G03_n_B1_G05",
+   "fromNode": "n_B1_G03",
+   "toNode": "n_B1_G05"
+  },
+  {
+   "id": "e_n_B1_G03_n_B1_G06",
+   "fromNode": "n_B1_G03",
+   "toNode": "n_B1_G06"
+  },
+  {
+   "id": "e_n_A2_G06_n_B1_G06",
+   "fromNode": "n_A2_G06",
+   "toNode": "n_B1_G06"
+  },
+  {
+   "id": "e_n_A2_G09_n_B1_G07",
+   "fromNode": "n_A2_G09",
+   "toNode": "n_B1_G07"
+  },
+  {
+   "id": "e_n_A2_G05_n_B1_G08",
+   "fromNode": "n_A2_G05",
+   "toNode": "n_B1_G08"
+  },
+  {
+   "id": "e_n_A2_G06_n_B1_G08",
+   "fromNode": "n_A2_G06",
+   "toNode": "n_B1_G08"
+  },
+  {
+   "id": "e_n_B1_G03_n_B1_G09",
+   "fromNode": "n_B1_G03",
+   "toNode": "n_B1_G09"
+  },
+  {
+   "id": "e_n_A1_G04_n_B1_G10",
+   "fromNode": "n_A1_G04",
+   "toNode": "n_B1_G10"
+  },
+  {
+   "id": "e_n_A2_G05_n_B1_G11",
+   "fromNode": "n_A2_G05",
+   "toNode": "n_B1_G11"
+  },
+  {
+   "id": "e_n_A2_V04_n_B1_V01",
+   "fromNode": "n_A2_V04",
+   "toNode": "n_B1_V01"
+  },
+  {
+   "id": "e_n_A2_V03_n_B1_V02",
+   "fromNode": "n_A2_V03",
+   "toNode": "n_B1_V02"
+  },
+  {
+   "id": "e_n_A2_V05_n_B1_V03",
+   "fromNode": "n_A2_V05",
+   "toNode": "n_B1_V03"
+  },
+  {
+   "id": "e_n_A2_V04_n_B1_V04",
+   "fromNode": "n_A2_V04",
+   "toNode": "n_B1_V04"
+  },
+  {
+   "id": "e_n_A2_V01_n_B1_V05",
+   "fromNode": "n_A2_V01",
+   "toNode": "n_B1_V05"
+  },
+  {
+   "id": "e_n_B2_V01_n_B2_S01",
+   "fromNode": "n_B2_V01",
+   "toNode": "n_B2_S01"
+  },
+  {
+   "id": "e_n_B2_G02_n_B2_S01",
+   "fromNode": "n_B2_G02",
+   "toNode": "n_B2_S01"
+  },
+  {
+   "id": "e_n_B2_G04_n_B2_S01",
+   "fromNode": "n_B2_G04",
+   "toNode": "n_B2_S01"
+  },
+  {
+   "id": "e_n_B1_S06_n_B2_S01",
+   "fromNode": "n_B1_S06",
+   "toNode": "n_B2_S01"
+  },
+  {
+   "id": "e_n_B2_V03_n_B2_S02",
+   "fromNode": "n_B2_V03",
+   "toNode": "n_B2_S02"
+  },
+  {
+   "id": "e_n_B2_G10_n_B2_S02",
+   "fromNode": "n_B2_G10",
+   "toNode": "n_B2_S02"
+  },
+  {
+   "id": "e_n_B1_S05_n_B2_S02",
+   "fromNode": "n_B1_S05",
+   "toNode": "n_B2_S02"
+  },
+  {
+   "id": "e_n_B2_G11_n_B2_S03",
+   "fromNode": "n_B2_G11",
+   "toNode": "n_B2_S03"
+  },
+  {
+   "id": "e_n_B1_S02_n_B2_S03",
+   "fromNode": "n_B1_S02",
+   "toNode": "n_B2_S03"
+  },
+  {
+   "id": "e_n_B2_V02_n_B2_S04",
+   "fromNode": "n_B2_V02",
+   "toNode": "n_B2_S04"
+  },
+  {
+   "id": "e_n_B2_G02_n_B2_S04",
+   "fromNode": "n_B2_G02",
+   "toNode": "n_B2_S04"
+  },
+  {
+   "id": "e_n_B1_S01_n_B2_S04",
+   "fromNode": "n_B1_S01",
+   "toNode": "n_B2_S04"
+  },
+  {
+   "id": "e_n_B2_G04_n_B2_S05",
+   "fromNode": "n_B2_G04",
+   "toNode": "n_B2_S05"
+  },
+  {
+   "id": "e_n_B2_G09_n_B2_S05",
+   "fromNode": "n_B2_G09",
+   "toNode": "n_B2_S05"
+  },
+  {
+   "id": "e_n_B2_V04_n_B2_S05",
+   "fromNode": "n_B2_V04",
+   "toNode": "n_B2_S05"
+  },
+  {
+   "id": "e_n_B2_S02_n_B2_S06",
+   "fromNode": "n_B2_S02",
+   "toNode": "n_B2_S06"
+  },
+  {
+   "id": "e_n_B2_S03_n_B2_S06",
+   "fromNode": "n_B2_S03",
+   "toNode": "n_B2_S06"
+  },
+  {
+   "id": "e_n_B2_G06_n_B2_S06",
+   "fromNode": "n_B2_G06",
+   "toNode": "n_B2_S06"
+  },
+  {
+   "id": "e_n_B1_G04_n_B2_G01",
+   "fromNode": "n_B1_G04",
+   "toNode": "n_B2_G01"
+  },
+  {
+   "id": "e_n_B1_G05_n_B2_G01",
+   "fromNode": "n_B1_G05",
+   "toNode": "n_B2_G01"
+  },
+  {
+   "id": "e_n_B2_G01_n_B2_G02",
+   "fromNode": "n_B2_G01",
+   "toNode": "n_B2_G02"
+  },
+  {
+   "id": "e_n_B1_G07_n_B2_G02",
+   "fromNode": "n_B1_G07",
+   "toNode": "n_B2_G02"
+  },
+  {
+   "id": "e_n_B1_G03_n_B2_G03",
+   "fromNode": "n_B1_G03",
+   "toNode": "n_B2_G03"
+  },
+  {
+   "id": "e_n_B1_G03_n_B2_G04",
+   "fromNode": "n_B1_G03",
+   "toNode": "n_B2_G04"
+  },
+  {
+   "id": "e_n_B2_G01_n_B2_G05",
+   "fromNode": "n_B2_G01",
+   "toNode": "n_B2_G05"
+  },
+  {
+   "id": "e_n_B2_G01_n_B2_G06",
+   "fromNode": "n_B2_G01",
+   "toNode": "n_B2_G06"
+  },
+  {
+   "id": "e_n_B2_G05_n_B2_G06",
+   "fromNode": "n_B2_G05",
+   "toNode": "n_B2_G06"
+  },
+  {
+   "id": "e_n_B1_G01_n_B2_G07",
+   "fromNode": "n_B1_G01",
+   "toNode": "n_B2_G07"
+  },
+  {
+   "id": "e_n_A2_G10_n_B2_G08",
+   "fromNode": "n_A2_G10",
+   "toNode": "n_B2_G08"
+  },
+  {
+   "id": "e_n_B1_G08_n_B2_G09",
+   "fromNode": "n_B1_G08",
+   "toNode": "n_B2_G09"
+  },
+  {
+   "id": "e_n_B2_G01_n_B2_G09",
+   "fromNode": "n_B2_G01",
+   "toNode": "n_B2_G09"
+  },
+  {
+   "id": "e_n_B1_G11_n_B2_G10",
+   "fromNode": "n_B1_G11",
+   "toNode": "n_B2_G10"
+  },
+  {
+   "id": "e_n_B1_G11_n_B2_G11",
+   "fromNode": "n_B1_G11",
+   "toNode": "n_B2_G11"
+  },
+  {
+   "id": "e_n_B1_V02_n_B2_V01",
+   "fromNode": "n_B1_V02",
+   "toNode": "n_B2_V01"
+  },
+  {
+   "id": "e_n_B1_V01_n_B2_V02",
+   "fromNode": "n_B1_V01",
+   "toNode": "n_B2_V02"
+  },
+  {
+   "id": "e_n_B1_V04_n_B2_V03",
+   "fromNode": "n_B1_V04",
+   "toNode": "n_B2_V03"
+  },
+  {
+   "id": "e_n_B1_V03_n_B2_V04",
+   "fromNode": "n_B1_V03",
+   "toNode": "n_B2_V04"
+  }
+ ]
+}

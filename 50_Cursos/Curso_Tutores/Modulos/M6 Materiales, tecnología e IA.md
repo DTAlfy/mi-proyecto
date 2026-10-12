@@ -12,13 +12,14 @@ Crear materiales propios con Obsidian, IA, NotebookLM y HTML.
 
 ## Lecciones
 <!-- Cada lección → nota con la plantilla "Lección de curso" en esta carpeta, nombrada "M6.N Título". -->
-- [ ] M6.1 Tu segundo cerebro de tutor
+- [ ] M6.1 Tu segundo cerebro de tutor (Obsidian)
 - [ ] M6.2 Crear fichas y PDFs con NotebookLM
 - [ ] M6.3 Materiales interactivos en HTML con IA
-- [ ] M6.4 Flashcards y repetición espaciada
+- [ ] M6.4 Materiales que se desbloquean por nivel
+- [ ] M6.5 Flashcards y repetición espaciada
 
 ## Entregable del alumno
-Un material propio para una unidad del roadmap
+Un material propio para una situación del árbol
 
 ## Conocimiento que usa
 <!-- Enlaces a 20_Conocimiento/Pedagogia y otras áreas. -->

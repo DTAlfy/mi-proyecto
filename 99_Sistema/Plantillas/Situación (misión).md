@@ -1,0 +1,34 @@
+---
+tipo: nodo
+codigo: 
+nivel: 
+rama: situacion
+requiere: []
+conceptos: []
+estado: esqueleto
+---
+# {{title}}
+
+> 🎯 **Misión:** 
+
+## Goals (criterios de logro)
+- [ ] 
+- [ ] 
+- [ ] 
+
+*Se marca como **logrado** en la sesión cuando el alumno cumple todos los goals sin ayuda (4-5 en la escala).*
+
+## Escenario y roles
+<!-- Quién es el alumno, quién eres tú, qué pasa, qué complicación aparece. -->
+
+## Input necesario (el 20 %)
+<!-- Lo mínimo de gramática y vocabulario: los nodos de "requiere" + enlaces a 20_Conocimiento. -->
+
+## Materiales
+<!-- Notas de 40_Clases/Materiales con `nodos` apuntando aquí aparecen solas en el árbol. -->
+
+## Variantes (para repetirla sin aburrir)
+- 
+
+## Ideas de contenido
+- 

@@ -2,7 +2,10 @@
 60_Estudiantes/Alumnos/*
 60_Estudiantes/Sesiones/*
 60_Estudiantes/Evaluaciones/*
-!60_Estudiantes/**/.gitkeep
+60_Estudiantes/Arboles/*
+!60_Estudiantes/*/.gitkeep
+# Excepción: alumnos ficticios de demostración (nombre con "Demo")
+!60_Estudiantes/*/*Demo*
 10_Fuentes/Capturas_clases/
 10_Fuentes/Sheets/
 

@@ -10,23 +10,20 @@ views:
         - 'estado == "prueba"'
     order:
       - file.name
-      - nivel_actual
-      - unidad_actual
-      - progreso
-      - nivel_objetivo
-      - ultima_sesion
-      - proxima_evaluacion
+      - nivel_base
+      - meta
+      - objetivo
       - frecuencia
+      - proxima_evaluacion
   - type: table
     name: Por nivel
     groupBy:
-      property: nivel_actual
+      property: nivel_base
       direction: ASC
     order:
       - file.name
       - estado
-      - unidad_actual
-      - progreso
+      - meta
   - type: table
     name: Antiguos y en pausa
     filters:
@@ -36,12 +33,11 @@ views:
     order:
       - file.name
       - estado
-      - nivel_actual
-      - ultima_sesion
+      - nivel_base
       - objetivo
   - type: cards
     name: Tarjetas
     order:
       - file.name
-      - nivel_actual
-      - progreso
+      - estado
+      - meta

@@ -3,7 +3,7 @@ tipo: concepto
 area: gramatica
 nivel: [A1]
 destrezas: []
-unidades: []
+nodos: []
 fuentes: []
 usos: [clase, redes, flashcards]
 aliases: []

@@ -1,170 +1,284 @@
-# 🤝 Handshake — Segundo Cerebro de Español
+# 🤝 Handshake v2 — Segundo Cerebro de Español
 
-> Documento de acuerdo entre tú y Claude: **qué construimos, por qué, y cómo se usa**.
+> El acuerdo entre tú y Claude: **qué construimos, por qué, cómo funciona y cómo ejecutarlo en tu PC**.
 > Si algo cambia, se cambia aquí primero y luego en `CLAUDE.md`.
 
 ---
 
-## 1. Objetivo
+## 0. El proyecto en 30 segundos
 
-Un **esqueleto absoluto**: una sola estructura donde todo el material y conocimiento de español
-vive **una vez** y se reutiliza para:
+```
+                 ┌──────────────────────── TU CONOCIMIENTO ────────────────────────┐
+  10_Fuentes ──▶ 20_Conocimiento (wiki)  ◀── enlaza ──  30_Curriculum/Arbol (100 nodos)
+  libros, PDFs,  explicaciones, errores        🟧 situaciones  🟪 gramática  🟩 vocabulario
+  capturas       típicos, flashcards              unidos por "requiere" (qué desbloquea qué)
+                 └──────────────────────────────────┬──────────────────────────────┘
+        ┌───────────────────┬───────────────────────┼──────────────────┬──────────────────┐
+        ▼                   ▼                       ▼                  ▼                  ▼
+   40_Clases          60_Estudiantes           50_Cursos          70_Contenido       Flashcards
+   clases 80/20,      sesiones → ÁRBOL de      ⭐ Tutores (Skool)  redes → Skool      (Anki)
+   materiales         cada alumno + métricas   EN (futuro)        gratis → pago
+```
 
-| Salida | Para quién | Prioridad |
+**Una frase:** todo tu material vive una sola vez, ordenado en un **árbol de habilidades A0→B2**. De ese
+árbol salen tus clases, el progreso visible de cada alumno, tus cursos y tu contenido.
+
+---
+
+## 1. Decisiones tomadas
+
+| Tema | Decisión |
+|---|---|
+| Producto principal | **Curso de Nuevos Tutores de Español** (nativos que quieren empezar a enseñar) |
+| Producto futuro | Cursos ultrasólidos para angloparlantes, A0→B2 |
+| Metodología | Mixta, **80 % práctica**: situaciones reales (misiones) con **goals medibles**; 20 % input |
+| Columna vertebral | **Árbol de habilidades** A0–B2 (sustituye al temario lineal por unidades) |
+| Seguimiento de alumnos | Un **árbol por alumno** que se desbloquea con su avance. Sustituye a las capturas sueltas y al Google Sheet |
+| Skool | Aún no existe. Embudo: **redes → Skool gratis → Skool de pago** |
+| Dónde trabaja Claude | En **tu PC**, directamente sobre la bóveda (Claude Code) |
+| Privacidad | Datos de alumnos y libros con copyright **fuera** del repositorio |
+
+---
+
+## 2. Tu metodología, modelada: 80/20
+
+**Situación (misión)** = algo real que el alumno hace + **goals** que se pueden comprobar.
+
+```
+A0.S01 Saluda y preséntate
+   ⋮
+A2.S05 Pregunta por un piso en alquiler        goals: pregunta precio y gastos · compara · concierta visita
+   └─▶ B1.S06 Llama al casero por una avería   goals: describe la avería · pide que la arreglen · acuerda fecha
+          └─▶ B2.S01 Lee un contrato de alquiler y negocia
+                 goals: identifica 3 cláusulas problemáticas · propone alternativas con condicionales · llega a un acuerdo
+```
+
+- **Gramática y vocabulario son llaves**: cada situación `requiere` los nodos que necesita (el 20 % de input).
+- **Clase 80/20** (plantilla *Plan de clase*): calentamiento → misión y goals → input mínimo → **práctica de la situación** → check de goals.
+- **Logrado** = cumple **todos** los goals sin ayuda (4-5 en la escala). Así el progreso es medible y no depende de "me parece que va bien".
+
+---
+
+## 3. El árbol de habilidades
+
+### 3.1 Piezas
+| Pieza | Dónde | Qué es |
 |---|---|---|
-| 🎓 **Curso de Nuevos Tutores de Español** | Nativos que quieren empezar a enseñar | **Principal** |
-| 📚 Clases particulares | Tus alumnos actuales y antiguos | Continua |
-| 📣 Contenido en redes + Skool | Tutores y estudiantes (todas las plataformas) | Continua |
-| 🃏 Flashcards | Alumnos y tutores | Futuro (ya preparado) |
-| 🇬🇧 Cursos ultrasólidos para angloparlantes (A0→B2) | Estudiantes de inglés nativo | Futuro (ya preparado) |
+| **Nodo** | `30_Curriculum/Arbol/<Nivel>/` | Una situación (`A1.S07`), una llave de gramática (`A1.G03`) o una de vocabulario (`A1.V03`) |
+| **requiere** | propiedad del nodo | Los nodos que hay que dominar antes. Dibujan las flechas |
+| **Material** | `40_Clases/Materiales/` | Lectura, ficha, HTML… con `nodos:` → se abre cuando el nodo se desbloquea |
+| **Sesión / Evaluación** | `60_Estudiantes/` | `practicados` (trabajados hoy) y `logrados` (goals cumplidos) |
 
-**Problema que resolvemos:**
-- El material está importado pero **no conectado** (los "racimos" aislados del grafo).
-- El progreso de alumnos vive en **capturas de pantalla + un Google Sheet** desordenado.
-- Cada pieza de contenido se crea desde cero en vez de **derivarse** de lo que ya sabes.
+Hoy el árbol tiene **100 nodos** (32 situaciones, 45 de gramática, 23 de vocabulario) y **147 conexiones**.
+Es una propuesta inicial: lo ajustas a tu método (fase 3).
 
----
+### 3.2 Estados de cada nodo para cada alumno (los calcula `arbol.py`)
+| Estado | Significa | En su árbol |
+|---|---|---|
+| ✅ Dominado | Logrado en una sesión/evaluación, o por debajo de su `nivel_base` | Verde |
+| 🟡 En curso | Trabajado pero aún no logrado | Ámbar |
+| 🔓 Disponible | Todos sus requisitos dominados: **puede hacerlo ya** | Borde azul |
+| 🔒 Próximo | Le falta poco: sus requisitos están disponibles o en curso | Gris, discontinuo |
+| ⬛ Bloqueado | Aún lejos | **Oculto** (niebla) |
 
-## 2. Principios (las reglas del juego)
+**La niebla** cumple lo que pediste: un alumno A0 **no ve** "Lee una historia corta" (A1). Ve lo que ya
+domina, lo que puede hacer ahora y lo que se desbloquea justo después. Con el botón **"Resaltar ruta a la meta"**
+aparece su *pathing*: el camino exacto de gramática + vocabulario + situaciones hasta su objetivo.
 
-1. **Una idea, un lugar.** Cada concepto (p. ej. *Ser vs estar*) existe en **una** nota de `20_Conocimiento`.
-   Clases, cursos, posts y flashcards **enlazan** a esa nota; no la copian.
-2. **El MCER es la columna vertebral.** Todo lleva `nivel` (A0–B2, o `tutor`). Así el grafo se
-   ordena por niveles y el progreso se puede medir.
-3. **Las fuentes no se tocan.** `10_Fuentes` es material bruto (libros, PDFs, capturas). Se lee,
-   se extrae, se cita, pero no se edita.
-4. **Metadatos obligatorios.** Cada nota empieza con propiedades (`tipo`, `nivel`, `estado`…)
-   definidas en [[99_Sistema/Taxonomia|Taxonomía]]. Sin propiedades, los tableros no la ven.
-5. **Crear con plantilla, siempre.** Nada se escribe en blanco: se usa la plantilla del tipo de nota.
-6. **Producir = derivar.** Un concepto → una clase → una lección de curso → 5-10 piezas de contenido → flashcards.
-7. **Privacidad.** Los datos de alumnos y los libros con copyright **no se suben** al repositorio (ver `.gitignore`).
+### 3.3 Ruta y siguiente paso
+- Cada alumno tiene una `meta` (p. ej. `B2.S01 Lee un contrato de alquiler y negocia`).
+- `arbol.py` calcula **la ruta**: los nodos pendientes en orden, respetando los requisitos.
+- **Siguiente paso recomendado**, en este orden: 1) terminar lo que está en curso; 2) lo que está en la ruta a su meta;
+  3) el nivel más bajo; 4) situaciones antes que llaves (80 %); 5) lo que más desbloquea.
 
----
+### 3.4 Cómo se ve
+| Vista | Archivo | Para qué |
+|---|---|---|
+| Árbol del alumno (navegador) | `60_Estudiantes/Arboles/<Alumno>.html` | **Enseñárselo al alumno** (pantalla compartida o enviado) |
+| Árbol del alumno (Obsidian) | `60_Estudiantes/Arboles/<Alumno>.canvas` | Tu vista de profe, con enlaces a cada nota |
+| Ruta del alumno | `60_Estudiantes/Arboles/<Alumno> - Ruta.md` | Qué puede hacer, qué sigue, qué le falta |
+| Panel de todos | `60_Estudiantes/Arboles/Panel de progreso.md` + tablero `Progreso.base` | Alumnos nuevos y antiguos de un vistazo |
+| Árbol completo | `30_Curriculum/Arbol maestro.canvas` / `.html` | **Todas las conexiones** entre nodos |
 
-## 3. Arquitectura
+> Ejemplos funcionando con alumnos ficticios: **Demo Emma** (A0, meta: leer historias), **Demo Jake**
+> (alumno antiguo con base A1, meta: contrato de alquiler B2) y **Demo Lucía** (antigua, B1).
 
-```
-00_Inbox/          Captura rápida. Todo entra aquí si no sabes dónde va. Se vacía cada semana.
-10_Fuentes/        Material bruto: libros, PDFs, epubs, manuales DELE, capturas, exports de Sheets.
-20_Conocimiento/   La WIKI. Notas atómicas por concepto:
-   ├─ Gramatica/      ser vs estar, subjuntivo, pasados…
-   ├─ Vocabulario/    campos léxicos por tema
-   ├─ Funciones/      pedir, opinar, quejarse… (funciones comunicativas)
-   ├─ Pronunciacion/  sonidos, entonación, errores típicos de angloparlantes
-   ├─ Cultura/        variedades, costumbres, referentes
-   └─ Pedagogia/      CÓMO enseñar: metodología, corrección, planificación, negocio (→ curso tutores)
-30_Curriculum/     El ROADMAP medible:
-   ├─ MCER/           descriptores "puedo hacer…" por nivel (A0, A1, A2, B1, B2)
-   └─ Unidades/       A0.01 … B2.12 — cada unidad enlaza a conceptos de la wiki
-40_Clases/         Planes de clase reutilizables + materiales (fichas, HTML, PDF)
-50_Cursos/
-   ├─ Curso_Tutores/          ⭐ PRINCIPAL — módulos y lecciones para Skool
-   └─ Curso_Estudiantes_EN/   futuro — se construye sobre 30_Curriculum
-60_Estudiantes/    Fichas de alumnos, sesiones, evaluaciones (privado, no se sube)
-70_Contenido/      Línea de producción: Ideas → Producción → Publicado (+ Lead magnets)
-90_Archivo/        Lo que ya no se usa pero no quieres borrar
-99_Sistema/        Plantillas, Tableros (.base), Taxonomía, scripts
-```
+### 3.5 Medible: métricas por alumno
+| Métrica | Qué dice |
+|---|---|
+| Nivel completado / en curso + % | Dónde está de verdad (un nivel cuenta como completado con el 80 % de sus nodos dominados) |
+| Logrados en 30 días | Velocidad de avance |
+| Pasos hasta la meta | Cuánto le falta para su objetivo (útil para vender paquetes de clases) |
+| Sesiones, última sesión | Constancia. Detecta a quién recuperar |
 
-**Archivos raíz:** `CLAUDE.md` (reglas para Claude) · `Inicio.md` (tu panel principal) ·
-`log.md` (bitácora de cambios) · `HANDSHAKE.md` (este documento).
+### 3.6 Optimizable: métricas de tu método (Panel de progreso)
+| Métrica | Decisión que te permite tomar |
+|---|---|
+| **Cuellos de botella**: sesiones de media hasta lograr cada nodo | Mejorar o dividir ese nodo y su material |
+| Nodos en curso (cuántos alumnos atascados) | Preparar material o una clase grupal para ese punto |
+| Situaciones sin material | Qué material crear primero |
 
-### Cómo se conecta todo
-
-```
-10_Fuentes ──extraer──▶ 20_Conocimiento ──agrupar──▶ 30_Curriculum (Unidades por nivel)
-                              │                              │
-                              │                              ├──▶ 40_Clases (plan de clase)
-                              │                              │         │
-                              │                              │         └──▶ 60_Estudiantes (sesión → progreso)
-                              │                              │
-                              ├──enseñar a enseñar──▶ 50_Cursos/Curso_Tutores
-                              │
-                              ├──derivar──▶ 70_Contenido (reels, carruseles, posts Skool, PDFs, HTML)
-                              │
-                              └──extraer──▶ Flashcards (sección "## Flashcards" de cada nota)
-```
+**Ciclo mensual:** revisar el panel → elegir 1 cuello de botella → mejorar su material o dividir el nodo → medir el mes siguiente.
 
 ---
 
-## 4. Los 5 flujos de trabajo
+## 4. Arquitectura de carpetas
 
-### A. Ingerir una fuente (romper los racimos)
-1. El libro/PDF va a `10_Fuentes/` con su ficha (plantilla **Fuente**).
-2. Claude (o tú) recorre el índice del libro y, por cada tema, **busca si ya existe** la nota en `20_Conocimiento`.
-   - Si existe → añade la referencia a la fuente (`fuentes:`) y lo nuevo que aporte.
-   - Si no existe → crea la nota con la plantilla **Concepto**.
-3. Resultado: el libro deja de ser una "estrella aislada" y sus temas se unen a la red.
-
-### B. Preparar una clase
-1. Abres la **Unidad** del roadmap (p. ej. `A2.05`).
-2. Creas un **Plan de clase** en `40_Clases/Planes/` que enlaza a la unidad y a los conceptos.
-3. El plan se reutiliza con cada alumno que llegue a esa unidad.
-
-### C. Registrar una sesión (adiós capturas sueltas)
-1. Tras la clase: nota **Sesión** en `60_Estudiantes/Sesiones/` → alumno, unidad, temas, errores, tarea.
-2. Las capturas de pantalla se pegan **dentro** de la sesión (ya no sueltas).
-3. Cada 4-6 sesiones: **Evaluación** → actualiza `nivel_actual`, `unidad_actual` y `progreso` en la ficha.
-4. El tablero **Alumnos** muestra a todos (activos, en pausa, antiguos) de un vistazo.
-
-### D. Producir contenido (1 idea → muchas piezas)
-1. Idea en `70_Contenido/Ideas/` (plantilla **Idea**), enlazada a un concepto.
-2. Se elige una **pieza pilar** (lección Skool o vídeo largo).
-3. Se derivan piezas por plataforma (plantilla **Pieza de contenido**): reel/TikTok/Short, carrusel,
-   post de Skool, email, PDF (NotebookLM) o HTML (Claude).
-4. El tablero **Contenido** muestra el pipeline: idea → guion → producción → programado → publicado.
-
-### E. Flashcards
-- Cada nota de concepto tiene una sección `## Flashcards` con líneas `frente :: reverso`.
-- Funcionan dentro de Obsidian (plugin *Spaced Repetition*) y se exportan a Anki con
-  `python 99_Sistema/scripts/exportar_flashcards.py`.
+```
+00_Inbox/          Captura rápida. Se vacía cada semana.
+10_Fuentes/        Material bruto (solo lectura): libros, PDFs, epubs, capturas, CSV del Sheet.
+20_Conocimiento/   La wiki: Gramatica · Vocabulario · Funciones · Pronunciacion · Cultura · Pedagogia
+30_Curriculum/     🌳 Arbol/<Nivel>/ (100 nodos) · Árbol de habilidades A0-B2 · Arbol maestro · MCER/
+40_Clases/         Planes/ (clases 80/20) · Materiales/ (se desbloquean con el árbol)
+50_Cursos/         ⭐ Curso_Tutores/ (M0–M9) · Curso_Estudiantes_EN/ (futuro)
+60_Estudiantes/    🔒 Alumnos/ · Sesiones/ · Evaluaciones/ · Arboles/ (generado)
+70_Contenido/      Ideas/ → Produccion/ → Publicado/ · Lead_magnets/
+90_Archivo/        Lo que ya no se usa (aquí está el temario v1 por unidades)
+99_Sistema/        Plantillas · Bases (10 tableros) · Taxonomia · scripts
+```
 
 ---
 
-## 5. Migración desde tu bóveda actual
+## 5. Flujos de trabajo
 
+| # | Flujo | Pasos |
+|---|---|---|
+| A | **Ingerir una fuente** | Ficha *Fuente* → por cada tema, crear o ampliar el concepto en `20_Conocimiento` → enlazarlo a su nodo (`conceptos:`) |
+| B | **Preparar una clase** | Elegir la situación (nodo) → *Plan de clase* 80/20 → materiales con `nodos:` |
+| C | **Registrar una sesión** (3-5 min) | *Sesión* con `practicados` y `logrados` (+ capturas pegadas dentro) → `python 99_Sistema/scripts/arbol.py` |
+| D | **Evaluar** (cada 4-6 clases) | *Evaluación* con `logrados` y escala 1-5 → `arbol.py` |
+| E | **Alumno antiguo** | Ficha con `nivel_base` (p. ej. A1) + `dominados` sueltos + `meta` → su árbol aparece ya avanzado |
+| F | **Producir contenido** | Situación o concepto → pieza pilar → derivadas por plataforma con `embudo:` |
+| G | **Flashcards** | Sección `## Flashcards` (`frente :: reverso`) → `exportar_flashcards.py` → Anki |
+
+### Migración desde tu bóveda actual
 | Carpeta actual | Destino |
 |---|---|
-| `A1Hidalgo_Andrea_Fabiana_-_Preparaci…` | `10_Fuentes/Libros/` |
-| `DELE_B2_Preparación_BLANCO_Y_NEGR…` | `10_Fuentes/Libros/` |
-| `Lazlo_Sandor_-_Tiempo…_Para_practicar…` | `10_Fuentes/Libros/` |
-| `Libros de ESPAÑOL Alfy` | `10_Fuentes/Libros/` |
+| `A1Hidalgo…`, `DELE_B2…`, `Lazlo_Sandor…`, `Libros de ESPAÑOL Alfy` | `10_Fuentes/Libros/` |
 | `Epubs` | `10_Fuentes/Epubs/` |
-| `raw` | `10_Fuentes/` (revisar contenido) |
-| `wiki` | `20_Conocimiento/` (reclasificar por área) |
-| `MCER` / `MCER Markdown` | `30_Curriculum/MCER/` (fusionar con los descriptores nuevos) |
-| `ideas` | `70_Contenido/Ideas/` (o `00_Inbox` si están sin procesar) |
-| `plantillas` | `99_Sistema/Plantillas/` (fusionar con las nuevas) |
-| `scripts` | `99_Sistema/scripts/` |
-| `CLAUDE`, `index`, `log` | raíz → fusionar con `CLAUDE.md`, `Inicio.md`, `log.md` |
-| `Untitled`, `Untitled.base` | revisar → borrar o mover a `99_Sistema/Bases/` |
-| Google Sheet de alumnos | exportar a CSV → `10_Fuentes/Sheets/` → Claude genera una ficha por alumno |
-| Capturas de clases | `10_Fuentes/Capturas_clases/<alumno>/` → se enlazan desde las sesiones |
-
-> ⚠️ Mueve las carpetas **desde dentro de Obsidian** (arrastrar en el explorador) para que
-> los enlaces se actualicen solos.
+| `raw` | `10_Fuentes/` (revisar) |
+| `wiki` | `20_Conocimiento/` (reclasificar por área y enlazar a nodos) |
+| `MCER` | `30_Curriculum/MCER/` (fusionar) |
+| `ideas` | `70_Contenido/Ideas/` o `00_Inbox/` |
+| `plantillas`, `scripts` | `99_Sistema/` (fusionar) |
+| `CLAUDE`, `index`, `log` | fusionar con `CLAUDE.md`, `Inicio.md`, `log.md` |
+| `Untitled`, `Untitled.base` | revisar → borrar o archivar |
+| Google Sheet de alumnos | CSV → `10_Fuentes/Sheets/` → fichas (fase 2) |
+| Capturas de clases | `10_Fuentes/Capturas_clases/<alumno>/` → sesiones (fase 2) |
 
 ---
 
-## 6. Plan por fases
+## 6. Ver TODAS las conexiones en Obsidian
 
-| Fase | Qué | Resultado |
+1. **Grafo global** (ya configurado en `.obsidian/graph.json`): colores por tipo, con flechas.
+   🟧 situaciones · 🟪 gramática · 🟩 vocabulario · 🔵 conocimiento · 🩵 clases · 🟨 cursos · 🩷 alumnos · 🟢 contenido · ⚪ fuentes.
+2. **Grafo local** de cualquier nota: qué la desbloquea y qué desbloquea ella. En la nota *Ruta* de un alumno,
+   el grafo local muestra **su** árbol.
+3. **Canvas**: `Arbol maestro.canvas` (todo) y `<Alumno>.canvas` (coloreado por su estado). Los nodos son clicables.
+4. **Backlinks** de un nodo: qué situaciones lo usan, qué materiales, qué conceptos, qué sesiones.
+5. **Bases** (`99_Sistema/Bases/`): tablas filtrables de árbol, alumnos, progreso, sesiones, materiales, contenido y curso.
+
+---
+
+## 7. Embudo Skool
+
+```
+ATRAER (redes) ──▶ CAPTAR (lead magnet + Skool gratis) ──▶ CONVERTIR (Curso de Tutores, pago) ──▶ RETENER
+```
+
+- **Skool gratis:** M0 + 1-2 lecciones de muestra, reto semanal *"Diseña tu situación"* y 1 directo al mes.
+- **Skool de pago:** Curso de Nuevos Tutores completo (M0–M9) + plantillas + árbol de habilidades.
+- **Lead magnets:** el árbol A0–B2 en PDF/HTML · *10 situaciones listas para tu primera clase* · plantilla de clase 80/20.
+- Detalle y métricas por etapa: [[Estrategia de contenido]]. Estructura del curso: [[Curso de Nuevos Tutores]].
+
+---
+
+## 8. Plan de ejecución en tu PC (paso a paso)
+
+### Paso 0 — Lo que necesitas instalar
+| Herramienta | Para qué |
+|---|---|
+| **Obsidian** (versión reciente, con Bases) | Tu bóveda |
+| **Git** | Descargar el esqueleto y guardar versiones |
+| **Python 3.10+** | Ejecutar `arbol.py` y `exportar_flashcards.py` (no necesitan nada más) |
+| **Claude Code** (app de escritorio o terminal) | Que Claude trabaje directamente en tu bóveda |
+
+> 🔒 Comprueba que el repositorio `DTAlfy/mi-proyecto` sea **privado** en GitHub.
+
+### Paso 1 — Copia de seguridad
+Comprime tu bóveda actual ("Second Brain") en un `.zip` y guárdalo fuera. No se toca hasta que la nueva funcione.
+
+### Paso 2 — Descargar el esqueleto
+```bash
+git clone https://github.com/DTAlfy/mi-proyecto.git "Segundo Cerebro Español"
+cd "Segundo Cerebro Español"
+git checkout claude/festive-feynman-6dy8ui     # o main, cuando fusiones esta rama
+```
+
+### Paso 3 — Abrirlo en Obsidian
+1. Obsidian → *Abrir carpeta como bóveda* → `Segundo Cerebro Español`.
+2. Plugins núcleo activados: **Bases, Canvas, Plantillas, Grafo, Propiedades, Backlinks**.
+3. Opcionales (comunitarios): **Spaced Repetition** (flashcards dentro de Obsidian) y **Obsidian Git** (copia automática).
+4. Abre `Inicio.md`.
+
+### Paso 4 — Comprobar que todo funciona
+```bash
+python 99_Sistema/scripts/arbol.py --validar     # en Windows: py 99_Sistema\scripts\arbol.py --validar
+python 99_Sistema/scripts/arbol.py
+```
+Abre `60_Estudiantes/Arboles/Demo Emma.html` en el navegador y `30_Curriculum/Arbol maestro.canvas` en Obsidian.
+
+### Paso 5 — Claude toma el control de la bóveda
+Abre Claude Code **en la carpeta de la bóveda**. Claude lee `CLAUDE.md` solo y conoce las reglas, carpetas y plantillas.
+Claude edita los archivos `.md` directamente y **Obsidian refresca al instante**, sin plugins ni conexiones extra.
+También puede ejecutar `arbol.py` por ti después de cada cambio.
+
+### Paso 6 — Ejecutar las fases con Claude (prompts para copiar y pegar)
+
+| Fase | Prompt para Claude Code | Hecho cuando… |
 |---|---|---|
-| **0. Esqueleto** ✅ | Estructura, taxonomía, plantillas, tableros, roadmap, curso tutores | Este repositorio |
-| **1. Migrar** | Mover tu bóveda actual a la nueva estructura (tabla de arriba) | Todo en su sitio |
-| **2. Alumnos** | Sheet → fichas; capturas → sesiones; primera evaluación de cada activo | Tablero de progreso real |
-| **3. Conectar fuentes** | Flujo A con cada libro, empezando por los de A1 y B2 | Grafo conectado por niveles |
-| **4. Curso de Tutores** | Rellenar módulos M0–M9 desde `20_Conocimiento/Pedagogia` | Curso listo para Skool |
-| **5. Máquina de contenido** | Pilares + calendario + derivación por plataforma | Publicación constante |
-| **6. Flashcards** | Secciones `## Flashcards` + export a Anki | Mazos por nivel |
-| **7. Curso EN** | Curso para angloparlantes sobre el roadmap A0→B2 | Segundo producto |
+| **1. Migrar** | *"Lee HANDSHAKE.md §5. Mi bóveda antigua está en `<ruta>`. Propón el plan de movimiento carpeta por carpeta y espera mi OK antes de mover nada."* | Todo tu material está en su carpeta y `00_Inbox` está vacío |
+| **2. Alumnos** | *"Convierte `10_Fuentes/Sheets/alumnos.csv` en fichas con la plantilla Alumno. Para cada alumno antiguo propón `nivel_base` y `meta` y pregúntame lo que no sepas."* · después: *"Con las capturas de `10_Fuentes/Capturas_clases/<alumno>/` crea sus sesiones con practicados y logrados y ejecuta arbol.py."* | Cada alumno (nuevo y antiguo) tiene ficha, árbol y ruta |
+| **3. Ajustar el árbol** | *"Revisa `30_Curriculum/Arbol` con mi método 80/20: propón situaciones que falten por nivel, revisa los `requiere` y valida con `arbol.py --validar`."* | El árbol refleja cómo enseñas tú |
+| **4. Conectar fuentes** | *"Ingiere la fuente `<libro>`: crea o amplía conceptos en `20_Conocimiento` y enlázalos a sus nodos del árbol."* (un libro por sesión) | El grafo ya no tiene "estrellas" aisladas |
+| **5. Materiales** | *"Mira el Panel de progreso y crea materiales para las situaciones que mis alumnos tienen disponibles o en curso."* | Las situaciones activas tienen material |
+| **6. Curso de Tutores** | *"Desarrolla el módulo M3 del Curso de Tutores: guion de cada lección con la plantilla Lección de curso."* (módulo a módulo) | M0–M9 con guion listo para grabar |
+| **7. Skool + contenido** | *"Crea el lead magnet 'Árbol de habilidades A0-B2' y un plan de contenido de 4 semanas con el campo embudo."* | Skool gratis abierto y publicando cada semana |
+| **8. Flashcards** | *"Añade flashcards a los conceptos de A1 y exporta el mazo."* | Mazo por nivel en Anki |
+
+> Las fases 2 a 5 pueden ir en paralelo. Empieza por la **2**: es la que más tiempo te ahorra desde el primer día.
+
+### Paso 7 — Rutina
+| Cuándo | Qué | Tiempo |
+|---|---|---|
+| Después de cada clase | Sesión con `practicados` y `logrados`, o dile a Claude *"registra la sesión de X: …"* | 3-5 min |
+| Cada 4-6 clases por alumno | Evaluación | 10 min |
+| Semanal | `arbol.py` → revisar el panel · vaciar Inbox · contenido de la semana | 30 min |
+| Mensual | Ciclo de optimización (§3.6) · recuperar alumnos antiguos (vista *Antiguos* en Progreso.base) | 1 h |
 
 ---
 
-## 7. Preguntas abiertas (para la siguiente ronda)
+## 9. Fases y criterios de "hecho"
 
-- [ ] ¿Qué plataformas exactas usas y con qué frecuencia quieres publicar en cada una?
-- [ ] ¿Tu Skool ya existe? ¿Gratis + de pago, o solo de pago?
-- [ ] ¿Qué escala de evaluación prefieres: 1-5 por destreza, o porcentaje de descriptores logrados?
-- [ ] ¿Usarás Claude Code en tu PC sobre la bóveda, o subiremos la bóveda a este repo (privado)?
-- [ ] ¿Cuál es tu "método" o diferencial como profe? (Es el corazón del Curso de Tutores.)
+| Fase | Resultado medible |
+|---|---|
+| 0. Esqueleto ✅ | Este repositorio: árbol, plantillas, tableros, scripts y demos funcionando |
+| 1. Migrar | 100 % del material en su carpeta |
+| 2. Alumnos | 100 % de alumnos activos con ficha y árbol; antiguos con `nivel_base` |
+| 3. Ajustar el árbol | `arbol.py --validar` sin errores y las situaciones revisadas por ti |
+| 4. Conectar fuentes | Cada nodo `lista` tiene al menos 1 concepto enlazado |
+| 5. Materiales | Menos del 50 % de situaciones sin material (hoy: 31 de 32) |
+| 6. Curso de Tutores | 10 módulos con guion; M0 publicado gratis |
+| 7. Skool + contenido | X piezas por semana y primeros miembros en Skool gratis |
+| 8. Flashcards | 1 mazo por nivel |
+| 9. Curso EN | Tramo A1 publicado |
+
+---
+
+## 10. Preguntas abiertas
+
+- [ ] ¿Nombre del método? (propuesta de trabajo: *Método Misiones 80/20*)
+- [ ] ¿Skool gratis y de pago en **una** comunidad con niveles o en **dos** comunidades?
+- [ ] ¿Precio y modelo del Curso de Tutores (pago único o suscripción)?
+- [ ] ¿Qué plataformas priorizas para publicar las primeras 4 semanas?
+- [ ] ¿Quieres que el alumno reciba su árbol (HTML) por correo después de cada evaluación?
