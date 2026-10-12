@@ -31,16 +31,18 @@
 |---|---|
 | Producto principal | **Curso de Nuevos Tutores de Español** (nativos que quieren empezar a enseñar) |
 | Producto futuro | Cursos ultrasólidos para angloparlantes, A0→B2 |
-| Metodología | Mixta, **80 % práctica**: situaciones reales (misiones) con **goals medibles**; 20 % input |
+| Metodología | **Método Misiones 80/20**: mixta, 80 % práctica con situaciones reales (misiones) y **goals medibles**; 20 % input |
 | Columna vertebral | **Árbol de habilidades** A0–B2 (sustituye al temario lineal por unidades) |
 | Seguimiento de alumnos | Un **árbol por alumno** que se desbloquea con su avance. Sustituye a las capturas sueltas y al Google Sheet |
-| Skool | Aún no existe. Embudo: **redes → Skool gratis → Skool de pago** |
+| Skool | **Dos comunidades**: Skool 1 gratis (dar valor y demostrar el método) → Skool 2 **Premium** de pago |
+| Modelo de precio | Según el producto: **curso de introducción = pago único** (incluye 1 mes de Premium); **Premium = suscripción** (asesorías personalizadas, materiales nuevos y actualizados cada mes) |
+| Contenido | **Todas las plataformas**, en **vertical y horizontal**: se graba una pieza pilar horizontal y de ella salen clips verticales, carruseles, pins y textos |
 | Dónde trabaja Claude | En **tu PC**, directamente sobre la bóveda (Claude Code) |
 | Privacidad | Datos de alumnos y libros con copyright **fuera** del repositorio |
 
 ---
 
-## 2. Tu metodología, modelada: 80/20
+## 2. Tu metodología, modelada: Método Misiones 80/20
 
 **Situación (misión)** = algo real que el alumno hace + **goals** que se pueden comprobar.
 
@@ -180,16 +182,23 @@ aparece su *pathing*: el camino exacto de gramática + vocabulario + situaciones
 
 ---
 
-## 7. Embudo Skool
+## 7. Oferta y embudo
 
 ```
-ATRAER (redes) ──▶ CAPTAR (lead magnet + Skool gratis) ──▶ CONVERTIR (Curso de Tutores, pago) ──▶ RETENER
+REDES (todas, vertical + horizontal)
+   │ lead magnets
+   ▼
+① COMUNIDAD GRATIS (Skool 1) ──▶ ② CURSO DE INTRODUCCIÓN (pago único) ──▶ ③ PREMIUM (Skool 2, suscripción)
+   probar el método                  Curso de Nuevos Tutores M0–M9           asesorías personalizadas, kit mensual
+   retos, muestra, directo           + 1 mes de Premium incluido              de materiales nuevos, actualizaciones
 ```
 
-- **Skool gratis:** M0 + 1-2 lecciones de muestra, reto semanal *"Diseña tu situación"* y 1 directo al mes.
-- **Skool de pago:** Curso de Nuevos Tutores completo (M0–M9) + plantillas + árbol de habilidades.
-- **Lead magnets:** el árbol A0–B2 en PDF/HTML · *10 situaciones listas para tu primera clase* · plantilla de clase 80/20.
-- Detalle y métricas por etapa: [[Estrategia de contenido]]. Estructura del curso: [[Curso de Nuevos Tutores]].
+- **Dar valor primero:** cada semana algo aplicable en la comunidad gratis (reto *Diseña tu situación*, lecciones de muestra,
+  directo mensual). La invitación al curso llega al completar 3 retos y al final de cada directo.
+- **Premium se ve:** cada mes llega un *Kit del mes* (4 situaciones listas con plan y material), asesorías grupales semanales,
+  una asesoría 1:1 y las actualizaciones del sistema. Construir el Premium **es** construir tu bóveda.
+- **Contenido:** todas las plataformas. Pilar horizontal 16:9 → 3-5 clips verticales 9:16 → carrusel 4:5 y 1:1 → pins 2:3 → textos.
+- Detalle: [[Escalera de productos]] · [[Estrategia de contenido]] · [[Calendario - primeras 4 semanas]] · [[Curso de Nuevos Tutores]].
 
 ---
 
@@ -243,7 +252,8 @@ También puede ejecutar `arbol.py` por ti después de cada cambio.
 | **4. Conectar fuentes** | *"Ingiere la fuente `<libro>`: crea o amplía conceptos en `20_Conocimiento` y enlázalos a sus nodos del árbol."* (un libro por sesión) | El grafo ya no tiene "estrellas" aisladas |
 | **5. Materiales** | *"Mira el Panel de progreso y crea materiales para las situaciones que mis alumnos tienen disponibles o en curso."* | Las situaciones activas tienen material |
 | **6. Curso de Tutores** | *"Desarrolla el módulo M3 del Curso de Tutores: guion de cada lección con la plantilla Lección de curso."* (módulo a módulo) | M0–M9 con guion listo para grabar |
-| **7. Skool + contenido** | *"Crea el lead magnet 'Árbol de habilidades A0-B2' y un plan de contenido de 4 semanas con el campo embudo."* | Skool gratis abierto y publicando cada semana |
+| **7. Skool + contenido** | *"Crea el lead magnet '10 situaciones listas para tu primera clase' y las piezas de la semana 1 del Calendario."* (semana a semana) | Skool 1 abierto, publicando en todas las plataformas cada semana |
+| **7b. Premium** | *"Prepara el Kit del mes 1 de Premium según la Escalera de productos."* (cada mes) | Skool 2 abierto con su primer kit y calendario de asesorías |
 | **8. Flashcards** | *"Añade flashcards a los conceptos de A1 y exporta el mazo."* | Mazo por nivel en Anki |
 
 > Las fases 2 a 5 pueden ir en paralelo. Empieza por la **2**: es la que más tiempo te ahorra desde el primer día.
@@ -269,16 +279,19 @@ También puede ejecutar `arbol.py` por ti después de cada cambio.
 | 4. Conectar fuentes | Cada nodo `lista` tiene al menos 1 concepto enlazado |
 | 5. Materiales | Menos del 50 % de situaciones sin material (hoy: 31 de 32) |
 | 6. Curso de Tutores | 10 módulos con guion; M0 publicado gratis |
-| 7. Skool + contenido | X piezas por semana y primeros miembros en Skool gratis |
+| 7. Skool + contenido | 15 piezas por semana (calendario de 4 semanas cumplido) y línea base de métricas anotada |
+| 7b. Premium | Skool 2 abierto, primer kit entregado, % del mes incluido → suscripción medido |
 | 8. Flashcards | 1 mazo por nivel |
 | 9. Curso EN | Tramo A1 publicado |
 
 ---
 
-## 10. Preguntas abiertas
+## 10. Decisiones de esta ronda y preguntas abiertas
 
-- [ ] ¿Nombre del método? (propuesta de trabajo: *Método Misiones 80/20*)
-- [ ] ¿Skool gratis y de pago en **una** comunidad con niveles o en **dos** comunidades?
-- [ ] ¿Precio y modelo del Curso de Tutores (pago único o suscripción)?
-- [ ] ¿Qué plataformas priorizas para publicar las primeras 4 semanas?
+- [x] Nombre del método → **Método Misiones 80/20**
+- [x] Skool → **dos comunidades** (gratis → Premium)
+- [x] Modelo → **pago único** para el curso de introducción, **suscripción** para Premium
+- [x] Plataformas → **todas**, en vertical y horizontal
+- [ ] Precios del curso y de la suscripción
+- [ ] Nombres de las dos comunidades (de trabajo: *Tutores 80/20* y *Tutores 80/20 Premium*)
 - [ ] ¿Quieres que el alumno reciba su árbol (HTML) por correo después de cada evaluación?

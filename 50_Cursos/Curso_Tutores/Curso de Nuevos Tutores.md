@@ -8,8 +8,10 @@ curso: tutores
 
 **Promesa (borrador):** de *hablo español* a *enseño español con método, alumnos y un sistema que muestra su progreso*.
 
+**Modelo:** curso de introducción al método, **pago único**, con **1 mes de Premium incluido** (ver [[Escalera de productos]]).
+
 **Diferencial:** el curso no solo enseña a dar clases; entrega **el método y el sistema completo**:
-- **Método 80/20**: clases construidas sobre situaciones reales con goals medibles (de *preséntate* a *negocia un contrato de alquiler*).
+- **Método Misiones 80/20**: clases construidas sobre situaciones reales con goals medibles (de *preséntate* a *negocia un contrato de alquiler*).
 - **Árbol de habilidades A0–B2** con seguimiento visual de cada alumno (lo que puede hacer, lo que sigue, su ruta).
 - Plantillas, materiales y creación de contenido con IA. Es el mismo sistema de esta bóveda.
 
@@ -28,20 +30,19 @@ curso: tutores
 | [[M8 El negocio del tutor\|M8]] | El negocio del tutor | Tu oferta y tu perfil de tutor publicados |
 | [[M9 Práctica final y certificación\|M9]] | Práctica final y certificación | Clase demo grabada |
 
-## Formato en Skool (propuesta)
-Ver el embudo completo en [[HANDSHAKE]] §7 y [[Estrategia de contenido]].
+## Formato en Skool
+Escalones, entregas mensuales y métricas: [[Escalera de productos]].
 
-| Capa | Qué incluye | Precio |
-|---|---|---|
-| **Comunidad gratis** | M0 + 1-2 lecciones de M1 y M3, reto semanal "Diseña tu situación", 1 live al mes | 0 € |
-| **Curso de Nuevos Tutores** | M0–M9 completos, plantillas, árbol de habilidades, revisión de tu clase demo | Pago (por decidir) |
-| **Premium (opcional, más adelante)** | Mentoría en grupo, revisión de clases grabadas, bóveda completa lista para usar | Pago superior |
+| Comunidad | Qué hay del curso |
+|---|---|
+| **Skool 1 (gratis)** | M0 completo + lecciones de muestra (M1.1, M3.1) + retos semanales |
+| **Curso (pago único)** | M0–M9 completos, plantillas, árbol de habilidades, revisión de la clase demo + 1 mes de Premium |
+| **Skool 2 (Premium)** | Asesorías, Kit del mes, masterclasses y actualizaciones del curso |
 
-- **Classroom:** un módulo = una sección; una lección = vídeo corto (5-12 min) + recurso descargable.
+- **Classroom:** un módulo = una sección; una lección = vídeo horizontal (5-12 min) + recurso descargable.
+  De cada lección salen clips verticales para redes.
 - **Comunidad:** reto semanal ligado al entregable del módulo.
-- **Calendario:** 1 sesión en directo semanal para los de pago (dudas y revisión de clases demo).
 
 ## Por decidir
-- [ ] Nombre del curso y promesa final
-- [ ] Nombre del método (propuesta de trabajo: *Método Misiones 80/20*)
-- [ ] Precio y modelo (pago único / suscripción) y si el gratis y el de pago van en una o dos comunidades de Skool
+- [ ] Nombre comercial del curso y promesa final
+- [ ] Precio del pago único

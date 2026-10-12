@@ -15,6 +15,7 @@ views:
       - file.name
       - plataforma
       - formato
+      - orientacion
       - audiencia
       - embudo
       - pilar
@@ -51,3 +52,17 @@ views:
       - file.name
       - audiencia
       - origen
+  - type: table
+    name: Por orientación
+    filters:
+      and:
+        - 'tipo == "contenido"'
+    groupBy:
+      property: orientacion
+      direction: ASC
+    order:
+      - file.name
+      - plataforma
+      - formato
+      - estado
+      - fecha_publicacion

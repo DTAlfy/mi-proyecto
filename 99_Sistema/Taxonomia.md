@@ -116,8 +116,9 @@ Escala 1–5: **1** no lo consigue · **2** con mucha ayuda · **3** con algo de
 | `audiencia` | `tutores` · `estudiantes_en` · `estudiantes_general` |
 | `embudo` | `atraer` (redes) · `captar` (lead magnet / Skool gratis) · `convertir` (pago) · `retener` (alumnos y miembros) |
 | `pilar` | `ensenar_espanol` · `negocio_tutor` · `gramatica_facil` · `errores_comunes` · `cultura` · `historias` · `herramientas_ia` |
-| `plataforma` | `skool` · `instagram` · `tiktok` · `youtube` · `youtube_shorts` · `facebook` · `linkedin` · `threads` · `x` · `newsletter` · `pinterest` |
-| `formato` | `reel` · `carrusel` · `post` · `historia` · `video_largo` · `leccion_skool` · `live` · `hilo` · `email` · `pdf` · `html` |
+| `plataforma` | `skool` (comunidad gratis) · `skool_premium` · `instagram` · `tiktok` · `youtube` · `youtube_shorts` · `facebook` · `linkedin` · `threads` · `x` · `newsletter` · `pinterest` |
+| `formato` | `reel` · `carrusel` · `post` · `historia` · `video_largo` · `leccion_skool` · `live` · `hilo` · `email` · `pin` · `pdf` · `html` |
+| `orientacion` | `horizontal` (16:9) · `vertical` (9:16) · `retrato` (4:5) · `cuadrado` (1:1) · `pin` (2:3) · `texto` |
 | `pieza_pilar` | enlace a la pieza larga de la que deriva |
 | `origen` | enlace al concepto de `20_Conocimiento` o al nodo (situación) del árbol |
 | `estado` | `idea` · `guion` · `produccion` · `programado` · `publicado` · `reciclar` |

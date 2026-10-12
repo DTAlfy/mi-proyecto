@@ -23,9 +23,11 @@ tipo: sistema
 | [[99_Sistema/Bases/Fuentes.base\|📚 Fuentes]] | Biblioteca y qué falta procesar |
 
 ## Mapas
-- [[Curso de Nuevos Tutores]] — ⭐ producto principal
+- [[Escalera de productos]] — Skool gratis → curso (pago único) → Premium (suscripción)
+- [[Curso de Nuevos Tutores]] — ⭐ producto principal (curso de introducción)
 - [[Curso Estudiantes EN]] — futuro
-- [[Estrategia de contenido]] — embudo redes → Skool gratis → pago
+- [[Estrategia de contenido]] — todas las plataformas, vertical y horizontal
+- [[Calendario - primeras 4 semanas]] — qué publicar y dónde
 - [[Taxonomia]] — propiedades y valores permitidos
 - [[HANDSHAKE]] — el plan completo y cómo ejecutarlo
 

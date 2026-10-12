@@ -4,7 +4,7 @@ Bóveda de Obsidian para organizar todo el conocimiento de enseñanza de españo
 **clases**, el **Curso de Nuevos Tutores** (producto principal), **contenido para redes y Skool**,
 **flashcards** y futuros **cursos para angloparlantes (A0–B2)**.
 
-Método 80/20 (situaciones con goals medibles) organizado en un **árbol de habilidades A0→B2**: cada alumno
+**Método Misiones 80/20** (situaciones con goals medibles) organizado en un **árbol de habilidades A0→B2**: cada alumno
 tiene su propio árbol, que se desbloquea a medida que avanza y le muestra la ruta hacia su meta.
 
 - 🤝 **[HANDSHAKE.md](HANDSHAKE.md)**: el plan, las decisiones y las fases. Empieza por aquí.

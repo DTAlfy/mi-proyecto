@@ -4,7 +4,7 @@ Esta es una bóveda de Obsidian para enseñar español: clases particulares, Cur
 (producto principal), contenido para redes/Skool, flashcards y futuros cursos para angloparlantes.
 El plan completo y las decisiones están en `HANDSHAKE.md`. Léelo si dudas de dónde va algo.
 
-**Método:** 80 % práctica con situaciones (misiones) con goals medibles, 20 % input. La columna vertebral es el
+**Método Misiones 80/20:** 80 % práctica con situaciones (misiones) con goals medibles, 20 % input. La columna vertebral es el
 **árbol de habilidades** (`30_Curriculum/Arbol/`): nodos de situación (S), gramática (G) y vocabulario (V)
 unidos por `requiere`. El progreso de cada alumno se calcula con `99_Sistema/scripts/arbol.py`.
 
@@ -62,5 +62,9 @@ unidos por `requiere`. El progreso de cada alumno se calcula con `99_Sistema/scr
 - **"Saca contenido de `[[Ser vs estar]]`"** → 1 pieza pilar + derivadas por plataforma, con la plantilla
   Pieza de contenido, en `70_Contenido/Produccion/`.
 - **"Prepara la clase de `[[A2.S05 Pregunta por un piso en alquiler]]`"** → *Plan de clase* 80/20 en `40_Clases/Planes/` + materiales con `nodos:`.
+- **"Crea las piezas de la semana N"** → sigue `70_Contenido/Calendario - primeras 4 semanas.md`: una nota por pieza
+  (plantilla Pieza de contenido, con `plataforma`, `formato`, `orientacion` y `embudo`) en `70_Contenido/Produccion/`.
+- **"Prepara el Kit del mes N de Premium"** → sigue el checklist de `50_Cursos/Escalera de productos.md`: 4 situaciones a
+  `estado: lista` con plan de clase, materiales y flashcards.
 - **"Prepara la lección MX.Y del curso de tutores"** → plantilla Lección de curso; se apoya en `20_Conocimiento/Pedagogia`.
 - **"Exporta flashcards"** → `python 99_Sistema/scripts/exportar_flashcards.py --nivel A1`.
