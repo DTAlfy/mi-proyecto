@@ -29,7 +29,8 @@ tipo: sistema
 - [[Estrategia de contenido]] — todas las plataformas, vertical y horizontal
 - [[Calendario - primeras 4 semanas]] — qué publicar y dónde
 - [[Taxonomia]] — propiedades y valores permitidos
-- [[HANDSHAKE]] — el plan completo y cómo ejecutarlo
+- [[HANDSHAKE]] — el plan completo y las decisiones
+- [[PLAN_PC]] — prompt para organizar la bóveda en tu PC · [[Organizacion - progreso]]
 
 ## Rutina
 - **Después de cada clase (3-5 min):** Sesión con `practicados` y `logrados` → `python 99_Sistema/scripts/arbol.py`.

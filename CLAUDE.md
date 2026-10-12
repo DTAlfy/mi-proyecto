@@ -50,7 +50,7 @@ unidos por `requiere`. El progreso de cada alumno se calcula con `99_Sistema/scr
 9. **Antes de mover o borrar** carpetas de la bóveda, propón el plan y espera confirmación.
 
 ## Tareas frecuentes
-- **"Ingiere esta fuente"** → crea la ficha en `10_Fuentes`, recorre sus temas y crea o amplía conceptos en
+- **"Ingiere esta fuente"** → crea la ficha en `10_Fuentes/Fichas/`, recorre sus temas y crea o amplía conceptos en
   `20_Conocimiento` (flujo A del handshake). Informa de las notas creadas y ampliadas.
 - **"Registra la sesión de X"** (con capturas o notas) → crea la sesión con la plantilla, rellena `practicados` y
   `logrados` con nodos del árbol, pega las capturas dentro y ejecuta `arbol.py`. Resume cómo cambió su árbol.
@@ -67,4 +67,6 @@ unidos por `requiere`. El progreso de cada alumno se calcula con `99_Sistema/scr
 - **"Prepara el Kit del mes N de Premium"** → sigue el checklist de `50_Cursos/Escalera de productos.md`: 4 situaciones a
   `estado: lista` con plan de clase, materiales y flashcards.
 - **"Prepara la lección MX.Y del curso de tutores"** → plantilla Lección de curso; se apoya en `20_Conocimiento/Pedagogia`.
+- **"Continúa la organización"** → lee `PLAN_PC.md` y `99_Sistema/Organizacion - progreso.md` y sigue la siguiente fase.
+- **"Revisa la bóveda"** → `python 99_Sistema/scripts/revisar_boveda.py` (y `--enlaces`); propone arreglos.
 - **"Exporta flashcards"** → `python 99_Sistema/scripts/exportar_flashcards.py --nivel A1`.

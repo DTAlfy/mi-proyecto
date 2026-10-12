@@ -5,4 +5,5 @@
 - `scripts/`:
   - `arbol.py`: calcula el progreso y genera los árboles. `--validar` revisa el árbol.
   - `exportar_flashcards.py`: exporta a Anki.
+  - `revisar_boveda.py`: inventario, carpetas aisladas, notas centrales y enlaces rotos (`--enlaces`).
   - `boveda.py`: utilidades compartidas (no se ejecuta solo).

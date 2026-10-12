@@ -8,6 +8,7 @@ Bóveda de Obsidian para organizar todo el conocimiento de enseñanza de españo
 tiene su propio árbol, que se desbloquea a medida que avanza y le muestra la ruta hacia su meta.
 
 - 🤝 **[HANDSHAKE.md](HANDSHAKE.md)**: el plan, las decisiones y las fases. Empieza por aquí.
+- 🖥️ **[PLAN_PC.md](PLAN_PC.md)**: el prompt para pegar en Claude Code y organizar tu bóveda en tu PC.
 - 🏠 **[Inicio.md](Inicio.md)**: panel principal dentro de Obsidian.
 - 🤖 **[CLAUDE.md](CLAUDE.md)**: reglas que sigue Claude al trabajar en la bóveda.
 

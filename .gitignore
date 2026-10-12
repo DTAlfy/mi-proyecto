@@ -6,8 +6,12 @@
 !60_Estudiantes/*/.gitkeep
 # Excepción: alumnos ficticios de demostración (nombre con "Demo")
 !60_Estudiantes/*/*Demo*
-10_Fuentes/Capturas_clases/
-10_Fuentes/Sheets/
+
+# --- Fuentes: el material bruto (libros convertidos, PDFs, capturas, Sheets) se queda en tu PC ---
+# Solo se suben las fichas de fuente (metadatos tuyos) y la guía de la carpeta.
+10_Fuentes/*
+!10_Fuentes/_LEEME.md
+!10_Fuentes/Fichas/
 
 # --- Copyright y archivos pesados ---
 *.pdf

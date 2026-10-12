@@ -204,6 +204,11 @@ REDES (todas, vertical + horizontal)
 
 ## 8. Plan de ejecución en tu PC (paso a paso)
 
+> ✅ **Ruta recomendada: [[PLAN_PC]].** Es un **prompt maestro** para pegar en Claude Code dentro de tu bóveda actual.
+> Claude hace la copia de seguridad, instala este esqueleto **dentro** de tu bóveda (conservando tus plugins y ajustes),
+> migra, crea las fichas, **conecta** cada libro con el árbol y se para en cada punto de control para que apruebes.
+> Los pasos de abajo describen lo mismo a mano, como alternativa para empezar con una bóveda nueva.
+
 ### Paso 0 — Lo que necesitas instalar
 | Herramienta | Para qué |
 |---|---|
