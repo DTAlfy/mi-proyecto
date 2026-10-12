@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'tipo == "evaluacion"'
+views:
+  - type: table
+    name: Evolución por alumno
+    groupBy:
+      property: alumno
+      direction: ASC
+    order:
+      - fecha
+      - nivel_evaluado
+      - cl
+      - ca
+      - ee
+      - eo
+      - io
+      - resultado

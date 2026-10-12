@@ -1,0 +1,20 @@
+filters:
+  and:
+    - 'tipo == "sesion"'
+views:
+  - type: table
+    name: Todas
+    order:
+      - fecha
+      - alumno
+      - unidad
+      - conceptos
+  - type: table
+    name: Por alumno
+    groupBy:
+      property: alumno
+      direction: ASC
+    order:
+      - fecha
+      - unidad
+      - conceptos

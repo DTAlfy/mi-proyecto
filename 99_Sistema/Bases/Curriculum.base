@@ -1,0 +1,14 @@
+filters:
+  and:
+    - 'tipo == "unidad"'
+views:
+  - type: table
+    name: Roadmap A0-B2
+    groupBy:
+      property: nivel
+      direction: ASC
+    order:
+      - codigo
+      - file.name
+      - estado
+      - conceptos

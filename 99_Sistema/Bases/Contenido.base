@@ -1,0 +1,52 @@
+filters:
+  or:
+    - 'tipo == "contenido"'
+    - 'tipo == "idea"'
+views:
+  - type: table
+    name: Pipeline
+    filters:
+      and:
+        - 'estado != "publicado"'
+    groupBy:
+      property: estado
+      direction: ASC
+    order:
+      - file.name
+      - plataforma
+      - formato
+      - audiencia
+      - pilar
+      - fecha_publicacion
+  - type: table
+    name: Por plataforma
+    groupBy:
+      property: plataforma
+      direction: ASC
+    order:
+      - file.name
+      - formato
+      - estado
+      - fecha_publicacion
+  - type: table
+    name: Publicado
+    filters:
+      and:
+        - 'estado == "publicado"'
+    order:
+      - fecha_publicacion
+      - file.name
+      - plataforma
+      - url
+  - type: table
+    name: Banco de ideas
+    filters:
+      and:
+        - 'tipo == "idea"'
+    groupBy:
+      property: pilar
+      direction: ASC
+    order:
+      - file.name
+      - audiencia
+      - origen

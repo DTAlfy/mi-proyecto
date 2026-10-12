@@ -1,0 +1,14 @@
+filters:
+  and:
+    - 'tipo == "fuente"'
+views:
+  - type: table
+    name: Biblioteca
+    groupBy:
+      property: estado
+      direction: ASC
+    order:
+      - file.name
+      - formato
+      - autor
+      - nivel

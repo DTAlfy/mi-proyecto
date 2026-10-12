@@ -1,0 +1,34 @@
+# --- Privacidad: datos de alumnos (se quedan solo en tu PC) ---
+60_Estudiantes/Alumnos/*
+60_Estudiantes/Sesiones/*
+60_Estudiantes/Evaluaciones/*
+!60_Estudiantes/**/.gitkeep
+10_Fuentes/Capturas_clases/
+10_Fuentes/Sheets/
+
+# --- Copyright y archivos pesados ---
+*.pdf
+*.epub
+*.mobi
+*.docx
+*.pptx
+*.mp3
+*.mp4
+*.m4a
+*.mov
+10_Fuentes/**/*.png
+10_Fuentes/**/*.jpg
+10_Fuentes/**/*.jpeg
+
+# --- Exportaciones ---
+*.tsv
+
+# --- Obsidian: estado local de la ventana ---
+.obsidian/workspace*.json
+.obsidian/cache
+.trash/
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
+__pycache__/

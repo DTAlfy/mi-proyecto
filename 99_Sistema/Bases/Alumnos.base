@@ -1,0 +1,47 @@
+filters:
+  and:
+    - 'tipo == "alumno"'
+views:
+  - type: table
+    name: Activos
+    filters:
+      or:
+        - 'estado == "activo"'
+        - 'estado == "prueba"'
+    order:
+      - file.name
+      - nivel_actual
+      - unidad_actual
+      - progreso
+      - nivel_objetivo
+      - ultima_sesion
+      - proxima_evaluacion
+      - frecuencia
+  - type: table
+    name: Por nivel
+    groupBy:
+      property: nivel_actual
+      direction: ASC
+    order:
+      - file.name
+      - estado
+      - unidad_actual
+      - progreso
+  - type: table
+    name: Antiguos y en pausa
+    filters:
+      or:
+        - 'estado == "pausa"'
+        - 'estado == "antiguo"'
+    order:
+      - file.name
+      - estado
+      - nivel_actual
+      - ultima_sesion
+      - objetivo
+  - type: cards
+    name: Tarjetas
+    order:
+      - file.name
+      - nivel_actual
+      - progreso

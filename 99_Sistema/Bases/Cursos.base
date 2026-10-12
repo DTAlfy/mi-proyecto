@@ -1,0 +1,30 @@
+filters:
+  or:
+    - 'tipo == "modulo"'
+    - 'tipo == "leccion"'
+views:
+  - type: table
+    name: Curso de Tutores
+    filters:
+      and:
+        - 'curso == "tutores"'
+    groupBy:
+      property: modulo
+      direction: ASC
+    order:
+      - file.name
+      - tipo
+      - formato
+      - estado
+      - duracion_min
+  - type: table
+    name: Curso Estudiantes EN
+    filters:
+      and:
+        - 'curso == "estudiantes_en"'
+    groupBy:
+      property: modulo
+      direction: ASC
+    order:
+      - file.name
+      - estado

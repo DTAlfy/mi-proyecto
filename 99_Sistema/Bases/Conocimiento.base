@@ -1,0 +1,33 @@
+filters:
+  and:
+    - 'tipo == "concepto"'
+views:
+  - type: table
+    name: Por nivel
+    groupBy:
+      property: nivel
+      direction: ASC
+    order:
+      - file.name
+      - area
+      - estado
+      - unidades
+      - fuentes
+  - type: table
+    name: Por área
+    groupBy:
+      property: area
+      direction: ASC
+    order:
+      - file.name
+      - nivel
+      - estado
+  - type: table
+    name: Pendientes de revisar
+    filters:
+      and:
+        - 'estado == "borrador"'
+    order:
+      - file.name
+      - area
+      - nivel
