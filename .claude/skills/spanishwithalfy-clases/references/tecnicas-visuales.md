@@ -11,8 +11,8 @@ Sirve para animar **cambiando de diapositiva** en lugar de usar muchas animacion
   en la diapositiva N, pero **fuera del lienzo** (x mayor que 13.333" o negativa). Si solo aparece
   en N+1, PowerPoint hace un simple fundido.
 - Duración: 1–1.5 s.
-- Se aplica con código insertando la transición en el XML de la diapositiva
-  (`p159:morph` dentro de `mc:AlternateContent`, con fundido como alternativa para versiones antiguas).
+- Con `swa.morph(s)` en la diapositiva de llegada (inserta `p159:morph` en el XML, con fundido
+  como alternativa para versiones antiguas de PowerPoint).
 - Arquitectura: diapositiva 0 = diseño completo estático (respaldo); de la 1 a la N = pasos.
 
 **Usos en clase:**
@@ -33,7 +33,7 @@ Sirve para animar **cambiando de diapositiva** en lugar de usar muchas animacion
 - Solo 2 paradas de color, con el ángulo siguiendo la inclinación de la forma (≈ 15°).
 - En la marca: azul tinta → azul pizarra, o terracota → azafrán. Nunca degradados en el texto
   del cuerpo.
-- La librería pptxgenjs no hace degradados: aplicarlos editando el XML o usar una imagen de fondo.
+- Con `swa.degradado(forma, c1, c2, angulo)`.
 
 ## 4. Portada de alto impacto (adaptada del estilo "tech")
 Se toma la técnica y se descarta la estética neón:
@@ -49,6 +49,9 @@ Se toma la técnica y se descarta la estética neón:
 - Las curvas se generan con código (forma libre con puntos calculados), sin programas externos.
 
 ## 5. Animaciones de entrada
+> `swa.py` todavía no genera animaciones de entrada: para revelar paso a paso usa Morph.
+> Si el usuario las pide, añádelas al XML (`p:timing`) o indícale que las aplique en PowerPoint.
+
 - Título y botón: fundido de 1 s; el botón con 0.5 s de retardo.
 - Ondas: entrada deslizante de 2 s, "con la anterior", con final suave.
 - Regla general: una animación debe ayudar a entender (revelar paso a paso), nunca solo adornar.
