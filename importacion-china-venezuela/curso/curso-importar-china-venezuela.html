@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Importa de China a Venezuela</title>
+<style>
+  :root {
+    --ink: #1d2433;
+    --muted: #5b6474;
+    --accent: #c8102e;
+    --accent-soft: #fdecef;
+    --gold: #b7791f;
+    --gold-soft: #fdf6e7;
+    --green: #2f7d4f;
+    --green-soft: #eaf6ef;
+    --blue: #1f5fa8;
+    --blue-soft: #eaf1fb;
+    --line: #e3e6ec;
+  }
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "DejaVu Sans", "Liberation Sans", Arial, "Noto Color Emoji", sans-serif;
+    color: var(--ink);
+    font-size: 10.5pt;
+    line-height: 1.5;
+    margin: 0;
+    background: #fff;
+  }
+  h1, h2, h3 { line-height: 1.2; margin: 0 0 8px; }
+  h2 {
+    font-size: 20pt;
+    color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 6px;
+    margin-top: 0;
+  }
+  h3 { font-size: 13pt; margin-top: 18px; }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0 6px 20px; padding: 0; }
+  li { margin: 3px 0; }
+  .module { page-break-before: always; }
+  .kicker { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .lead { font-size: 11.5pt; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 10px; font-size: 9.5pt; page-break-inside: avoid; }
+  th, td { border: 1px solid var(--line); padding: 5px 7px; text-align: left; vertical-align: top; }
+  th { background: #f4f5f8; }
+  td.num, th.num { text-align: right; }
+  .box { border-radius: 8px; padding: 10px 12px; margin: 10px 0; page-break-inside: avoid; border-left: 5px solid; }
+  .box .t { font-weight: bold; margin-bottom: 4px; }
+  .yes { background: var(--green-soft); border-color: var(--green); }
+  .no { background: var(--accent-soft); border-color: var(--accent); }
+  .scale { background: var(--gold-soft); border-color: var(--gold); }
+  .tip { background: var(--blue-soft); border-color: var(--blue); }
+  .ve { background: #fff; border: 1px dashed var(--accent); border-left: 5px solid var(--accent); }
+  .case { background: #f7f7fa; border-color: #6b7280; }
+  .grid2 { display: flex; gap: 10px; }
+  .grid2 > div { flex: 1; }
+  .big { font-size: 22pt; font-weight: bold; color: var(--accent); line-height: 1.1; }
+  .stat { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; text-align: center; }
+  .stat .lbl { font-size: 8.5pt; color: var(--muted); }
+  .check li { list-style: none; margin-left: -18px; }
+  .check li::before { content: "☐ "; }
+  .small { font-size: 8.5pt; color: var(--muted); }
+  code, .mono { font-family: "DejaVu Sans Mono", monospace; font-size: 9pt; }
+  pre { background: #f4f5f8; border-radius: 6px; padding: 8px 10px; font-size: 8.8pt; white-space: pre-wrap; page-break-inside: avoid; }
+  /* Portada */
+  .cover { height: 255mm; display: flex; flex-direction: column; justify-content: space-between; }
+  .cover h1 { font-size: 34pt; color: var(--ink); }
+  .cover h1 span { color: var(--accent); }
+  .flagbar { height: 8px; display: flex; border-radius: 4px; overflow: hidden; margin: 12px 0; }
+  .flagbar div { flex: 1; }
+  .ladder { display: flex; align-items: flex-end; gap: 8px; height: 120px; margin: 10px 0; }
+  .ladder div { flex: 1; background: var(--accent); color: #fff; border-radius: 6px 6px 0 0; text-align: center; font-weight: bold; padding-top: 6px; font-size: 11pt; }
+  .toc { margin-left: 30px; }
+  .toc li { margin: 4px 0; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="cover">
+  <div>
+    <div class="kicker">Curso práctico · Edición 2026 · Barinas, Venezuela</div>
+    <h1>🇨🇳 ➜ 🇻🇪<br>Importa de China<br>a <span>Venezuela</span></h1>
+    <div class="flagbar"><div style="background:#f4c300"></div><div style="background:#1f3f8f"></div><div style="background:#c8102e"></div></div>
+    <p class="lead">De tus primeros $1.000 a un negocio que se paga solo. Paso a paso, con números reales de flete, aduana y margen, adaptado a cómo se compra, se paga y se vende desde el interior del país.</p>
+  </div>
+  <div>
+    <div class="ladder">
+      <div style="height:25%">$1k</div>
+      <div style="height:40%">$2k</div>
+      <div style="height:62%">$5k</div>
+      <div style="height:100%">$10k+</div>
+    </div>
+    <p class="small">La escalera que vas a subir en este curso. Cada escalón tiene su propio método, sus números y su señal para pasar al siguiente.</p>
+  </div>
+  <div class="small">
+    Basado en el curso gratuito de importación de Andrés Valenzuela (YouTube), ampliado y adaptado a Venezuela con la investigación del plan de negocio de este proyecto.<br>
+    Leyenda de datos: ✅ verificado en fuente · ⚠️ fuentes no oficiales o contradictorias · ❓ supuesto a confirmar con cotización.<br>
+    Este material es educativo. No es asesoría legal, aduanera ni financiera. Las cifras de escenarios no son promesas de ganancia.
+  </div>
+</section>
+
+<!-- CÓMO USAR -->
+<section class="module">
+  <div class="kicker">Antes de empezar</div>
+  <h2>📖 Cómo usar este curso</h2>
+  <p class="lead">Son 12 módulos cortos. Cada uno termina con una tarea. Si haces las tareas, al final del Módulo 11 tendrás tu primera importación en camino.</p>
+
+  <h3>🧭 Contenido</h3>
+  <ol class="toc">
+    <li>🧠 Mentalidad y números clave</li>
+    <li>🎯 Elegir el producto correcto (filtro Barinas)</li>
+    <li>🚚 Tipos de importación: lo que sí funciona hacia Venezuela</li>
+    <li>📜 Incoterms sin dolor de cabeza</li>
+    <li>🔎 Encontrar proveedores confiables en Alibaba y 1688</li>
+    <li>🤝 Negociar como un profesional</li>
+    <li>🧾 Documentos: proforma, factura comercial y contrato</li>
+    <li>💳 Pagar desde Venezuela sin perder tu dinero</li>
+    <li>🔬 Calidad: muestras, defectos e inspecciones</li>
+    <li>🛃 Aduana venezolana, códigos HS e impuestos</li>
+    <li>📲 Vender desde Barinas: grupo, WhatsApp y MRW</li>
+    <li>🚀 La escalera: de $1.000 a $10.000+</li>
+  </ol>
+
+  <h3>🔣 Los recuadros que verás</h3>
+  <div class="box yes"><div class="t">✅ SÍ — hazlo así</div>La práctica correcta, probada.</div>
+  <div class="box no"><div class="t">❌ NO — error común</div>Lo que le cuesta dinero a los principiantes.</div>
+  <div class="box ve"><div class="t">🇻🇪 Ajuste Venezuela</div>Dónde el curso original (pensado para México o EE. UU.) no aplica igual aquí.</div>
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad</div>Cómo cambia este paso cuando tu capital crece.</div>
+  <div class="box case"><div class="t">📒 Caso práctico</div>Situaciones con números. Son <b>casos ilustrativos</b> construidos con cifras típicas del mercado, no testimonios de personas reales. En el Módulo 1 aprenderás a verificar los casos "reales" que veas en redes.</div>
+</section>
+
+<!-- MÓDULO 1 -->
+<section class="module">
+  <div class="kicker">Módulo 1</div>
+  <h2>🧠 Mentalidad y números clave</h2>
+  <p class="lead">Importar no es "comprar barato en China". Es <b>comprar, traer y vender más rápido de lo que se te come el flete</b>.</p>
+
+  <div class="grid2">
+    <div class="stat"><div class="big">2,5×</div><div class="lbl">Precio de venta mínimo sobre tu costo <b>puesto en Barinas</b></div></div>
+    <div class="stat"><div class="big">30 días</div><div class="lbl">Tiempo máximo que un producto debería tardar en venderse</div></div>
+    <div class="stat"><div class="big">30%</div><div class="lbl">Del capital siempre en reserva. No se toca.</div></div>
+  </div>
+
+  <h3>💡 Las 3 ideas que separan a quien gana de quien pierde</h3>
+  <ol>
+    <li><b>El precio de fábrica no es tu costo.</b> Tu costo real = producto + comisión del agente + flete + aduana + pagos + empaque + mermas. En productos baratos y livianos, el flete aéreo puede costar <b>más que la mercancía</b>.</li>
+    <li><b>Vende antes de comprar.</b> Valida con preventa en tu grupo. Si nadie aparta, no lo traigas.</li>
+    <li><b>La velocidad es tu ganancia.</b> $1.000 que rotan 6 veces al año valen más que $3.000 dormidos en un depósito.</li>
+  </ol>
+
+  <div class="box no"><div class="t">❌ NO</div>"Vi en TikTok que los audífonos cuestan $1 en China, los vendo a $15 y me hago rico". No incluye flete, aduana, defectos, ni que 50 personas en Barinas ya venden lo mismo.</div>
+  <div class="box yes"><div class="t">✅ SÍ</div>"Este producto me cuesta $1,54 puesto en Barinas, lo vendo a $4, tengo 18 personas apartadas y el resto lo muevo en 3 semanas."</div>
+
+  <h3>🕵️ Cómo verificar un "caso de éxito" que veas en redes</h3>
+  <ul>
+    <li>¿Muestra <b>guías de courier, facturas o pantallas de Alibaba</b> con fecha? ¿O solo carros y fajos de billetes?</li>
+    <li>¿Vende un curso, una asesoría o un servicio de carga? Entonces el caso es también publicidad.</li>
+    <li>¿Puedes comprarle algo a esa persona y ver si su operación existe? Los importadores reales tienen catálogo, clientes y reseñas.</li>
+    <li>Busca su nombre en grupos de importadores venezolanos. Las quejas aparecen rápido.</li>
+  </ul>
+
+  <div class="box tip"><div class="t">✅ Lo que sí está verificado sobre el mercado</div>
+    Cashea, la app de "compra ahora y paga después", superó los <b>3 millones de usuarios</b> y 1.800 comercios en Venezuela ✅ (fuente: Fedecámaras Radio). Hay consumidores comprando a crédito. Quien tenga mercancía a buen precio y genere confianza, vende.
+  </div>
+
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad</div>Con un 40% de ganancia neta por ciclo de 2 meses y reinvirtiendo todo, $1.000 se convierten en unos <b>$7.500 en 12 meses</b>. Con 20%, en unos $3.000. El Módulo 12 te enseña a calcular tu propia curva. La diferencia entre los dos escenarios no es suerte: es <b>elegir bien el producto y venderlo rápido</b>.</div>
+
+  <h3>📝 Tarea 1</h3>
+  <ul class="check">
+    <li>Escribe cuánto capital tienes hoy y cuánto apartas como reserva (30%).</li>
+    <li>Escribe cuántos días a la semana dedicarás a vender y cuántos a comprar.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 2 -->
+<section class="module">
+  <div class="kicker">Módulo 2</div>
+  <h2>🎯 Elegir el producto correcto</h2>
+  <p class="lead">El curso original lo dice claro: debes saber qué vas a importar <b>antes</b> de buscar proveedor. Aquí está el filtro adaptado a vender desde Barinas al interior.</p>
+
+  <h3>🔍 El filtro de 6 preguntas</h3>
+  <table>
+    <tr><th>Pregunta</th><th>Respuesta que buscas</th><th>Por qué</th></tr>
+    <tr><td>⚖️ ¿Cuánto pesa?</td><td>Menos de 300 g por unidad</td><td>El flete aéreo se cobra por kilo</td></tr>
+    <tr><td>📦 ¿Se rompe?</td><td>No</td><td>Viaja China → Valencia o Caracas → Barinas → pueblo</td></tr>
+    <tr><td>🔋 ¿Lleva batería de litio?</td><td>No, o se trae por marítimo</td><td>Muchos couriers aéreos la restringen ❓</td></tr>
+    <tr><td>💰 ¿Margen?</td><td>Precio de venta ≥ 2,5× costo puesto</td><td>Cubre publicidad, MRW, defectos y tu trabajo</td></tr>
+    <tr><td>🔁 ¿Rotación?</td><td>Se vende en menos de 30 días</td><td>Capital dormido = capital perdido</td></tr>
+    <tr><td>™️ ¿Es de marca?</td><td>No, nada de réplicas</td><td>Retenciones en aduana y problemas legales</td></tr>
+  </table>
+
+  <h3>🏆 8 categorías candidatas para el interior</h3>
+  <table>
+    <tr><th>Categoría</th><th>A favor</th><th>Cuidado</th></tr>
+    <tr><td>📱 Accesorios de celular</td><td>Venta diaria, livianos</td><td>Mucha competencia: elige modelos populares</td></tr>
+    <tr><td>🏍️ Accesorios de moto</td><td>La moto es el transporte principal de la región ❓</td><td>Confirma qué modelos se usan</td></tr>
+    <tr><td>💡 Iluminación solar y recargable</td><td>Cortes de luz en el interior ❓</td><td>Baterías: solo por marítimo</td></tr>
+    <tr><td>💅 Uñas, pestañas y belleza</td><td>Recompra y manicuristas revendedoras</td><td>Pide muestras: la calidad varía</td></tr>
+    <tr><td>🧸 Juguetes pequeños</td><td>Navidad, cumpleaños</td><td>Temporada fija: llegar tarde = inventario muerto</td></tr>
+    <tr><td>🍳 Gadgets de cocina</td><td>Compra por impulso con video</td><td>Volumen: mejor por marítimo</td></tr>
+    <tr><td>🔧 Herramientas pequeñas</td><td>Zona agrícola y ganadera ❓</td><td>Peso</td></tr>
+    <tr><td>💍 Bisutería</td><td>Liviana, margen alto</td><td>Modas que cambian rápido</td></tr>
+  </table>
+
+  <h3>🧪 Valida antes de comprar: la preventa</h3>
+  <ol>
+    <li>Toma fotos del producto en 1688 o AliExpress (o pide fotos al proveedor).</li>
+    <li>Publica en tu grupo: "Llega en 3 semanas. Precio de preventa $X. Aparta con el 30%".</li>
+    <li>Regla: si en 7 días no tienes <b>10 interesados</b> (o 5 apartados), no lo traigas.</li>
+  </ol>
+
+  <div class="box case"><div class="t">📒 Caso práctico: "las luces que nadie quería" (ilustrativo)</div>
+    María compró 300 luces LED decorativas porque se veían bonitas en TikTok. No hizo preventa. Pesaban 180 g cada una y las trajo por aéreo. Resultado: el flete se comió el margen y en Barinas nadie las buscaba fuera de diciembre. Las vendió a precio de costo en marzo.<br>
+    <b>Lección:</b> el producto bonito no es el producto rentable. El que se vende solo es el que <b>ya te pidieron</b>.
+  </div>
+
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad</div>Al principio pruebas 3–4 productos en poca cantidad. Cuando escalas, haces lo contrario: <b>pocos productos ganadores en mucha cantidad</b>, porque el precio por unidad baja con el volumen (MOQ) y el flete marítimo por unidad se vuelve mínimo.</div>
+
+  <h3>📝 Tarea 2</h3>
+  <ul class="check">
+    <li>Elige 5 productos candidatos y pásalos por el filtro de 6 preguntas.</li>
+    <li>Crea tu grupo de Facebook y publica la primera encuesta: "¿Qué te gustaría que trajera?"</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 3 -->
+<section class="module">
+  <div class="kicker">Módulo 3</div>
+  <h2>🚚 Tipos de importación hacia Venezuela</h2>
+  <p class="lead">El curso original describe 3 tipos: pequeña por courier, marítima y aérea de carga. Hacia Venezuela la realidad es un poco distinta.</p>
+
+  <div class="box ve"><div class="t">🇻🇪 Ajuste Venezuela: el "courier consolidador"</div>
+    En México o EE. UU. una importación pequeña llega por DHL o FedEx. Hacia Venezuela, el exprés directo es caro (⚠️ unos $16/kg). Lo que usa la mayoría es un <b>courier venezolano con almacén en China</b> (Guangzhou o Yiwu): te da una dirección en China, tus proveedores envían ahí, ellos <b>juntan todo en una caja</b> y la mandan por aire o mar con la aduana incluida.
+  </div>
+
+  <table>
+    <tr><th>Modalidad</th><th>Costo de referencia</th><th>Tiempo</th><th>Úsala para</th></tr>
+    <tr><td>✈️ Courier consolidado aéreo</td><td>⚠️ flete $5,5–10/kg; puerta a puerta con aduana: más ❓</td><td>7–14 días</td><td>Livianos y de valor. Llegar a tiempo a una temporada</td></tr>
+    <tr><td>📮 Exprés (DHL/FedEx)</td><td>⚠️ unos $16/kg</td><td>5–10 días</td><td>Solo muestras urgentes</td></tr>
+    <tr><td>🚢 Marítimo consolidado (LCL / "grupaje")</td><td>⚠️ $100–300 por m³ solo flete</td><td><b>45–60 días</b></td><td>Volumen, peso, baterías</td></tr>
+    <tr><td>🏗️ Contenedor completo de 20 pies</td><td>⚠️ $2.500–7.800 + $300–600 locales</td><td>45–60 días</td><td>Etapa de $10.000 o más</td></tr>
+  </table>
+  <p class="small">Fuentes: Basenton, Dantful 2026, Ubest, GoodHope 2026. Son solo flete internacional. Tu costo real lo da la cotización de tu courier "todo incluido".</p>
+
+  <div class="box ve"><div class="t">🇻🇪 Dos correcciones al curso original</div>
+    <ul>
+      <li><b>"El marítimo tarda 20–35 días"</b> → hacia Venezuela calcula <b>45–60 días</b>.</li>
+      <li><b>"El aéreo casi nadie lo usa"</b> → es verdad para la carga aérea grande. Pero el <b>aéreo consolidado por kilo</b> es la vía más usada por quien empieza en Venezuela.</li>
+    </ul>
+  </div>
+
+  <h3>📏 Kilo real vs. peso volumétrico</h3>
+  <p>Los couriers cobran el <b>mayor</b> entre el peso real y el volumétrico.</p>
+  <pre>Peso volumétrico (kg) = largo × ancho × alto (cm) ÷ 5.000   (algunos usan 6.000)
+Ejemplo: caja 50 × 40 × 30 cm = 60.000 ÷ 5.000 = 12 kg volumétricos
+Si la caja pesa 7 kg reales → te cobran 12 kg.</pre>
+  <div class="box yes"><div class="t">✅ SÍ</div>Pide al proveedor que <b>quite cajas individuales grandes</b> o que empaque compacto. A veces ahorras el 30% del flete.</div>
+
+  <h3>📋 Las 7 preguntas a cada courier</h3>
+  <ol>
+    <li>¿Tarifa por kg real, volumétrico o pie³? ¿Mínimo?</li>
+    <li>¿Incluye aduana? ¿Recargo por envío comercial o de "alto valor"?</li>
+    <li>¿Aceptan baterías, líquidos, imanes o marcas?</li>
+    <li>¿Entregan en Barinas o retiro en sucursal? ¿Costo del tramo nacional?</li>
+    <li>¿Seguro? ¿Qué pasa si se pierde algo?</li>
+    <li>¿Consolidan varios proveedores? ¿Cuántos días de almacén gratis?</li>
+    <li>¿Aceptan USDT?</li>
+  </ol>
+
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad</div>Cuando pasas de aéreo a marítimo, el costo de traer cada unidad puede caer a una fracción ❓. Ese salto es el que más aumenta tu margen en la etapa de $2.000. El precio: planificar con 2 meses de anticipación.</div>
+
+  <h3>📝 Tarea 3</h3>
+  <ul class="check">
+    <li>Pide cotización a 3 couriers con almacén en China usando las 7 preguntas.</li>
+    <li>Anota sus respuestas en una tabla para compararlos.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 4 -->
+<section class="module">
+  <div class="kicker">Módulo 4</div>
+  <h2>📜 Incoterms sin dolor de cabeza</h2>
+  <p class="lead">Son reglas internacionales que dicen <b>qué incluye el precio</b> y <b>hasta dónde</b> responde el vendedor. En Alibaba los vas a ver en cada cotización.</p>
+
+  <pre>🏭 Fábrica → 🚛 transporte al puerto → ⚓ puerto de origen → 🌊 mar/aire → ⚓ puerto destino → 🛃 aduana → 🚛 transporte → 🏠 tu depósito</pre>
+
+  <table>
+    <tr><th>Incoterm</th><th>Significa</th><th>El vendedor responde hasta…</th><th>¿Te conviene?</th></tr>
+    <tr><td><b>EXW</b></td><td>En fábrica</td><td>Fabricar. Nada más</td><td>❌ Tú organizas todo</td></tr>
+    <tr><td><b>FAS</b></td><td>Libre al costado del buque</td><td>Dejarlo junto al barco, sin cargar</td><td>❌ Casi nunca</td></tr>
+    <tr><td><b>FOB</b></td><td>Libre a bordo</td><td>Cargarlo en el barco y hacer la exportación</td><td>✅ El más usado para marítimo</td></tr>
+    <tr><td><b>CFR</b></td><td>Costo y flete</td><td>Pagar el flete hasta el puerto destino (sin seguro)</td><td>⚠️ Posible</td></tr>
+    <tr><td><b>CIF</b></td><td>Costo, seguro y flete</td><td>Flete y seguro hasta el puerto destino</td><td>✅ Si quieres seguro incluido</td></tr>
+    <tr><td><b>DDP</b></td><td>Entregado con derechos pagados</td><td>Todo: hasta tu puerta, con impuestos pagados</td><td>⚠️ Cómodo pero caro</td></tr>
+  </table>
+
+  <div class="box ve"><div class="t">🇻🇪 Ajuste Venezuela: ¿qué Incoterm usar al empezar?</div>
+    Con un courier consolidador <b>no necesitas FOB ni CIF</b>. Le pides al proveedor: <i>"Please deliver to my forwarder's warehouse in Guangzhou"</i> (entrega en el almacén de mi courier en Guangzhou). Esa entrega local dentro de China suele ser gratis o barata. Desde ahí, tu courier se encarga.<br>
+    FOB y CIF los usarás cuando hagas marítimo con agente de carga, en la etapa de $5.000+.
+  </div>
+
+  <div class="box no"><div class="t">❌ NO</div>Pedir "DDP Venezuela" a un proveedor cualquiera. Pocos lo hacen bien hacia Venezuela y no sabrás qué impuestos pagaron ni cómo declararon tu mercancía.</div>
+
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad</div>Cuando importes en formal, el arancel venezolano se calcula sobre el valor <b>CIF</b> ⚠️ (producto + flete + seguro). Por eso un flete más barato no solo te ahorra el flete: también baja los impuestos.</div>
+
+  <h3>📝 Tarea 4</h3>
+  <ul class="check">
+    <li>Escribe de memoria qué incluye FOB, CIF y DDP.</li>
+    <li>Pregúntale a tu courier la dirección exacta de su almacén en China y cómo debe rotular el proveedor las cajas.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 5 -->
+<section class="module">
+  <div class="kicker">Módulo 5</div>
+  <h2>🔎 Encontrar proveedores confiables</h2>
+  <p class="lead">Tómate de 1 a 3 días. Cotiza con <b>al menos 5 proveedores</b> antes de pedir una muestra.</p>
+
+  <h3>🛠️ Configura Alibaba</h3>
+  <ol>
+    <li>Moneda en <b>USD</b> e idioma en <b>inglés</b> (la traducción al español es mala). Usa el traductor si no hablas inglés.</li>
+    <li>Busca el producto en inglés (ej.: <i>yoga mat</i>, <i>phone case</i>, <i>motorcycle LED light</i>).</li>
+    <li>Activa los filtros <b>Verified Supplier</b> (proveedor verificado) y <b>Trade Assurance</b>.</li>
+  </ol>
+  <div class="box tip"><div class="t">🛡️ ¿Qué es Trade Assurance?</div>Alibaba <b>retiene tu pago</b> y no se lo entrega al proveedor hasta que confirmas que todo llegó como se acordó. Es tu seguro contra estafas. Solo funciona si pagas <b>dentro</b> de la plataforma.</div>
+
+  <h3>✅ Checklist del proveedor</h3>
+  <table>
+    <tr><th>Señal</th><th>Bien</th><th>Alerta</th></tr>
+    <tr><td>Años en Alibaba</td><td>4 años o más</td><td>Menos de 2</td></tr>
+    <tr><td>Ventas registradas</td><td>Cientos de miles o millones de USD</td><td>5 años y apenas $50.000</td></tr>
+    <tr><td>Calificación</td><td>4,8 o más, con muchas reseñas</td><td>Pocas reseñas o comentarios vacíos</td></tr>
+    <tr><td>Tipo</td><td>Fabricante especializado en tu nicho</td><td>"Vende de todo"</td></tr>
+    <tr><td>Verificación</td><td>Auditoría de SGS, TÜV o Bureau Veritas descargable</td><td>Sin informe</td></tr>
+    <tr><td>Respuesta</td><td>En menos de 3–6 horas</td><td>Días sin responder</td></tr>
+  </table>
+
+  <h3>🏭 Fabricante vs. trading company</h3>
+  <div class="grid2">
+    <div class="box yes"><div class="t">🏭 Fabricante</div>Mejor precio y calidad constante. Ideal cuando compras volumen.</div>
+    <div class="box tip"><div class="t">🏪 Trading company</div>Más caro, pero acepta pedidos pequeños y mezcla productos. Útil al empezar.</div>
+  </div>
+
+  <h3>🧩 ODM vs. OEM</h3>
+  <p><b>ODM</b>: productos con diseño ya listo. Es lo que comprarás casi siempre. <b>OEM</b>: fabricar tu propio diseño. Es para marca propia, más adelante.</p>
+
+  <div class="box ve"><div class="t">🇻🇪 Ajuste Venezuela: 1688 con agente</div>
+    <b>1688.com</b> es el mercado mayorista interno de China, con precios más bajos que Alibaba ✅. Pero solo acepta pagos chinos (Alipay o banco chino), así que necesitas un <b>agente de compras</b> que pague por ti en yuanes ✅. Pide <b>por escrito</b> su comisión y el tipo de cambio que usa. Muchos couriers con almacén en China ofrecen este servicio.
+  </div>
+
+  <div class="box case"><div class="t">📒 Caso práctico: dos proveedores, misma funda (ilustrativo)</div>
+    Proveedor A: 10 años, $2,8 M en ventas, 4,9 ⭐ con 1.000 reseñas, verificado por SGS, $0,68/u.<br>
+    Proveedor B: 2 años, sin reseñas, no verificado, $0,45/u, "pago solo por transferencia fuera de Alibaba".<br>
+    <b>Decisión:</b> A. Los $0,23 de diferencia en 200 fundas son $46. Una estafa con B te cuesta los $90 completos más el tiempo.
+  </div>
+
+  <h3>📝 Tarea 5</h3>
+  <ul class="check">
+    <li>Crea tu cuenta en Alibaba y encuentra 5 proveedores de tu producto principal que pasen el checklist.</li>
+    <li>Regístrate con un agente de 1688 y compara su precio con el de Alibaba.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 6 -->
+<section class="module">
+  <div class="kicker">Módulo 6</div>
+  <h2>🤝 Negociar como un profesional</h2>
+  <p class="lead">La regla de oro: <b>ganar-ganar</b>. Buscas una relación de años, no una sola compra.</p>
+
+  <h3>✉️ Primer mensaje (cópialo y adáptalo)</h3>
+  <pre>Hello, my name is [Tu nombre], I am the buyer of [Tu negocio] in Venezuela.
+I am interested in [producto + link].
+1. What is the MOQ (minimum order quantity)?
+2. What is the unit price for 100 / 300 / 500 pcs?
+3. Can you send a sample? What is the sample cost?
+4. Can you deliver to my forwarder's warehouse in Guangzhou? Cost?
+5. What is the production time?
+6. What is the HS code of this product?
+Thank you!</pre>
+
+  <h3>🧠 Reglas de negociación</h3>
+  <ul>
+    <li>💬 Pide un descuento razonable: alrededor de <b>2–5%</b>. Lo que te den está bien.</li>
+    <li>🧪 Por una muestra <b>no</b> pidas rebaja. Negocia cuando hagas el pedido grande.</li>
+    <li>🔁 Si no bajan ahora: "Ok, pago este precio, pero en mi segundo pedido ¿me haces un descuento?". Suelen aceptar.</li>
+    <li>⏰ La diferencia horaria con China es de unas 12 horas: te responderán de noche.</li>
+  </ul>
+
+  <div class="box no"><div class="t">❌ NO</div>Regatear sin parar. El proveedor te pondrá en su lista negra o, peor, <b>te dirá que sí y bajará la calidad</b>. Esa mala calidad la pagas tú con clientes molestos en tu grupo.</div>
+  <div class="box yes"><div class="t">✅ SÍ</div>Cuidar la relación calidad-precio. Un proveedor que te responde rápido y te repone defectos vale más que 5 centavos menos por unidad.</div>
+
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad</div>Al pasar de 100 a 500–1.000 unidades, el precio por unidad suele bajar notablemente ❓ por la escala de producción. Un proveedor con el que ya tienes historial te da ese precio sin pelear. Por eso la relación vale más que el regateo.</div>
+
+  <h3>📝 Tarea 6</h3>
+  <ul class="check">
+    <li>Envía el primer mensaje a tus 5 proveedores.</li>
+    <li>Arma una tabla: precio por cantidad, MOQ, costo de muestra, tiempo de producción, código HS.</li>
+    <li>Pide la muestra a los 2 mejores.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 7 -->
+<section class="module">
+  <div class="kicker">Módulo 7</div>
+  <h2>🧾 Documentos: tu protección legal</h2>
+  <p class="lead">Lo que acordaste por chat <b>no vale</b>. Lo que está en la proforma, sí.</p>
+
+  <h3>1️⃣ Proforma invoice (factura proforma)</h3>
+  <p>Te la envían <b>antes de pagar</b>. Revisa durante 1–3 días:</p>
+  <ul class="check">
+    <li>Datos del proveedor y los tuyos</li>
+    <li>Lista de productos: modelo, color, cantidad, precio unitario</li>
+    <li>Condiciones de pago (100% o 30% de anticipo + 70% antes de enviar)</li>
+    <li>Entrega: dirección del almacén de tu courier y fecha</li>
+    <li>Empaque y etiquetas</li>
+  </ul>
+
+  <h3>2️⃣ Commercial invoice (factura comercial)</h3>
+  <p>Llega <b>sellada después del anticipo</b>. Acompaña tu mercancía por aduana. El nombre del beneficiario del pago debe ser <b>el mismo</b> que aparece en la factura.</p>
+
+  <h3>3️⃣ Contrato o cláusulas adicionales</h3>
+  <p>Para diseños propios (no copiar tu diseño) o para garantías ("reponer las piezas defectuosas en el próximo pedido"). Puede ir como página extra firmada por ambos en la factura comercial.</p>
+
+  <div class="box ve"><div class="t">🇻🇪 Ajuste Venezuela</div>
+    Pide que la factura comercial muestre el <b>valor real</b>. Subdeclarar para "pagar menos" es un riesgo: si el SENIAT considera que el valor es mayor, recalcula los impuestos o cambia la modalidad del envío ⚠️. Guarda todo en PDF: lo necesitarás cuando te formalices.
+  </div>
+
+  <div class="box case"><div class="t">📒 Caso práctico: el color equivocado (ilustrativo)</div>
+    Pedro acordó por chat 200 fundas "50% negras y 50% transparentes". La proforma decía "assorted colors" (colores surtidos) y no la revisó. Llegaron rosadas y verdes. Sin la proforma correcta, Trade Assurance no pudo ayudarle.<br>
+    <b>Lección:</b> 10 minutos revisando la proforma te ahorran un lote completo.
+  </div>
+
+  <h3>📝 Tarea 7</h3>
+  <ul class="check">
+    <li>Cuando tengas tu primera proforma, revísala con este checklist antes de pagar.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 8 -->
+<section class="module">
+  <div class="kicker">Módulo 8</div>
+  <h2>💳 Pagar desde Venezuela sin perder tu dinero</h2>
+  <p class="lead">El curso original recomienda PayPal o tarjeta para pedidos pequeños y transferencia bancaria para grandes. En Venezuela el mapa es otro.</p>
+
+  <table>
+    <tr><th>Método</th><th>Dónde</th><th>Protección</th><th>Cuándo</th></tr>
+    <tr><td>💳 Tarjeta internacional</td><td>Alibaba (enlace de pago oficial)</td><td>✅ Trade Assurance</td><td>Siempre con proveedores nuevos</td></tr>
+    <tr><td>🅿️ PayPal</td><td>Alibaba</td><td>✅ Trade Assurance</td><td>Si tienes una cuenta funcional</td></tr>
+    <tr><td>🪙 USDT (Binance)</td><td>Agentes de 1688, couriers, proveedores directos</td><td>❌ Ninguna ✅</td><td>Solo con quien ya completaste una operación</td></tr>
+    <tr><td>🏦 Transferencia internacional</td><td>Pedidos grandes</td><td>⚠️ Solo si es dentro de Alibaba</td><td>Etapa de $5.000+, si tienes cuenta en el exterior</td></tr>
+  </table>
+
+  <div class="box no"><div class="t">❌ NO</div>
+    <ul>
+      <li>Pagar fuera de Alibaba porque el proveedor "te hace descuento". Pierdes la protección.</li>
+      <li>Pagar a una cuenta a nombre distinto del que aparece en la factura.</li>
+      <li>Pagar un curso o servicio a una cuenta personal o a un Pay ID de Binance sin verificar. Es un patrón típico de estafa.</li>
+    </ul>
+  </div>
+
+  <div class="box tip"><div class="t">💸 Las comisiones existen</div>Alibaba cobra una comisión por pagar con tarjeta o PayPal. En el ejemplo del curso original eran unos <b>$25</b> en un pedido pequeño. Inclúyela en tu calculadora (Módulo 10).</div>
+
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad</div>Con pedidos grandes, la comisión de la tarjeta (un % del total) empieza a doler. Ahí vale la pena negociar con tu agente de carga un <b>pago consolidado en USDT</b>, que ya sabes que es confiable, o una cuenta en el exterior para transferencias.</div>
+
+  <h3>📝 Tarea 8</h3>
+  <ul class="check">
+    <li>Haz una compra pequeña de prueba en AliExpress con tu tarjeta para confirmar que funciona.</li>
+    <li>Verifica tu cuenta de Binance y practica una compra P2P pequeña.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 9 -->
+<section class="module">
+  <div class="kicker">Módulo 9</div>
+  <h2>🔬 Calidad: muestras, defectos e inspecciones</h2>
+  <p class="lead">El paso que todos se saltan… hasta que reciben 200 piezas malas.</p>
+
+  <h3>🧪 Al empezar: la muestra lo es todo</h3>
+  <ol>
+    <li>Pide 1–3 muestras al proveedor (o cómpralas en AliExpress del mismo modelo).</li>
+    <li>Pruébalas como un cliente exigente: úsalas, déjalas caer, mírales las costuras.</li>
+    <li>Antes del envío del lote, pide al proveedor <b>fotos y video</b> del lote ya empacado.</li>
+  </ol>
+
+  <h3>📐 Límite de defectos aceptable (AQL)</h3>
+  <table>
+    <tr><th>Tipo de defecto</th><th>Ejemplo</th><th>Tolerancia</th></tr>
+    <tr><td>🟢 Menor</td><td>Caja rayada</td><td>1–2%</td></tr>
+    <tr><td>🟡 Mayor</td><td>Rayón visible en el producto</td><td>≤ 0,5%</td></tr>
+    <tr><td>🔴 Crítico</td><td>No funciona</td><td>0%</td></tr>
+  </table>
+
+  <h3>🏢 Inspección profesional</h3>
+  <p>Hay 4 momentos: preproducción, durante la producción, producto terminado y carga del contenedor. Empresas conocidas: <b>QIMA, TÜV, Bureau Veritas, SGS</b>.</p>
+  <div class="box ve"><div class="t">🇻🇪 Ajuste Venezuela</div>
+    Para tus primeros pedidos de 100–300 piezas, una inspección profesional <b>no se justifica</b>: puede costar más que la mercancía ❓. Alternativa: muchos couriers con almacén en China revisan, cuentan y fotografían tu mercancía por un pequeño costo. Pregúntalo en la cotización.
+  </div>
+
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad</div>Cuando un pedido pase de unos <b>$3.000–5.000</b>, una inspección de producto terminado es un seguro barato frente a lo que arriesgas ❓. Un 1% de defectos críticos en 2.000 piezas son 20 clientes molestos en tu grupo.</div>
+
+  <h3>📝 Tarea 9</h3>
+  <ul class="check">
+    <li>Recibe tus muestras y califícalas del 1 al 10.</li>
+    <li>Escribe tus límites de defectos y envíaselos al proveedor elegido.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 10 -->
+<section class="module">
+  <div class="kicker">Módulo 10</div>
+  <h2>🛃 Aduana, códigos HS e impuestos</h2>
+  <p class="lead">Lo que vas a pagar en Venezuela depende del régimen (courier o formal) y del código arancelario de tu producto.</p>
+
+  <h3>🔢 Código HS</h3>
+  <p>Es el código internacional de cada producto. Dos formas de conseguirlo:</p>
+  <ol>
+    <li>Pídeselo al proveedor (lo incluiste en tu primer mensaje).</li>
+    <li>Busca en Google "HS code + producto" (ej.: <i>HS code phone case</i>). Confírmalo con tu courier o agente aduanal.</li>
+  </ol>
+  <div class="box ve"><div class="t">🇻🇪 Ajuste Venezuela</div>El curso original usa una herramienta de México para buscar aranceles. En Venezuela rige el <b>Arancel de Aduanas de 2024</b>, modificado por el <b>Decreto 5.198, vigente desde el 5 de enero de 2026</b> ⚠️. Los aranceles van del <b>5% al 35% sobre el valor CIF</b> y el IVA general es del <b>16%</b> ⚠️. Para confirmar la tasa de tu código, consulta a tu courier o a un agente aduanal.</div>
+
+  <h3>📦 Régimen courier (tus primeras importaciones)</h3>
+  <table>
+    <tr><th>Valor del envío</th><th>Qué pasa</th></tr>
+    <tr><td>Hasta $100 FOB, uso personal</td><td>⚠️ Exento de arancel e IVA (Resolución SENIAT 3.283, citada por fuentes no oficiales)</td></tr>
+    <tr><td>$101 – $2.000</td><td>⚠️ "Alto valor": recargo de cerca del 35%, normalmente cobrado <b>en origen</b> por el courier</td></tr>
+    <tr><td>Más de $2.000</td><td>Importación formal: RIF, registro aduanero, agente aduanal</td></tr>
+  </table>
+  <div class="box yes"><div class="t">✅ SÍ</div>En las etapas de $1.000 y $2.000, trabaja con un courier que cotice <b>todo incluido</b>: él gestiona la aduana y tú sabes el costo final antes de comprar.</div>
+
+  <h3>🧮 Cálculo de una importación formal (en USD)</h3>
+  <table>
+    <tr><th>Concepto</th><th class="num">USD</th></tr>
+    <tr><td>Valor de la mercancía (FOB)</td><td class="num">3.000,00</td></tr>
+    <tr><td>+ Flete marítimo</td><td class="num">450,00</td></tr>
+    <tr><td>+ Seguro</td><td class="num">30,00</td></tr>
+    <tr><th>= Valor CIF (base del arancel)</th><th class="num">3.480,00</th></tr>
+    <tr><td>Arancel (supuesto 20% ❓ × CIF)</td><td class="num">696,00</td></tr>
+    <tr><td>Base del IVA (CIF + arancel)</td><td class="num">4.176,00</td></tr>
+    <tr><td>IVA 16% ⚠️</td><td class="num">668,16</td></tr>
+    <tr><th>Total impuestos</th><th class="num">1.364,16</th></tr>
+    <tr><th>Costo puesto en puerto (sin agente ni flete interno)</th><th class="num">4.844,16</th></tr>
+  </table>
+  <p class="small">Falta sumar honorarios del agente aduanal, tasas portuarias y flete hasta Barinas ❓. El porcentaje de arancel depende de tu código HS.</p>
+
+  <h3>🧮 Calculadora de costo para courier (la que usarás al empezar)</h3>
+  <pre>Costo por unidad puesto en Barinas =
+  (FOB + comisión del agente + flete todo incluido + comisión de pago + empaque)
+  ÷ unidades vendibles (descontando 5% de mermas)
+
+Precio de venta mínimo = costo por unidad × 2,5</pre>
+
+  <div class="box case"><div class="t">📒 Caso práctico: 200 fundas (tarifas supuestas ❓)</div>
+    200 × $0,60 = $120 · agente 8% = $9,60 · 10 kg × $15/kg = $150 · pago 2% = $2,40 · empaque $10<br>
+    <b>Total $292 ÷ 190 vendibles = $1,54 por unidad → venta a unos $4 → ganancia bruta de unos $468.</b><br>
+    Fíjate: el flete ($150) costó <b>más que las fundas</b> ($120).
+  </div>
+
+  <h3>📝 Tarea 10</h3>
+  <ul class="check">
+    <li>Consigue el código HS de tus 2 productos principales.</li>
+    <li>Llena la calculadora con las tarifas reales de tu mejor courier.</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 11 -->
+<section class="module">
+  <div class="kicker">Módulo 11</div>
+  <h2>📲 Vender desde Barinas</h2>
+  <p class="lead">Tu ventaja: llevar mercancía a pueblos donde no llega. Tu reto: que te paguen antes de enviar.</p>
+
+  <h3>🏗️ Construye la audiencia antes de que llegue la carga</h3>
+  <ol>
+    <li><b>Grupo de Facebook</b> ("Ofertas importadas Barinas" o similar). Meta: 300 miembros antes del primer lote.</li>
+    <li><b>WhatsApp Business</b> con catálogo, estados diarios y lista de difusión.</li>
+    <li><b>Contenido</b>: video corto de cada producto (abrir la caja, probarlo). Lo real vende.</li>
+    <li><b>Encuestas</b> semanales: "¿Qué traigo en el próximo lote?"</li>
+  </ol>
+
+  <h3>🤝 Confianza = ventas</h3>
+  <ul>
+    <li>📸 Publica cada guía de MRW enviada (con el nombre del cliente tapado).</li>
+    <li>⭐ Pide una foto o un audio a cada cliente satisfecho y compártelo.</li>
+    <li>💬 Responde rápido. En el interior, quien contesta primero vende.</li>
+  </ul>
+
+  <h3>🚛 Despacho al interior</h3>
+  <ul>
+    <li>MRW, Tealca, Zoom o encomienda en autobús. Cotiza 1 kg y 5 kg a Socopó, Santa Bárbara, Ciudad Bolivia, Barinitas, Sabaneta, Guanare y San Fernando ❓.</li>
+    <li>Regla clara: el envío lo paga el cliente ("cobro a destino") o va sumado al precio.</li>
+    <li>Cobro por <b>pago móvil o USDT antes de despachar</b>.</li>
+  </ul>
+
+  <h3>📅 Calendario comercial</h3>
+  <table>
+    <tr><th>Temporada</th><th>Pedir en</th><th>Vía</th></tr>
+    <tr><td>🎄 Navidad</td><td>Agosto–septiembre (marítimo) o antes del 10 de noviembre (aéreo)</td><td>🚢 / ✈️</td></tr>
+    <tr><td>🎭 Carnaval y reposición</td><td>Diciembre–enero</td><td>🚢</td></tr>
+    <tr><td>💐 Día de las Madres (mayo)</td><td>Marzo</td><td>🚢 / ✈️</td></tr>
+    <tr><td>🎒 Temporada escolar (septiembre)</td><td>Junio–julio</td><td>🚢</td></tr>
+  </table>
+
+  <div class="box scale"><div class="t">🚀 Dato de escalabilidad: revendedores</div>Un revendedor en cada pueblo multiplica tus ventas sin que tengas que publicar más. Ejemplo: 5 revendedores que te compran $150 al mes cada uno, con un 20% de descuento, son <b>$750 al mes</b> de ventas que se repiten. Es la base de la etapa de $2.000.</div>
+
+  <h3>📝 Tarea 11</h3>
+  <ul class="check">
+    <li>Publica todos los días durante 3 semanas. Mide cuántos miembros y mensajes recibes.</li>
+    <li>Cotiza MRW desde Barinas a 5 pueblos.</li>
+    <li>Identifica 3 posibles revendedores (manicuristas, tiendas de celulares, talleres de motos).</li>
+  </ul>
+</section>
+
+<!-- MÓDULO 12 -->
+<section class="module">
+  <div class="kicker">Módulo 12</div>
+  <h2>🚀 La escalera: de $1.000 a $10.000+</h2>
+  <p class="lead">Así se ve el crecimiento cuando reinviertes. Son <b>escenarios</b> calculados, no promesas. Tu resultado depende de tu producto, tu velocidad de venta y tus costos reales.</p>
+
+  <h3>📈 Tres escenarios (ciclos de 2 meses, reinvirtiendo todo)</h3>
+  <table>
+    <tr><th>Mes</th><th class="num">😐 20% por ciclo</th><th class="num">🙂 40% por ciclo</th><th class="num">🤩 60% por ciclo</th></tr>
+    <tr><td>0</td><td class="num">$1.000</td><td class="num">$1.000</td><td class="num">$1.000</td></tr>
+    <tr><td>2</td><td class="num">$1.200</td><td class="num">$1.400</td><td class="num">$1.600</td></tr>
+    <tr><td>4</td><td class="num">$1.440</td><td class="num">$1.960</td><td class="num">$2.560</td></tr>
+    <tr><td>6</td><td class="num">$1.728</td><td class="num">$2.744</td><td class="num">$4.096</td></tr>
+    <tr><td>8</td><td class="num">$2.074</td><td class="num">$3.842</td><td class="num">$6.554</td></tr>
+    <tr><td>10</td><td class="num">$2.488</td><td class="num">$5.378</td><td class="num">$10.486</td></tr>
+    <tr><td>12</td><td class="num">$2.986</td><td class="num">$7.530</td><td class="num">$16.777</td></tr>
+  </table>
+  <p class="small">% = ganancia neta sobre el capital invertido en cada ciclo, después de flete, aduana, publicidad, MRW y mercancía sin vender. Supone que no retiras dinero. Si vives del negocio, tu curva será más lenta: define cuánto retiras desde el inicio.</p>
+
+  <h3>🪜 Los escalones</h3>
+  <div class="box case"><div class="t">🥉 Escalón 1: $1.000 · "Aprender pagando poco"</div>
+    $350 de mercancía (3–4 productos) · $250 de flete y aduana aérea · $100 de publicidad y empaque · <b>$300 de reserva</b>.<br>
+    🎯 Meta: vender el 70% en 30–45 días. Encontrar <b>2 productos que se vendan solos</b> y un courier confiable.
+  </div>
+  <div class="box case"><div class="t">🥈 Escalón 2: $2.000 · "Del avión al barco"</div>
+    Primer marítimo consolidado con los ganadores + 1–2 líneas nuevas. 70% marítimo, 30% aéreo para reponer. <b>3–5 revendedores</b>.<br>
+    🎯 Meta: rotar el inventario cada 45–60 días. Ganancia neta de $400–700 al mes ❓.
+  </div>
+  <div class="box case"><div class="t">🥇 Escalón 3: $5.000 · "Hacerse empresa"</div>
+    RIF y firma personal. 1688 directo con agente, inspección en almacén. Venta al mayor a tiendas del interior.<br>
+    🎯 Meta: ingresos estables durante 3 meses seguidos.
+  </div>
+  <div class="box scale"><div class="t">🏆 Escalón 4: $10.000+ · "Tu marca"</div>
+    Productos OEM con tu logo y empaque, contenedor compartido con otros importadores, distribución en varios estados. Aquí sí vale la pena un curso avanzado (logística, comercio exterior) o un diplomado. El IESA, por ejemplo, acepta Cashea ✅.
+  </div>
+
+  <h3>🚦 Señales para subir de escalón</h3>
+  <ul class="check">
+    <li>El capital llegó a la meta <b>sin</b> tocar la reserva</li>
+    <li>Tienes al menos 2 productos con reventa constante</li>
+    <li>Tu courier entregó al menos 2 envíos sin problemas</li>
+    <li>Sabes tu costo puesto en Barinas sin mirar la calculadora</li>
+  </ul>
+
+  <h3>⚠️ Riesgos y cómo reducirlos</h3>
+  <table>
+    <tr><th>Riesgo</th><th>Mitigación</th></tr>
+    <tr><td>Estafa del proveedor</td><td>Trade Assurance + tarjeta + muestras</td></tr>
+    <tr><td>Courier pierde o retiene la carga</td><td>Referencias en grupos, seguro, repartir entre 2 couriers</td></tr>
+    <tr><td>No se vende</td><td>Preventa, lotes pequeños</td></tr>
+    <tr><td>Cambian las reglas del SENIAT</td><td>Tarifa todo incluido, no subdeclarar, revisar cada trimestre</td></tr>
+    <tr><td>El flete se come el margen</td><td>Calculadora antes de cada compra</td></tr>
+    <tr><td>Bolívar inestable</td><td>Precios y cobro en USD o USDT</td></tr>
+  </table>
+</section>
+
+<!-- CIERRE -->
+<section class="module">
+  <div class="kicker">Cierre</div>
+  <h2>🏁 Tu plan de los próximos 30 días</h2>
+
+  <table>
+    <tr><th>Semana</th><th>Qué haces</th><th>Resultado</th></tr>
+    <tr><td>1</td><td>Módulos 1–4 · grupo de Facebook · encuesta · cotizar 3 couriers</td><td>Grupo activo y tabla de couriers</td></tr>
+    <tr><td>2</td><td>Módulos 5–6 · 5 proveedores · pedir muestras</td><td>Muestras en camino</td></tr>
+    <tr><td>3</td><td>Módulos 7–10 · calculadora con datos reales · preventa</td><td>Productos validados con apartados</td></tr>
+    <tr><td>4</td><td>Módulo 11 · primer lote · MRW cotizado · revendedores</td><td>🎉 Primera importación en camino</td></tr>
+  </table>
+
+  <div class="box tip"><div class="t">🧭 ¿Necesitas un curso pagado?</div>
+    No para empezar. Con este material, contenido gratuito ordenado (YouTube primero) y tu primera importación de prueba tienes lo necesario. Un curso de pago vale la pena <b>después</b> de tu primera importación, cuando ya sepas qué preguntar. Exige casos reales hacia Venezuela, soporte y un precio razonable.
+  </div>
+
+  <div class="box no"><div class="t">❌ Sé crítico con quien te vende algo</div>
+    El curso gratuito en el que se basa este material termina ofreciendo su propia agencia aduanal. No tiene nada de malo, pero es un recordatorio: <b>casi todo el contenido gratis vende algo</b>. Compara siempre con 2–3 opciones.
+  </div>
+
+  <h3>📚 Fuentes consultadas</h3>
+  <ul class="small">
+    <li>Curso gratuito "Cómo importar de China", Andrés Valenzuela (YouTube): estructura base del curso.</li>
+    <li>IESA – cursos y pago con Cashea: iesa.edu.ve/cursos-y-programas</li>
+    <li>Fletes: es.basenton.com · dantful.us (2026) · es.ubestshipping.com · goodhopefreight.com (2026) · es.dtfulogistics.com</li>
+    <li>Aduana: rateships.com/es/customs/venezuela · decomprasporchina.com · lega.law (LEĜA In-Depth 34) · fletesmar.com (2026) · alaslatinas.com</li>
+    <li>Pagos y 1688: chilat.com · tonlexing.com · victorrecargasonline.com</li>
+    <li>Cashea: fedecamarasradio.com · debatesiesa.com</li>
+  </ul>
+  <p class="small">Todas las cifras de flete, impuestos y tarifas cambian. Confírmalas con una cotización por escrito antes de cada compra.</p>
+
+  <p style="text-align:center; font-size:18pt; margin-top:30px;">🇨🇳 ➜ 📦 ➜ 🇻🇪 ➜ 💰</p>
+  <p style="text-align:center;" class="lead">El mejor curso es tu primera importación. Hazla pequeña, hazla bien y hazla pronto.</p>
+</section>
+
+</body>
+</html>
