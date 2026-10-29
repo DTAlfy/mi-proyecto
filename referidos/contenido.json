@@ -1,0 +1,410 @@
+{
+  "es": {
+    "guia": {
+      "archivo": "Guia-Ensena-Tu-Materia-ES.pdf",
+      "titulo_doc": "Enseña lo que sabes, cobra en dólares",
+      "portada": {
+        "kicker": "GUÍA GRATUITA",
+        "titulo": "Enseña lo que sabes. Cobra en dólares.",
+        "subtitulo": "Cómo empezar a enseñar tu materia online en Preply, explicado por un tutor con más de 14.000 clases dadas.",
+        "por": "Por {nombre}"
+      },
+      "secciones": [
+        {
+          "titulo": "Quién soy y por qué escribí esta guía",
+          "parrafos": [
+            "Llevo más de 14.000 clases online en Preply. Hoy genero entre 4.000 y 6.000 dólares al mes enseñando, pero no empecé así: me tomó tiempo aprender qué hace que un alumno reserve, se quede y recomiende.",
+            "Lo que aprendí no depende de la materia. Un buen perfil, un precio bien pensado y una clase de prueba que convence funcionan igual en matemáticas, música, química o programación.",
+            "Preply está creciendo más allá de los idiomas y busca tutores de otras materias. Por eso escribí esta guía: para que no tengas que aprender todo por prueba y error como yo."
+          ],
+          "nota": "Mis ingresos son mi caso personal y no una promesa. Los resultados de cada tutor dependen de su materia, su dedicación y el mercado."
+        },
+        {
+          "titulo": "Por qué enseñar en Preply",
+          "tarjetas": [
+            ["Los alumnos llegan a ti", "Preply trae alumnos de todo el mundo. Tú no tienes que salir a buscarlos."],
+            ["Tú pones el precio", "Decides cuánto cobras por clase y lo subes a medida que creces."],
+            ["Tú eliges el horario", "Abres solo las horas que te convienen, desde cualquier lugar."],
+            ["Ingresos recurrentes", "Con las suscripciones, un buen alumno es un ingreso que se repite cada semana."]
+          ],
+          "parrafos": [
+            "Materias con demanda: matemáticas, química, física, programación, inteligencia artificial, música, oratoria, arte, preparación de exámenes y muchas más."
+          ]
+        },
+        {
+          "titulo": "¿Calificas para la sesión gratuita de 30 minutos?",
+          "parrafos": [
+            "Ofrezco una sesión gratuita de 30 minutos a quienes se unen a Preply como tutores a través de mi enlace. Para recibirla debes cumplir todo esto:"
+          ],
+          "checklist": [
+            "Tienes nacionalidad de Estados Unidos o del Reino Unido.",
+            "Nunca te has registrado en Preply.",
+            "Vas a enseñar una materia que no sea idiomas.",
+            "Completas tu registro antes del {fecha_limite}."
+          ],
+          "nota": "¿No cumples algún punto? Escríbeme a {contacto}. Igual puedo ayudarte con mi programa completo."
+        },
+        {
+          "titulo": "Tu sesión gratis en 3 pasos",
+          "pasos": [
+            ["Regístrate como tutor con mi enlace", "Crea tu cuenta de tutor en Preply usando el botón de abajo. Si te registras sin el enlace, no puedo ofrecerte la sesión gratuita."],
+            ["Reserva tu sesión en TidyCal", "Elige el día y la hora que te queden mejor. El calendario se ajusta solo a tu zona horaria. Usa el mismo email con el que te registraste en Preply."],
+            ["Conéctate a la videollamada", "Recibirás un email de confirmación con el enlace de la llamada. Ten a mano tu perfil de Preply, aunque esté a medias."]
+          ],
+          "botones": [
+            ["1. Regístrate en Preply", "referral_url"],
+            ["2. Reserva tu sesión gratis", "tidycal_url"]
+          ]
+        },
+        {
+          "titulo": "Qué te llevas de la sesión",
+          "tarjetas": [
+            ["Revisión de tu perfil", "Título, descripción y foto, con cambios concretos para mejorarlos."],
+            ["Tu video de presentación", "Una estructura de 60 a 90 segundos que genera confianza."],
+            ["Tu precio de arranque", "Cuánto cobrar al inicio y cuándo subir."],
+            ["Tus primeras 2 semanas", "Un plan claro para conseguir tus primeras clases de prueba."]
+          ]
+        },
+        {
+          "titulo": "Checklist: perfil que consigue alumnos",
+          "checklist": [
+            "Foto profesional: de frente, buena luz, fondo limpio y sonriendo.",
+            "Título específico. En vez de «Profesor de matemáticas», escribe «Álgebra y SAT Math: 10 años ayudando a adolescentes a aprobar con confianza».",
+            "Video de 60 a 90 segundos: quién eres, a quién ayudas, cómo es tu clase y una invitación a reservar.",
+            "Descripción enfocada en el alumno: qué problema resuelves y qué resultado obtendrá.",
+            "Calendario abierto con suficientes horas, sobre todo en las primeras semanas.",
+            "Responde los mensajes rápido. Los alumnos suelen reservar con quien contesta primero."
+          ]
+        },
+        {
+          "titulo": "3 errores que frenan a los tutores nuevos",
+          "pasos": [
+            ["Un perfil genérico", "Si tu perfil podría ser el de cualquiera, nadie te elige. Sé específico sobre a quién ayudas."],
+            ["Un precio mal pensado", "Ni regalar tu tiempo ni cobrar como experto sin reseñas. El precio se construye por etapas."],
+            ["Improvisar la clase de prueba", "La clase de prueba es tu momento de venta. Necesita estructura: diagnóstico, una mini victoria y un plan."]
+          ]
+        }
+      ],
+      "cierre": {
+        "titulo": "Empieza hoy",
+        "texto": "El programa de referidos tiene fecha límite: el registro debe completarse antes del {fecha_limite}. Regístrate y reserva tu sesión gratis.",
+        "transparencia": "Transparencia: si te registras con mi enlace y das tu primera clase de suscripción, Preply me paga un bono por referido. A ti no te cuesta nada. No soy empleado de Preply ni hablo en su nombre."
+      }
+    },
+    "deck": {
+      "archivo": "Sesion-Gratis-30min-ES.pptx",
+      "slides": {
+        "portada": {
+          "titulo": "De experto a tutor online",
+          "subtitulo": "Tu plan de arranque en Preply · Sesión de 30 minutos",
+          "por": "{nombre}",
+          "notas": "Bienvenida. Agradece que se hayan registrado con tu enlace. Pregunta su nombre, su materia y desde dónde se conectan."
+        },
+        "agenda": {
+          "titulo": "Lo que haremos en 30 minutos",
+          "items": [
+            ["5 min", "Tú y tu materia"],
+            ["10 min", "Tu perfil: foto, título y video"],
+            ["5 min", "Tu precio de arranque"],
+            ["5 min", "La clase de prueba que convierte"],
+            ["5 min", "Próximos pasos y preguntas"]
+          ],
+          "notas": "Controla el tiempo. Si la persona aún no completó su perfil, dedica más tiempo al bloque de perfil y menos al de precio."
+        },
+        "historia": {
+          "titulo": "Por qué te puedo ayudar",
+          "stats": [
+            ["14.000+", "clases dadas en Preply"],
+            ["$4K–6K", "ingreso mensual actual*"],
+            ["1 método", "que sirve para cualquier materia"]
+          ],
+          "nota": "*Mi caso personal. No es una garantía de resultados.",
+          "notas": "Cuenta tu historia en 1 minuto: cómo empezaste, qué te costó aprender y qué cambió cuando entendiste el perfil, el precio y la clase de prueba."
+        },
+        "porque": {
+          "titulo": "Por qué Preply para tu materia",
+          "tarjetas": [
+            ["Alumnos que llegan solos", "Preply trae la demanda. Tú te enfocas en enseñar."],
+            ["Tu precio, tus reglas", "Tú decides cuánto cobras y cuándo subes."],
+            ["Tu horario", "Abre solo las horas que te convienen."],
+            ["Suscripciones", "Ingresos que se repiten cada semana."]
+          ],
+          "notas": "Pregunta: ¿qué te atrae más de enseñar online? Usa su respuesta para motivar el resto de la sesión."
+        },
+        "perfil": {
+          "titulo": "Los 3 pilares de un perfil que vende",
+          "tarjetas": [
+            ["Foto", "De frente, buena luz, fondo limpio y sonriendo. Es lo primero que se ve."],
+            ["Título", "Específico: materia, a quién ayudas y qué resultado das."],
+            ["Video", "De 60 a 90 segundos: quién eres, a quién ayudas, cómo es tu clase y una invitación a reservar."]
+          ],
+          "notas": "Abre su perfil en pantalla compartida y revisa los tres pilares en vivo. Anota 2 o 3 cambios concretos."
+        },
+        "titular": {
+          "titulo": "Tu título: antes y después",
+          "antes_label": "Antes",
+          "antes": "Profesor de matemáticas",
+          "despues_label": "Después",
+          "despues": "Álgebra y SAT Math: 10 años ayudando a adolescentes a aprobar con confianza",
+          "formula": "Fórmula: materia + a quién ayudas + resultado",
+          "notas": "Escriban juntos el título de su perfil usando la fórmula. Haz que lo pegue en Preply durante la sesión."
+        },
+        "precio": {
+          "titulo": "Tu precio se construye por etapas",
+          "etapas": [
+            ["1 · Arranque", "Precio competitivo para conseguir tus primeras clases y reseñas."],
+            ["2 · Crecimiento", "Con tus primeras reseñas positivas, subes de forma gradual."],
+            ["3 · Premium", "Agenda llena y buenas reseñas: cobras lo que vale tu experiencia."]
+          ],
+          "notas": "Revisa con la persona los precios de otros tutores de su materia en Preply y elijan juntos un precio de arranque."
+        },
+        "prueba": {
+          "titulo": "La clase de prueba que convierte",
+          "pasos": [
+            ["Diagnóstico", "Pregunta qué necesita y por qué ahora."],
+            ["Mini victoria", "Enséñale algo útil que pueda aplicar ya."],
+            ["Plan", "Muéstrale el camino hacia su objetivo."],
+            ["Propuesta", "Invítalo a suscribirse para seguir ese plan."]
+          ],
+          "notas": "Este es el punto más importante: aquí se gana o se pierde al alumno. Si hay tiempo, hagan una simulación de 2 minutos."
+        },
+        "plan": {
+          "titulo": "Tus primeras 2 semanas",
+          "fases": [
+            ["Días 1–2", "Completa tu perfil y graba tu video"],
+            ["Días 3–7", "Aprobación de Preply y calendario abierto"],
+            ["Semana 2", "Responde rápido y da tus primeras clases de prueba"]
+          ],
+          "notas": "Deja una fecha concreta para cada fase. Si se registró con tu enlace, recuérdale la fecha límite del programa."
+        },
+        "programa": {
+          "titulo": "¿Quieres acelerar? Programa «Despega en Preply»",
+          "items": [
+            "4 sesiones grupales de 30 minutos (una por semana)",
+            "Revisión detallada de tu perfil y tu video",
+            "Guion de clase de prueba adaptado a tu materia",
+            "Grupo privado de apoyo y preguntas"
+          ],
+          "precio_label": "Precio de lanzamiento",
+          "precio": "{precio_programa}",
+          "notas": "Ofrécelo solo si la sesión aportó valor. Sin presión: la sesión gratuita debe servir por sí sola."
+        },
+        "cierre": {
+          "titulo": "Tus próximos pasos",
+          "items": [
+            "Aplica hoy los cambios de tu perfil",
+            "Graba tu video esta semana",
+            "Completa tu registro antes del {fecha_limite}"
+          ],
+          "contacto": "{contacto}",
+          "transparencia": "Transparencia: Preply me paga un bono si te registras con mi enlace y das tu primera clase de suscripción. No soy empleado de Preply.",
+          "notas": "Cierra con los 3 pasos y la fecha de cada uno. Pide permiso para escribirle en una semana y ver cómo va."
+        }
+      }
+    }
+  },
+  "en": {
+    "guia": {
+      "archivo": "Guide-Teach-Your-Subject-EN.pdf",
+      "titulo_doc": "Teach what you know, get paid online",
+      "portada": {
+        "kicker": "FREE GUIDE",
+        "titulo": "Teach what you know. Get paid online.",
+        "subtitulo": "How to start teaching your subject online on Preply, from a tutor with 14,000+ lessons taught.",
+        "por": "By {nombre}"
+      },
+      "secciones": [
+        {
+          "titulo": "Who I am and why I wrote this guide",
+          "parrafos": [
+            "I have taught more than 14,000 online lessons on Preply. Today I earn between $4,000 and $6,000 a month teaching, but I didn't start there: it took time to learn what makes a student book, stay and recommend you.",
+            "What I learned doesn't depend on the subject. A strong profile, a well-thought-out price and a convincing trial lesson work the same way in math, music, chemistry or coding.",
+            "Preply is growing beyond languages and is looking for tutors in other subjects. That's why I wrote this guide: so you don't have to learn everything by trial and error like I did."
+          ],
+          "nota": "My income is my personal case, not a promise. Every tutor's results depend on their subject, effort and the market."
+        },
+        {
+          "titulo": "Why teach on Preply",
+          "tarjetas": [
+            ["Students come to you", "Preply brings students from all over the world. You don't have to go find them."],
+            ["You set the price", "You decide your rate and raise it as you grow."],
+            ["You choose the hours", "Open only the hours that work for you, from anywhere."],
+            ["Recurring income", "With subscriptions, a good student is income that repeats every week."]
+          ],
+          "parrafos": [
+            "Subjects in demand: math, chemistry, physics, coding, AI, music, public speaking, art, test prep and many more."
+          ]
+        },
+        {
+          "titulo": "Do you qualify for the free 30-minute session?",
+          "parrafos": [
+            "I offer a free 30-minute session to people who join Preply as tutors through my link. To get it, all of this must be true:"
+          ],
+          "checklist": [
+            "You hold US or UK nationality.",
+            "You have never registered on Preply.",
+            "You will teach a non-language subject.",
+            "You complete your registration by {fecha_limite}."
+          ],
+          "nota": "Don't meet one of these? Email me at {contacto}. I can still help you with my full program."
+        },
+        {
+          "titulo": "Your free session in 3 steps",
+          "pasos": [
+            ["Sign up as a tutor with my link", "Create your Preply tutor account using the button below. If you sign up without the link, I can't offer you the free session."],
+            ["Book your session on TidyCal", "Pick the day and time that suit you. The calendar adjusts to your time zone automatically. Use the same email you signed up to Preply with."],
+            ["Join the video call", "You'll get a confirmation email with the call link. Have your Preply profile handy, even if it's unfinished."]
+          ],
+          "botones": [
+            ["1. Sign up on Preply", "referral_url"],
+            ["2. Book your free session", "tidycal_url"]
+          ]
+        },
+        {
+          "titulo": "What you get from the session",
+          "tarjetas": [
+            ["Profile review", "Headline, description and photo, with specific changes to improve them."],
+            ["Your intro video", "A 60–90 second structure that builds trust."],
+            ["Your starting price", "What to charge at first and when to raise it."],
+            ["Your first 2 weeks", "A clear plan to land your first trial lessons."]
+          ]
+        },
+        {
+          "titulo": "Checklist: a profile that gets students",
+          "checklist": [
+            "Professional photo: facing the camera, good light, clean background, smiling.",
+            "Specific headline. Instead of \"Math teacher\", write \"Algebra & SAT Math: 10 years helping teens pass with confidence\".",
+            "A 60–90 second video: who you are, who you help, what your lessons look like and an invitation to book.",
+            "A student-focused description: what problem you solve and what result they'll get.",
+            "An open calendar with plenty of hours, especially in your first weeks.",
+            "Reply to messages fast. Students often book whoever answers first."
+          ]
+        },
+        {
+          "titulo": "3 mistakes that hold new tutors back",
+          "pasos": [
+            ["A generic profile", "If your profile could belong to anyone, nobody picks you. Be specific about who you help."],
+            ["A poorly planned price", "Don't give your time away, and don't charge expert rates with no reviews. Price is built in stages."],
+            ["Improvising the trial lesson", "The trial lesson is your sales moment. It needs structure: diagnosis, a quick win and a plan."]
+          ]
+        }
+      ],
+      "cierre": {
+        "titulo": "Start today",
+        "texto": "The referral program has a deadline: registration must be completed by {fecha_limite}. Sign up and book your free session.",
+        "transparencia": "Disclosure: if you sign up with my link and teach your first subscription lesson, Preply pays me a referral bonus. It costs you nothing. I'm not a Preply employee and don't speak on its behalf."
+      }
+    },
+    "deck": {
+      "archivo": "Free-30min-Session-EN.pptx",
+      "slides": {
+        "portada": {
+          "titulo": "From expert to online tutor",
+          "subtitulo": "Your Preply launch plan · 30-minute session",
+          "por": "{nombre}",
+          "notas": "Welcome them. Thank them for signing up with your link. Ask their name, their subject and where they're joining from."
+        },
+        "agenda": {
+          "titulo": "What we'll cover in 30 minutes",
+          "items": [
+            ["5 min", "You and your subject"],
+            ["10 min", "Your profile: photo, headline, video"],
+            ["5 min", "Your starting price"],
+            ["5 min", "The trial lesson that converts"],
+            ["5 min", "Next steps and questions"]
+          ],
+          "notas": "Watch the clock. If they haven't finished their profile, spend more time on the profile block and less on pricing."
+        },
+        "historia": {
+          "titulo": "Why I can help you",
+          "stats": [
+            ["14,000+", "lessons taught on Preply"],
+            ["$4K–6K", "current monthly income*"],
+            ["1 method", "that works for any subject"]
+          ],
+          "nota": "*My personal case. Not a guarantee of results.",
+          "notas": "Tell your story in 1 minute: how you started, what was hard to learn and what changed once you understood profile, pricing and the trial lesson."
+        },
+        "porque": {
+          "titulo": "Why Preply for your subject",
+          "tarjetas": [
+            ["Students come to you", "Preply brings the demand. You focus on teaching."],
+            ["Your price, your rules", "You decide your rate and when to raise it."],
+            ["Your schedule", "Open only the hours that suit you."],
+            ["Subscriptions", "Income that repeats every week."]
+          ],
+          "notas": "Ask: what excites you most about teaching online? Use their answer to motivate the rest of the session."
+        },
+        "perfil": {
+          "titulo": "The 3 pillars of a profile that sells",
+          "tarjetas": [
+            ["Photo", "Facing the camera, good light, clean background, smiling. It's the first thing students see."],
+            ["Headline", "Specific: subject, who you help and the result you deliver."],
+            ["Video", "60–90 seconds: who you are, who you help, what your lessons look like and an invitation to book."]
+          ],
+          "notas": "Open their profile on screen share and review the three pillars live. Write down 2–3 specific changes."
+        },
+        "titular": {
+          "titulo": "Your headline: before and after",
+          "antes_label": "Before",
+          "antes": "Math teacher",
+          "despues_label": "After",
+          "despues": "Algebra & SAT Math: 10 years helping teens pass with confidence",
+          "formula": "Formula: subject + who you help + result",
+          "notas": "Write their headline together using the formula. Have them paste it into Preply during the session."
+        },
+        "precio": {
+          "titulo": "Your price is built in stages",
+          "etapas": [
+            ["1 · Launch", "A competitive price to land your first lessons and reviews."],
+            ["2 · Growth", "With your first good reviews, raise it gradually."],
+            ["3 · Premium", "Full calendar and strong reviews: charge what your expertise is worth."]
+          ],
+          "notas": "Look at other tutors' prices in their subject on Preply together and choose a starting price."
+        },
+        "prueba": {
+          "titulo": "The trial lesson that converts",
+          "pasos": [
+            ["Diagnose", "Ask what they need and why now."],
+            ["Quick win", "Teach something useful they can apply right away."],
+            ["Plan", "Show them the path to their goal."],
+            ["Offer", "Invite them to subscribe to follow that plan."]
+          ],
+          "notas": "This is the most important part: this is where you win or lose the student. If there's time, do a 2-minute role play."
+        },
+        "plan": {
+          "titulo": "Your first 2 weeks",
+          "fases": [
+            ["Days 1–2", "Finish your profile and record your video"],
+            ["Days 3–7", "Preply approval and open calendar"],
+            ["Week 2", "Reply fast and teach your first trial lessons"]
+          ],
+          "notas": "Set a concrete date for each phase. If they signed up with your link, remind them of the program deadline."
+        },
+        "programa": {
+          "titulo": "Want to go faster? The \"Launch on Preply\" program",
+          "items": [
+            "4 weekly 30-minute group sessions",
+            "In-depth review of your profile and video",
+            "Trial lesson script adapted to your subject",
+            "Private support group for questions"
+          ],
+          "precio_label": "Launch price",
+          "precio": "{precio_programa}",
+          "notas": "Offer it only if the session delivered value. No pressure: the free session must be useful on its own."
+        },
+        "cierre": {
+          "titulo": "Your next steps",
+          "items": [
+            "Apply your profile changes today",
+            "Record your video this week",
+            "Complete your registration by {fecha_limite}"
+          ],
+          "contacto": "{contacto}",
+          "transparencia": "Disclosure: Preply pays me a bonus if you sign up with my link and teach your first subscription lesson. I'm not a Preply employee.",
+          "notas": "Close with the 3 steps and a date for each. Ask permission to check in with them in a week."
+        }
+      }
+    }
+  }
+}

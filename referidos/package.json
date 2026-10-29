@@ -1,0 +1,10 @@
+{
+  "name": "referidos-preply",
+  "private": true,
+  "scripts": {
+    "build": "python3 build_pdf.py && node build_deck.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "^3.12.0"
+  }
+}
