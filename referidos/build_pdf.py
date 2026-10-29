@@ -117,7 +117,7 @@ def tarjetas(items):
     return [tabla, Spacer(1, 12)]
 
 
-def pasos(items):
+def pasos(items, pad=12):
     filas = [[Paragraph(str(i), S["num"]), [Paragraph(t, S["card_t"]), Paragraph(d, S["card_p"])]]
              for i, (t, d) in enumerate(items, 1)]
     tabla = Table(filas, colWidths=[0.6 * inch, PAGE_W - 2 * MARGIN - 0.6 * inch], hAlign="LEFT")
@@ -126,7 +126,7 @@ def pasos(items):
         ("BACKGROUND", (0, 0), (0, -1), GOLD),
         ("BACKGROUND", (1, 0), (1, -1), SOFT),
         ("LINEBELOW", (0, 0), (-1, -2), 6, white),
-        ("TOPPADDING", (0, 0), (-1, -1), 12), ("BOTTOMPADDING", (0, 0), (-1, -1), 12),
+        ("TOPPADDING", (0, 0), (-1, -1), pad), ("BOTTOMPADDING", (0, 0), (-1, -1), pad),
         ("LEFTPADDING", (1, 0), (1, -1), 14), ("RIGHTPADDING", (1, 0), (1, -1), 14),
     ]))
     return [tabla, Spacer(1, 14)]

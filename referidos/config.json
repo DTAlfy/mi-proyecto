@@ -6,5 +6,8 @@
   "contacto": "tu-email@ejemplo.com",
   "precio_programa": "$97",
   "fecha_limite_es": "30 de noviembre de 2026",
-  "fecha_limite_en": "November 30, 2026"
+  "fecha_limite_en": "November 30, 2026",
+  "whatsapp_link": "https://wa.me/TU-NUMERO",
+  "guia_url_es": "https://drive.google.com/TU-ENLACE-GUIA-ES",
+  "guia_url_en": "https://drive.google.com/TU-ENLACE-GUIA-EN"
 }

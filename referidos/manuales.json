@@ -1,0 +1,340 @@
+{
+  "conversacion": {
+    "archivo": "Manual-de-Conversacion.pdf",
+    "titulo_doc": "Manual de conversación",
+    "portada": {
+      "kicker": "USO INTERNO · CAMPAÑA HASTA EL {fecha_limite_es}",
+      "titulo": "Manual de conversación",
+      "subtitulo": "Guiones en inglés y español para cada etapa: del primer mensaje a la primera clase de suscripción."
+    },
+    "secciones": [
+      {
+        "titulo": "Cómo usar este manual",
+        "bloques": [
+          {"p": "Cada conversación tiene un solo objetivo: llevar a la persona al siguiente paso del camino. No intentes cerrar todo en un mensaje."},
+          {"pasos": [
+            ["Contacto", "La persona comenta, escribe o responde a tu contenido."],
+            ["Calificación", "3 preguntas: materia, nacionalidad (EE. UU. o Reino Unido) y si ya tiene cuenta en Preply."],
+            ["Registro", "Le envías tu enlace de referido y te confirma que se registró."],
+            ["Reserva", "Le envías tu TidyCal y reserva su sesión gratis de 30 min."],
+            ["Sesión", "Usas la presentación de 30 min y dejas fechas concretas."],
+            ["Seguimiento", "Lo acompañas hasta la aprobación y su primera clase de suscripción."]
+          ]},
+          {"h2": "5 reglas de oro"},
+          {"lista": [
+            "**Califica primero.** Sin nacionalidad de EE. UU. o Reino Unido no hay bono. Pregúntalo pronto y con naturalidad.",
+            "**Un paso por mensaje.** Mensajes cortos y una sola pregunta o acción.",
+            "**Da valor antes de pedir.** Un consejo útil genera más confianza que diez enlaces.",
+            "**Sé transparente.** Si preguntan, di que Preply te paga un bono por referido. Esto genera confianza, no la quita.",
+            "**Nunca prometas ingresos.** Tus números son tu caso, no una garantía."
+          ]},
+          {"h2": "Qué idioma usar"},
+          {"tabla": {"cols": ["Persona", "Idioma", "Canal preferido"], "anchos": [0.4, 0.2, 0.4], "filas": [
+            ["Hispano con ciudadanía de EE. UU.", "Español (o spanglish)", "WhatsApp, Instagram, Facebook"],
+            ["Estadounidense angloparlante", "Inglés", "Instagram, LinkedIn, email, SMS"],
+            ["Británico", "Inglés", "WhatsApp, Instagram, LinkedIn"]
+          ]}},
+          {"nota": "En los guiones verás [LINK REGISTRO], [LINK TIDYCAL] y [NOMBRE]. Los textos listos para copiar, con tus enlaces reales, están en la pestaña «Respuestas rápidas» del Excel."}
+        ]
+      },
+      {
+        "titulo": "1. Mensajes de apertura",
+        "bloques": [
+          {"p": "Usa estos mensajes **solo con personas que ya te conocen o que interactuaron primero** con tu contenido. Los mensajes masivos a desconocidos pueden hacer que Instagram, Facebook o WhatsApp te bloqueen."},
+          {"guion": {"titulo": "A. Conocido (amigo, excolega, contacto de LinkedIn)",
+            "en": "Hi [NOMBRE]! Quick one: I've been teaching online for years (14,000+ lessons) and Preply is now looking for tutors in subjects like [MATERIA]. I thought of you right away. Would you be open to earning extra teaching online? Happy to share how I do it.",
+            "es": "¡Hola, [NOMBRE]! Te escribo rápido: llevo años enseñando online (más de 14.000 clases) y Preply ahora busca tutores de materias como [MATERIA]. Pensé en ti de inmediato. ¿Te interesaría ganar un ingreso extra enseñando online? Te cuento cómo lo hago yo."}},
+          {"guion": {"titulo": "B. Respuesta a quien comentó GUIDE o GUÍA (si no está automatizado)",
+            "en": "Hey [NOMBRE], thanks for your comment! Here's the free guide: [LINK GUIA]. Quick question so I can point you in the right direction: what subject would you teach?",
+            "es": "¡Hola, [NOMBRE], gracias por comentar! Aquí tienes la guía gratis: [LINK GUIA]. Una pregunta rápida para orientarte mejor: ¿qué materia enseñarías?"}},
+          {"guion": {"titulo": "C. Nota de conexión en LinkedIn (máx. 300 caracteres)",
+            "en": "Hi [NOMBRE], I've taught 14,000+ online lessons and I'm helping experts in [MATERIA] start teaching online on Preply. Your background caught my eye. Would love to connect!",
+            "es": "Hola, [NOMBRE]. He dado más de 14.000 clases online y ayudo a expertos en [MATERIA] a empezar a enseñar en Preply. Tu perfil me llamó la atención. ¡Me encantaría conectar!"}},
+          {"guion": {"titulo": "D. Respuesta a quien llega por un anuncio o por el enlace de WhatsApp",
+            "en": "Hi [NOMBRE]! Thanks for reaching out. I'm [TU NOMBRE], a Preply tutor with 14,000+ lessons. I'll help you get started. First, 3 quick questions so I don't waste your time:\n1) What subject would you teach?\n2) Do you hold US or UK nationality?\n3) Have you ever created a Preply account?",
+            "es": "¡Hola, [NOMBRE]! Gracias por escribirme. Soy [TU NOMBRE], tutor en Preply con más de 14.000 clases. Te ayudo a empezar. Primero, 3 preguntas rápidas para no hacerte perder tiempo:\n1) ¿Qué materia enseñarías?\n2) ¿Tienes nacionalidad de EE. UU. o del Reino Unido?\n3) ¿Alguna vez creaste una cuenta en Preply?"}}
+        ]
+      },
+      {
+        "titulo": "2. Calificación y respuestas según el caso",
+        "bloques": [
+          {"p": "Con las 3 respuestas sabes exactamente qué hacer. Marca la etiqueta correspondiente en WhatsApp y en tu Excel."},
+          {"tabla": {"cols": ["Si responde…", "Qué haces"], "anchos": [0.4, 0.6], "filas": [
+            ["Materia que no es idioma + EE. UU./Reino Unido + sin cuenta", "Califica. Envía el guion 2A (registro)."],
+            ["No tiene nacionalidad de EE. UU. ni de Reino Unido", "No genera bono. Guion 2B: sé honesto y ofrece tu programa de pago."],
+            ["Ya tiene cuenta en Preply", "No genera bono. Guion 2C: ofrece el programa para crecer."],
+            ["Solo quiere enseñar idiomas", "El enlace no aplica. Pregúntale si domina otra materia (guion 2D)."]
+          ]}},
+          {"guion": {"titulo": "2A. Califica: envío del enlace de registro",
+            "en": "Perfect, you're a great fit! Step 1 is creating your tutor account with my link (it's free):\n[LINK REGISTRO]\nTwo tips: choose [MATERIA] as your subject (not a language), and finish sign-up in the same browser where you opened the link. Let me know once you're in and I'll send you the link to book your free 30-min session with me.",
+            "es": "¡Perfecto, encajas muy bien! El paso 1 es crear tu cuenta de tutor con mi enlace (es gratis):\n[LINK REGISTRO]\nDos consejos: elige [MATERIA] como materia (no un idioma) y termina el registro en el mismo navegador donde abriste el enlace. Avísame cuando estés dentro y te paso el enlace para reservar tu sesión gratis de 30 min conmigo."}},
+          {"guion": {"titulo": "2B. No tiene la nacionalidad requerida",
+            "en": "Thanks for being upfront! My free session is part of a Preply pilot that's only open to US and UK nationals, so I can't offer it this time. You can still join Preply as a tutor, and if you'd like hands-on help, my \"Launch on Preply\" program covers profile, pricing and trial lessons. Want the details?",
+            "es": "¡Gracias por la sinceridad! Mi sesión gratis es parte de un programa piloto de Preply que solo aplica a personas con nacionalidad de EE. UU. o Reino Unido, así que esta vez no puedo ofrecértela. Igual puedes unirte a Preply como tutor y, si quieres acompañamiento, mi programa «Despega en Preply» cubre perfil, precio y clases de prueba. ¿Te paso los detalles?"}},
+          {"guion": {"titulo": "2C. Ya tiene cuenta en Preply",
+            "en": "Got it! Since you already have an account, the free session doesn't apply (it's for brand-new tutors). But if you want to get more students, my program is built exactly for that. Want me to tell you how it works?",
+            "es": "¡Entendido! Como ya tienes cuenta, la sesión gratis no aplica (es para tutores nuevos). Pero si quieres conseguir más alumnos, mi programa está pensado justo para eso. ¿Te cuento cómo funciona?"}},
+          {"guion": {"titulo": "2D. Solo enseña idiomas",
+            "en": "This program is for non-language subjects. Many bilingual people also master something else: math, music, coding, science, public speaking… Is there anything else you could teach?",
+            "es": "Este programa es para materias que no sean idiomas. Muchas personas bilingües dominan algo más: matemáticas, música, programación, ciencias, oratoria… ¿Hay algo más que podrías enseñar?"}}
+        ]
+      },
+      {
+        "titulo": "3. Reserva, recordatorios y ausencias",
+        "bloques": [
+          {"guion": {"titulo": "3A. Confirmó el registro: envío de TidyCal",
+            "en": "Awesome, welcome aboard! Now book your free 30-min session here (it shows times in your time zone):\n[LINK TIDYCAL]\nUse the same email you signed up to Preply with. Bring your profile, even if it's unfinished. We'll fix it together.",
+            "es": "¡Genial, bienvenido! Ahora reserva tu sesión gratis de 30 min aquí (verás los horarios en tu zona horaria):\n[LINK TIDYCAL]\nUsa el mismo email con el que te registraste en Preply. Trae tu perfil aunque esté a medias. Lo mejoramos juntos."}},
+          {"guion": {"titulo": "3B. Recordatorio el día anterior (TidyCal también envía uno por email)",
+            "en": "Hi [NOMBRE]! Just a reminder about our session tomorrow at [HORA]. To get the most out of it, have your Preply profile open and think about the headline you'd like. See you there!",
+            "es": "¡Hola, [NOMBRE]! Te recuerdo nuestra sesión de mañana a las [HORA]. Para aprovecharla al máximo, ten abierto tu perfil de Preply y piensa en el título que te gustaría. ¡Nos vemos!"}},
+          {"guion": {"titulo": "3C. No se presentó a la sesión",
+            "en": "Hi [NOMBRE], I missed you today. No worries, things happen! Want to rebook? Here's the link: [LINK TIDYCAL]. Remember registration closes on {fecha_limite_en}.",
+            "es": "Hola, [NOMBRE], hoy no coincidimos. ¡No pasa nada, a todos nos pasa! ¿Quieres reagendar? Aquí tienes el enlace: [LINK TIDYCAL]. Recuerda que el registro cierra el {fecha_limite_es}."}},
+          {"guion": {"titulo": "3D. Calificó pero no se ha registrado (después de 48 h)",
+            "en": "Hi [NOMBRE]! Did you get a chance to sign up? If anything got stuck, tell me and I'll help. Here's the link again: [LINK REGISTRO]",
+            "es": "¡Hola, [NOMBRE]! ¿Pudiste registrarte? Si algo te trabó, cuéntame y te ayudo. Te dejo el enlace otra vez: [LINK REGISTRO]"}}
+        ]
+      },
+      {
+        "titulo": "4. Seguimiento después de la sesión",
+        "bloques": [
+          {"p": "Recuerda que **el bono llega cuando la persona da su primera clase de suscripción**, no cuando se registra. El seguimiento es donde realmente ganas."},
+          {"guion": {"titulo": "4A. Resumen el mismo día",
+            "en": "Great session, [NOMBRE]! Your 3 next steps:\n1) [CAMBIO PERFIL] by [FECHA]\n2) Record your intro video by [FECHA]\n3) Submit your profile for approval by [FECHA]\nI'll check in on [DIA]. You've got this!",
+            "es": "¡Gran sesión, [NOMBRE]! Tus 3 próximos pasos:\n1) [CAMBIO PERFIL] antes del [FECHA]\n2) Graba tu video antes del [FECHA]\n3) Envía tu perfil a aprobación antes del [FECHA]\nTe escribo el [DIA]. ¡Tú puedes!"}},
+          {"guion": {"titulo": "4B. Día 3: ¿perfil enviado?",
+            "en": "Hey [NOMBRE]! How's the profile going? If you want, send me a screenshot of your headline or your video and I'll give you quick feedback.",
+            "es": "¡Hola, [NOMBRE]! ¿Cómo va el perfil? Si quieres, mándame una captura de tu título o tu video y te doy feedback rápido."}},
+          {"guion": {"titulo": "4C. Aprobado: a por la primera clase",
+            "en": "Congrats on getting approved! Now the key is your first trial lessons: keep your calendar open, reply to messages fast, and use the 4-step trial structure (diagnose, quick win, plan, offer). Tell me how your first one goes!",
+            "es": "¡Felicidades por la aprobación! Ahora lo clave son tus primeras clases de prueba: mantén el calendario abierto, responde rápido los mensajes y usa la estructura de 4 pasos (diagnóstico, mini victoria, plan, propuesta). ¡Cuéntame cómo te va en la primera!"}},
+          {"guion": {"titulo": "4D. Primera suscripción: celebración y referidos",
+            "en": "Your first subscription student, amazing! This is how it starts. Do you know anyone else (US/UK nationals) who could teach a subject online? I'd be happy to help them the same way.",
+            "es": "¡Tu primer alumno con suscripción, increíble! Así empieza todo. ¿Conoces a alguien más (con nacionalidad de EE. UU. o Reino Unido) que pueda enseñar una materia online? Con gusto lo ayudo igual que a ti."}}
+        ]
+      },
+      {
+        "titulo": "5. Manejo de objeciones",
+        "bloques": [
+          {"guion": {"titulo": "«¿Esto es una estafa o un esquema piramidal?»",
+            "en": "Fair question! Preply is a well-known tutoring marketplace: students pay for lessons and tutors get paid for teaching. Signing up is free. I'm a tutor there myself, and Preply pays me a referral bonus if you join with my link. There's nothing to buy and no one to recruit.",
+            "es": "¡Buena pregunta! Preply es una plataforma de tutorías conocida: los alumnos pagan por clases y los tutores cobran por enseñar. Registrarse es gratis. Yo mismo soy tutor ahí, y Preply me paga un bono si te unes con mi enlace. No hay nada que comprar ni a nadie que reclutar."}},
+          {"guion": {"titulo": "«¿Cuánto puedo ganar de verdad?»",
+            "en": "Honestly, it depends on your subject, your price and how many hours you open. I earn $4K–6K a month after 14,000+ lessons, but it took time. What I can promise is to show you exactly what worked for me.",
+            "es": "Con honestidad: depende de tu materia, tu precio y cuántas horas abras. Yo gano entre $4K y $6K al mes después de más de 14.000 clases, pero me tomó tiempo. Lo que sí te prometo es mostrarte exactamente lo que me funcionó."}},
+          {"guion": {"titulo": "«¿Por qué me ayudas gratis?»",
+            "en": "Full transparency: Preply pays me a bonus when someone I refer teaches their first subscription lesson. So I only win if you actually succeed. That's why I'll help you get there.",
+            "es": "Total transparencia: Preply me paga un bono cuando alguien que referí da su primera clase de suscripción. O sea, solo gano si a ti te va bien. Por eso te voy a ayudar a lograrlo."}},
+          {"guion": {"titulo": "«No tengo tiempo»",
+            "en": "Totally get it. That's the beauty of it: you open only the hours you want, even 3–4 a week. Sign-up takes about 20 minutes, and the deadline for this program is {fecha_limite_en}.",
+            "es": "Te entiendo totalmente. Eso es lo bueno: abres solo las horas que quieras, aunque sean 3 o 4 por semana. El registro toma unos 20 minutos y la fecha límite de este programa es el {fecha_limite_es}."}},
+          {"guion": {"titulo": "«No soy maestro certificado»",
+            "en": "You don't need to be a certified teacher to start. Many successful tutors are engineers, musicians or students who explain things well. What matters most is your profile and your first lessons, and I'll help you with both.",
+            "es": "No necesitas ser maestro certificado para empezar. Muchos tutores exitosos son ingenieros, músicos o estudiantes que explican bien. Lo que más importa es tu perfil y tus primeras clases, y en eso te ayudo."}},
+          {"guion": {"titulo": "«Preply se queda con una comisión»",
+            "en": "True. Preply keeps the trial lesson fee and charges a commission that goes down as you teach more hours (check their Help Center for current rates). In exchange, they bring you the students, so you don't spend on marketing.",
+            "es": "Es cierto. Preply se queda con la clase de prueba y cobra una comisión que baja a medida que das más horas (revisa los porcentajes actuales en su centro de ayuda). A cambio, te trae los alumnos y no gastas en publicidad."}},
+          {"guion": {"titulo": "«Lo voy a pensar»",
+            "en": "Of course! Just keep in mind that registration for this program closes on {fecha_limite_en}. Want me to check back with you in 2 days?",
+            "es": "¡Claro! Solo ten en cuenta que el registro para este programa cierra el {fecha_limite_es}. ¿Te escribo en 2 días para ver qué decidiste?"}}
+        ]
+      },
+      {
+        "titulo": "6. Ofrecer el programa de pago",
+        "bloques": [
+          {"p": "Ofrécelo **al final de la sesión**, solo si la sesión aportó valor. Si dice que no, la relación sigue igual: tu bono depende de que la persona tenga éxito, no del curso."},
+          {"guion": {"titulo": "6A. Oferta al final de la sesión",
+            "en": "You now have everything to get started. If you want to go faster, I run a 4-week program, \"Launch on Preply\": 4 group sessions, a full profile and video review, a trial lesson script for your subject and a private support group. The launch price is {precio_programa} until {fecha_limite_en}. Would that help you?",
+            "es": "Ya tienes todo para arrancar. Si quieres ir más rápido, tengo un programa de 4 semanas, «Despega en Preply»: 4 sesiones grupales, revisión completa de tu perfil y tu video, un guion de clase de prueba para tu materia y un grupo privado de apoyo. El precio de lanzamiento es {precio_programa} hasta el {fecha_limite_es}. ¿Te serviría?"}},
+          {"guion": {"titulo": "6B. Si dice que no",
+            "en": "No problem at all! You can absolutely do it on your own with what we covered today. I'll still check in on your progress.",
+            "es": "¡Ningún problema! Puedes hacerlo por tu cuenta con lo que vimos hoy. Igual te escribo para ver cómo vas."}},
+          {"h2": "Lo que nunca debes decir"},
+          {"lista": [
+            "«Vas a ganar X dólares» o «dinero fácil». Prometer ingresos está regulado por la FTC en EE. UU.",
+            "«Soy de Preply» o «trabajo para Preply». Eres un tutor independiente.",
+            "«Regístrate aunque no vayas a enseñar». Eso es fraude y pone en riesgo tu cuenta.",
+            "Nada de esto por el chat de Preply ni durante tus clases. Preply prohíbe usar su plataforma para promociones externas."
+          ]}
+        ]
+      }
+    ]
+  },
+  "modelo": {
+    "archivo": "Modelo-de-Captacion-y-Automatizacion.pdf",
+    "titulo_doc": "Modelo de captación y automatización",
+    "portada": {
+      "kicker": "PLAN DE 32 DÍAS · HASTA EL {fecha_limite_es}",
+      "titulo": "Modelo de captación y automatización",
+      "subtitulo": "Embudo, perfiles ideales, canales, WhatsApp y redes automatizadas, calendario y métricas."
+    },
+    "secciones": [
+      {
+        "titulo": "El modelo en una página",
+        "bloques": [
+          {"p": "Todo el sistema funciona como un embudo. Las redes atraen, la automatización filtra y tú conversas solo con quien califica."},
+          {"pasos": [
+            ["Atraer: Reels, TikTok, posts en grupos y anuncios", "Cada pieza invita a comentar GUIDE o GUÍA, o a escribir por WhatsApp."],
+            ["Filtrar automáticamente: ManyChat y respuestas rápidas", "El bot entrega la guía PDF y hace las 3 preguntas de calificación."],
+            ["Convertir: tu enlace de referido y TidyCal", "Quien califica se registra con tu enlace y reserva su sesión gratis."],
+            ["Acompañar: sesión de 30 min y seguimiento por WhatsApp", "Lo llevas hasta la aprobación y su primera clase de suscripción."],
+            ["Monetizar: bono de $100 más el programa de pago", "Bono por cada tutor activo, más ingresos del programa «Despega en Preply»."]
+          ]},
+          {"h2": "Meta de ejemplo (ajústala en el Excel, pestaña «Embudo»)"},
+          {"tabla": {"cols": ["Etapa", "Volumen", "Supuesto"], "anchos": [0.45, 0.2, 0.35], "filas": [
+            ["Personas alcanzadas", "20.000", "Orgánico + anuncios"],
+            ["Interactúan (comentan o escriben)", "600", "3 % del alcance"],
+            ["Califican (EE. UU./Reino Unido, cuenta nueva)", "180", "30 % de las interacciones"],
+            ["Se registran con tu enlace", "60", "33 % de los calificados"],
+            ["Aprobados por Preply", "40", "65 % de los registrados"],
+            ["Primera clase de suscripción", "15", "≈ 40 % de los aprobados"],
+            ["Bono estimado", "$1.500", "15 × $100"]
+          ]}},
+          {"nota": "Los porcentajes son estimaciones para planificar, no datos de Preply. Reemplázalos con tus números reales cada semana."}
+        ]
+      },
+      {
+        "titulo": "Perfiles ideales: a quién buscar",
+        "bloques": [
+          {"tarjetas": [
+            ["Maestro hispano en EE. UU.", "Maestros de matemáticas, ciencias o música con ciudadanía estadounidense. Quieren un ingreso extra sin otro trabajo presencial. Dónde: grupos de Facebook de maestros bilingües, Instagram en español. Gancho: «Enseña desde casa y cobra en dólares»."],
+            ["Profesional STEM", "Ingenieros, programadores, contadores o profesionales de la salud. Quieren monetizar lo que saben en horas libres. Dónde: LinkedIn, Reddit (r/sidehustle). Gancho: «Tu conocimiento vale $$$ por hora»."],
+            ["Músico o artista", "Profesores de guitarra, piano, canto o dibujo. Quieren alumnos estables sin depender de una academia. Dónde: grupos de músicos, Instagram, TikTok. Gancho: «Alumnos de todo el mundo, sin salir de casa»."],
+            ["Maestro jubilado o en transición (EE. UU./Reino Unido)", "Mucha experiencia y tiempo libre. Quieren flexibilidad y seguir enseñando. Dónde: Facebook, r/TeachersInTransition, LinkedIn. Gancho: «Sigue enseñando, a tu ritmo»."]
+          ]},
+          {"nota": "Recuerda: el requisito es la nacionalidad, no el lugar donde viven. Un ciudadano estadounidense que vive en México sí califica."}
+        ]
+      },
+      {
+        "titulo": "Canales: qué hace cada uno",
+        "bloques": [
+          {"tabla": {"cols": ["Canal", "Rol", "Frecuencia", "Automatizable"], "anchos": [0.18, 0.42, 0.2, 0.2], "filas": [
+            ["Instagram", "Reels y carruseles con «Comenta GUÍA»", "4–5 por semana", "Sí (ManyChat)"],
+            ["Facebook", "Reels y posts de valor en grupos de maestros y músicos", "1 post al día en grupos", "Parcial (ManyChat en tu página)"],
+            ["TikTok", "Videos cortos con enlace en la bio", "4–5 por semana", "Programación de posts"],
+            ["LinkedIn", "Tu historia y conexiones con profesionales", "3 posts + 10 conexiones por semana", "Programación de posts"],
+            ["Reddit", "Respuestas útiles en r/sidehustle y r/Teachers", "2–3 por semana", "No (siempre manual)"],
+            ["WhatsApp Business", "Centro de conversación con quien califica", "Diario", "Sí (respuestas rápidas)"],
+            ["Anuncios Meta", "Acelerar lo que ya funciona orgánicamente", "Desde la semana 2", "Sí (clic a WhatsApp o DM)"]
+          ]}},
+          {"nota": "Tendencia general: los hispanos en EE. UU. y los británicos usan mucho WhatsApp; muchos estadounidenses angloparlantes prefieren Instagram DM, SMS o email. Ofrece siempre las dos opciones."}
+        ]
+      },
+      {
+        "titulo": "Automatización: la arquitectura",
+        "bloques": [
+          {"pasos": [
+            ["Reel o post: «Comenta GUIDE o GUÍA»", "La persona comenta la palabra clave."],
+            ["ManyChat envía un DM automático", "Entrega la guía PDF y hace 3 preguntas con botones: materia, nacionalidad y si ya tiene cuenta."],
+            ["Si califica, el bot envía tu enlace de referido", "Más tu TidyCal y tu enlace de WhatsApp (wa.me). Etiqueta: «Calificado»."],
+            ["Si no califica, el bot ofrece el programa de pago", "Etiqueta: «No califica». No pierdes tiempo en conversaciones manuales."],
+            ["TidyCal agenda y envía recordatorios por email", "Se sincroniza con tu Google Calendar y nunca choca con Preply."],
+            ["Tú conversas por WhatsApp Business", "Con respuestas rápidas (/registro, /reserva…) y etiquetas por etapa."],
+            ["Registras todo en el Excel en 5 minutos al día", "Con el embudo real frente a tu meta."]
+          ]},
+          {"h2": "Herramientas y costo aproximado"},
+          {"tabla": {"cols": ["Herramienta", "Para qué", "Costo"], "anchos": [0.25, 0.5, 0.25], "filas": [
+            ["WhatsApp Business (app)", "Saludo automático, respuestas rápidas, etiquetas, catálogo", "Gratis"],
+            ["ManyChat", "DMs automáticos en Instagram y Facebook por palabra clave", "Plan gratis limitado; Pro de pago"],
+            ["TidyCal Pro", "Reservas, recordatorios y sincronización con Google Calendar", "Ya lo tienes"],
+            ["Meta Business Suite", "Programar posts de Instagram y Facebook", "Gratis"],
+            ["Programador nativo de TikTok y LinkedIn", "Programar videos y posts", "Gratis"],
+            ["Excel o Google Sheets", "Tu CRM y tu embudo", "Gratis"]
+          ]}},
+          {"nota": "Los precios y planes cambian. Verifícalos en cada sitio antes de contratar."}
+        ]
+      },
+      {
+        "titulo": "Configurar WhatsApp Business (30 min)",
+        "bloques": [
+          {"pasos": [
+            ["Perfil de empresa", "Foto profesional, nombre «[Tu nombre] · Tutor Coach», descripción: «Ayudo a expertos a enseñar su materia online en Preply. 14.000+ clases.» Agrega tu TidyCal como sitio web."],
+            ["Mensaje de bienvenida (automático)", "Herramientas para la empresa > Mensaje de bienvenida. Usa el texto de la pestaña «Respuestas rápidas» (atajo /hola). Se envía solo a quien te escribe por primera vez."],
+            ["Mensaje de ausencia", "Actívalo en tus horas de clase en Preply: «Estoy dando clase ahora; te respondo en cuanto termine.»"],
+            ["Respuestas rápidas", "Crea los atajos del Excel: /hola, /califica, /registro, /reserva, /recordatorio, /noshow, /resumen, /aprobado, /programa, /noapto. Escribes «/» y eliges."],
+            ["Etiquetas por etapa", "Nuevo · Calificado · Registrado · Sesión reservada · Sesión hecha · Aprobado · 1ª suscripción · No califica."],
+            ["Enlace directo con mensaje", "Crea https://wa.me/TU-NUMERO?text=GUIDE (sin + ni espacios) y ponlo en tu bio, tu guía PDF y tus anuncios."],
+            ["Catálogo", "Agrega el programa «Despega en Preply» como producto, con precio y descripción."]
+          ]},
+          {"h2": "Reglas de WhatsApp para no ser bloqueado"},
+          {"lista": [
+            "Escribe solo a quien te escribió primero o te dio su número para esto.",
+            "Las listas de difusión solo llegan a quien guardó tu número. Úsalas para recordatorios, no para captar desconocidos.",
+            "No envíes el mismo mensaje a cientos de números en poco tiempo."
+          ]}
+        ]
+      },
+      {
+        "titulo": "Configurar ManyChat en Instagram y Facebook",
+        "bloques": [
+          {"pasos": [
+            ["Conecta tu cuenta", "Necesitas una cuenta de Instagram profesional vinculada a una página de Facebook. En ManyChat: conecta Instagram y Messenger."],
+            ["Disparador: comentario con palabra clave", "Automatización > «Comentarios en publicación». Palabras: GUIDE, GUÍA, GUIA. Respuesta pública automática: «¡Te lo envié por DM!»"],
+            ["Mensaje 1: entrega + pregunta 1", "«¡Aquí tienes la guía! [enlace PDF]. ¿Qué materia enseñarías?» Botones: Matemáticas / Ciencias / Música / Programación / Otra."],
+            ["Mensaje 2: nacionalidad", "«¿Tienes nacionalidad de EE. UU. o del Reino Unido?» Botones: EE. UU. / Reino Unido / Ninguna."],
+            ["Mensaje 3: cuenta en Preply", "«¿Alguna vez creaste una cuenta en Preply?» Botones: No, nunca / Sí."],
+            ["Ramas", "Califica: guion 2A + TidyCal + WhatsApp, etiqueta «Calificado». No califica: guion 2B o 2C, etiqueta «No califica»."],
+            ["Versión en inglés", "Duplica el flujo con la palabra GUIDE y los textos en inglés."]
+          ]},
+          {"h2": "Dónde alojar la guía PDF"},
+          {"p": "Súbela a Google Drive con permiso «Cualquier persona con el enlace puede ver» y usa ese enlace en el bot, tu bio y tus anuncios. Haz lo mismo con la versión en inglés."},
+          {"nota": "Meta solo permite mensajes automáticos a personas que interactuaron contigo primero (comentario, DM o respuesta a historia). Así está diseñado este flujo."}
+        ]
+      },
+      {
+        "titulo": "Calendario de 32 días",
+        "bloques": [
+          {"tabla": {"cols": ["Semana", "Foco", "Acciones clave"], "anchos": [0.18, 0.2, 0.62], "filas": [
+            ["30 oct – 5 nov", "Montaje", "Configura WhatsApp Business, ManyChat y TidyCal. Sube las guías a Drive. Escribe a 50 conocidos (guion 1A). Únete a 10 grupos de Facebook. Publica 3 Reels."],
+            ["6 – 12 nov", "Tracción", "1 contenido al día. Posts de valor en grupos. Primeras sesiones de 30 min. Prueba anuncios con $5–10 al día durante 5 días."],
+            ["13 – 19 nov", "Escalar", "Duplica el presupuesto del anuncio que mejor funcione. Haz un directo de preguntas y respuestas en Instagram. Seguimientos 3D y 4B."],
+            ["20 – 26 nov", "Urgencia", "Mensaje «quedan 10 días». Thanksgiving es el 26 de noviembre: los maestros de EE. UU. tienen días libres, así que publica más."],
+            ["27 – 30 nov", "Cierre", "Cuenta regresiva diaria: «quedan 3 días», «último día». Recuerda a todos los calificados que aún no se registran."],
+            ["Dic – ene", "Cobro", "Acompaña a cada registrado hasta su aprobación y su primera clase de suscripción (guiones 4B–4D)."]
+          ]}},
+          {"nota": "El calendario de contenido día por día, con ganchos y llamadas a la acción, está en el Excel, pestaña «Calendario contenido»."}
+        ]
+      },
+      {
+        "titulo": "Anuncios en Facebook e Instagram",
+        "bloques": [
+          {"h2": "Configuración recomendada"},
+          {"lista": [
+            "**Objetivo:** Interacción > Mensajes (clic a WhatsApp o a DM de Instagram).",
+            "**Categoría especial:** como es una oportunidad de trabajo, probablemente Meta te pida declarar la categoría **«Empleo»**. Esto limita la segmentación por edad, género y código postal. Declárala para evitar rechazos.",
+            "**Ubicación:** Estados Unidos (un conjunto de anuncios) y Reino Unido (otro conjunto).",
+            "**Idioma:** para el público hispano en EE. UU., elige «Español» en la configuración de idioma.",
+            "**Presupuesto:** $5–10 al día por conjunto durante 5 días. Apaga lo que no genere conversaciones y escala lo que sí.",
+            "**Creatividad:** usa tu mejor Reel orgánico como anuncio. Funciona mejor que un diseño nuevo."
+          ]},
+          {"guion": {"titulo": "Texto del anuncio",
+            "en": "I've taught 14,000+ online lessons. Now Preply is looking for tutors in math, science, music, coding and more. If you're a US or UK national with knowledge to share, I'll help you get started for free: profile, pricing and your first students.\nTap \"Send message\" and get my free guide.\n(Preply referral link: I earn a bonus if you join.)",
+            "es": "He dado más de 14.000 clases online. Ahora Preply busca tutores de matemáticas, ciencias, música, programación y más. Si tienes nacionalidad de EE. UU. o Reino Unido y conocimientos que compartir, te ayudo gratis a empezar: perfil, precio y tus primeros alumnos.\nToca «Enviar mensaje» y recibe mi guía gratis.\n(Enlace de referido de Preply: recibo un bono si te unes.)"}},
+          {"nota": "No uses el logo de Preply ni te presentes como Preply. Revisa en los términos del programa de referidos si permiten anuncios pagados antes de invertir."}
+        ]
+      },
+      {
+        "titulo": "Métricas semanales y riesgos",
+        "bloques": [
+          {"tabla": {"cols": ["Métrica", "Meta semanal", "Dónde la ves"], "anchos": [0.45, 0.2, 0.35], "filas": [
+            ["Conversaciones nuevas", "150", "ManyChat + WhatsApp"],
+            ["Calificados", "45", "Excel, pestaña Leads"],
+            ["Registros con tu enlace", "15", "Excel (confirmado por la persona)"],
+            ["Sesiones de 30 min realizadas", "12", "TidyCal"],
+            ["Ventas del programa", "2–3", "Excel"],
+            ["Costo por registro (anuncios)", "< $20", "Meta Ads ÷ registros"]
+          ]}},
+          {"h2": "Riesgos y cómo evitarlos"},
+          {"lista": [
+            "**Tu cuenta de Preply:** nunca promociones esto en el chat de Preply ni en tus clases.",
+            "**Bloqueo en redes:** sin mensajes masivos a desconocidos; deja que la automatización responda solo a quien interactúa.",
+            "**Promesas de ingresos:** usa siempre «mi caso personal, no es garantía».",
+            "**Términos del programa:** léelos antes de los anuncios y antes de condicionar beneficios al uso del enlace.",
+            "**Seguimiento:** Preply no muestra tus referidos. Tu Excel es tu única fuente de verdad. Si dudas de algún caso, Customer Care puede confirmarlo."
+          ]}
+        ]
+      }
+    ]
+  }
+}

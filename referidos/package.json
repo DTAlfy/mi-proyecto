@@ -2,7 +2,7 @@
   "name": "referidos-preply",
   "private": true,
   "scripts": {
-    "build": "python3 build_pdf.py && node build_deck.js"
+    "build": "python3 build_pdf.py && python3 build_manuales.py && python3 build_excel.py && node build_deck.js"
   },
   "dependencies": {
     "pptxgenjs": "^3.12.0"

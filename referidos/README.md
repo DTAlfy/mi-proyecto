@@ -8,13 +8,16 @@ Material para atraer tutores de materias que no sean idiomas a Preply con tu enl
 |---|---|
 | `salidas/Guia-Ensena-Tu-Materia-ES.pdf` / `salidas/Guide-Teach-Your-Subject-EN.pdf` | Guía gratuita (lead magnet). Se comparte en redes, grupos y anuncios. Botones clicables: registro con tu enlace y reserva en TidyCal. |
 | `salidas/Sesion-Gratis-30min-ES.pptx` / `salidas/Free-30min-Session-EN.pptx` | Presentación para la sesión de 30 min. Cada diapositiva trae **notas del presentador** con lo que debes decir y hacer. |
-| `config.json` | **Tus datos:** nombre, enlaces de TidyCal, email y precio del programa. |
-| `contenido.json` | Todos los textos de la guía y de la presentación, en los dos idiomas. |
+| `salidas/Manual-de-Conversacion.pdf` | **Uso interno.** Guiones en inglés y español para cada etapa: apertura, calificación, registro, reserva, ausencias, seguimiento, objeciones y oferta del programa. |
+| `salidas/Modelo-de-Captacion-y-Automatizacion.pdf` | **Uso interno.** Embudo con metas, perfiles ideales, canales, configuración paso a paso de WhatsApp Business y ManyChat, calendario de 32 días, anuncios en Meta, KPIs y riesgos. |
+| `salidas/Tablero-Captacion-Tutores.xlsx` | CRM de candidatos (Leads), embudo plan frente a realidad con fórmulas, calendario de contenido día a día (ES/EN) y respuestas rápidas de WhatsApp con tus enlaces reales. |
+| `config.json` | **Tus datos:** nombre, enlaces de TidyCal, WhatsApp y guía, email y precio del programa. |
+| `contenido.json` / `manuales.json` | Todos los textos, en los dos idiomas. |
 
 ## Cómo cambiar tus datos y volver a generar todo
 
-1. Edita `config.json` (tu nombre, tus enlaces reales de TidyCal, tu email y el precio).
-2. Ejecuta lo siguiente (requiere Python 3 con `reportlab` y Node.js):
+1. Edita `config.json` (tu nombre, tus enlaces reales de TidyCal, tu número de WhatsApp en `wa.me`, los enlaces de Google Drive de las guías, tu email y el precio).
+2. Ejecuta lo siguiente (requiere Python 3 con `reportlab` y `openpyxl`, y Node.js):
 
 ```bash
 cd referidos && npm install && npm run build
